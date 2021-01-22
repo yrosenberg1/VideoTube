@@ -51,17 +51,20 @@ class SignUpForm extends React.Component{
                
                
                 <form onSubmit={this.handleSubmit} className='sign-in-form'>
+                 <div className='google-form-logo'> 
+                 <img src={window.googlelogoURL} />
+                 </div>
                 <h2 className='signup-form-header'> Create your VideoTube Account </h2>
                 <h3 className='signup-form-subheader'>to continue to VideoTube</h3>
-                
-                <input className='signup-form-input' type='text'
+                <label> Name </label>
+                <input className='signup-form-name' type='text'
                     value={this.state.first_name}
                     onChange={this.handleFirstName} />
                 
-                <input className='signup-form-input' type='text'
+                <input className='signup-form-name' type='text'
                     value={this.state.last_name}
                     onChange={this.handleLastName} />
-
+                
                     <input className='signup-form-input' type='text'
                     value={this.state.email}
                     onChange={this.handleEmail} />
