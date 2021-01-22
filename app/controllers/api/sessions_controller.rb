@@ -8,10 +8,24 @@ def create
 
     if @user
         login(@user)
-        # render # json user page
+       render "api/users/show"
     else
-        render json: @user.errors.full_messages
+        render json: ["Couldn't find your Email/ Invalid Password"], status: 401
     end
+end
+
+def destroy
+    @user = current_user
+
+    if @user 
+        logout
+        render "api/users/show"
+    else
+        render json: ["Nobody is currently signed in."], status: 404
+    end     
+end
+
+
 
     private
 
@@ -21,16 +35,3 @@ def create
 
 end
 
-
-def destroy
-    @user = current_user
-
-    if @user 
-        logout
-        # render #something? youtube renders login form.
-    else
-        render json: @user.errors.full_messages
-    end     
-end
-
-end
