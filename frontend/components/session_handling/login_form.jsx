@@ -49,7 +49,9 @@ class LogInForm extends React.Component{
                     value={this.state.password}
                     onChange={this.handlePassword} />
 
-                    <button>{this.props.formType}</button>
+                  <Link to='/signup'> Create new account </Link>
+                     <button>Next</button>
+
 
                 </form>
             </>

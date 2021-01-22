@@ -1,0 +1,1 @@
+window.dispatch(window.signup({email: "@email",password:"password123", first_name: "Bob", last_name: "Bobbo", }))

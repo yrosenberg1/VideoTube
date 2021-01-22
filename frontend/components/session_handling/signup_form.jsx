@@ -47,25 +47,26 @@ class SignUpForm extends React.Component{
     render(){
         
         return (
-            <>
+            <div className='signup-div'>
                
-                <h2> Create your VideoTube Account </h2>
-                <h3>to continue to VideoTube</h3>
+               
                 <form onSubmit={this.handleSubmit} className='sign-in-form'>
-                    
-                <input type='text'
+                <h2 className='signup-form-header'> Create your VideoTube Account </h2>
+                <h3 className='signup-form-subheader'>to continue to VideoTube</h3>
+                
+                <input className='signup-form-input' type='text'
                     value={this.state.first_name}
                     onChange={this.handleFirstName} />
                 
-                <input type='text'
+                <input className='signup-form-input' type='text'
                     value={this.state.last_name}
                     onChange={this.handleLastName} />
 
-                    <input type='text'
+                    <input className='signup-form-input' type='text'
                     value={this.state.email}
                     onChange={this.handleEmail} />
 
-                    <input type='text'
+                    <input className='signup-form-input' type='password'
                     value={this.state.password}
                     onChange={this.handlePassword} />
 
@@ -73,12 +74,12 @@ class SignUpForm extends React.Component{
                     value={this.state.confirm}
                     onChange={this.handleConfirm} /> */}
 
-                    <Link to='/login'>Sign in instead </Link>
-                    <button>Next</button>
+                    <Link className='signup-form-link' to='/login'>Sign in instead </Link>
+                    <button className='signup-form-button'>Next</button>
 
 
                 </form>
-            </>
+            </div>
         )
     }
 }

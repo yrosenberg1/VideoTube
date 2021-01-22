@@ -16,18 +16,18 @@ class ApplicationController < ActionController::Base
     end
 
     def login(user)
-        @user = user
-        session[:session_token] = @user.reset_session_token!
+        @current_user = user
+        session[:session_token] = user.reset_session_token!
     end
 
     def logout
         session[:session_token] = nil
-        @user.reset_session_token!
+        @current_user.reset_session_token!
     end
 
     def require_signed_in
         unless logged_in?     
-        render json: ['not signed in'], status: 404
+        render json: {base: ['not signed in']}, status: 404
         end
     end
 

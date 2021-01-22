@@ -6,17 +6,17 @@ export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveCurrentUser = currentUser =>({
-    action: RECEIVE_CURRENT_USER,
+    type: RECEIVE_CURRENT_USER,
     currentUser
 });
 
 export const logoutCurrentUser = () =>({
-    action: LOGOUT_CURRENT_USER
+    type: LOGOUT_CURRENT_USER
     
 });
 
 export const reveiveErrors = errors =>({
-    action: RECEIVE_ERRORS,
+    type: RECEIVE_ERRORS,
     errors
 });
 

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/Root';
 
+import { signup, login, logout } from './actions/session_actions';
+
 document.addEventListener('DOMContentLoaded', () =>{
 const root = document.getElementById('root')
 let store;
@@ -21,6 +23,9 @@ if (window.currentUser){
 
 window.getState = store.getState;
 window.dispatch = store.dispatch;
-
+window.login = login
+window.signup = signup
+window.logout = logout
+window.store = store
 ReactDOM.render( <Root store={store} />, root)
 });
