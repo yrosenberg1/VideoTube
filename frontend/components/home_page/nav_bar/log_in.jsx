@@ -33,7 +33,7 @@ class LogIn extends React.Component{
         
         const loggedIn = this.props.currentUser
        const boolean = loggedIn ? this.userProfile() : this.loggedOut()
-       debugger
+       
         return (
             <div>
             {boolean}
