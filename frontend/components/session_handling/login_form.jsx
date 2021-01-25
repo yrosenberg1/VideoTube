@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LogInFormOne from './login_form_one';
+import LogInFormTwo from './login_form_two';
 
 class LogInForm extends React.Component{
     constructor(props){
@@ -7,56 +9,74 @@ class LogInForm extends React.Component{
 
         this.state = {
             email: "",
-            password: ""
-
-            
+            password: "",
+            step: 1
         };
-        this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleEmail = this.handleEmail.bind(this)
-        this.handlePassword = this.handlePassword.bind(this)
+
+            // this.form = this.form.bind(this)
+            this.next = this.next.bind(this)
+            this.back = this.back.bind(this)
+            this.handleEmail = this.handleEmail.bind(this)
+            
+       
+      
     };
 
-        handleSubmit(e){
-            e.preventDefault();
-             const user = Object.assign({}, this.state);
-             this.props.form(user)
-        };
+    next(){
+        if (this.state.step === 1){
+            this.setState({step: 2})
+        }
+    }
 
-        handleEmail(e){
-            this.setState({email : e.target.value})
+    back(){
+        if (this.state.step === 2){
+            this.setState({step:1})
         }
+    }
+
+    handleEmail(e){
+        this.setState({email: e.currentTarget.value})
+    }
+
+    form(){
+       
+        switch(this.state.step){
+            case 1:
+                return(
+                    <LogInFormOne
+                    email={this.state.email} 
+                    next = {this.next}
+                    step = {this.state.step}
+                    password = {this.state.password}
+                    handleEmail = {this.handleEmail}/>
+                )
+                case 2:
+                    return(
+                        < LogInFormTwo 
+                    email={this.state.email} 
+                    back = {this.back}
+                    step = {this.state.step}
+                    password = {this.state.password}
+                    form = {this.props.form}/>
+                    )
+        }
+    }
         
-        handlePassword(e){
-            this.setState({password : e.target.value})
-        }
        
     render(){
 
         return (
-            <>
-               
-                <h2> {this.props.formType} </h2>
-                <h3>to continue to VideoTube</h3>
-                <form onSubmit={this.handleSubmit} className='sign-in-form'>
-                    <p> Forgot email?</p>
-                    <p> Not your computer? Use demo mode to see.</p>
-                    <p>create account</p>
-                    <input type='text'
-                    value={this.state.email}
-                    onChange={this.handleEmail} />
+            <div className='login-div'>
+            <form className='sign-in-form'>
 
-                    <input type='text'
-                    value={this.state.password}
-                    onChange={this.handlePassword} />
-
-                  <Link to='/signup'> Create new account </Link>
-                     <button>Next</button>
-
-
+            <img src={window.googlelogoURL} className='signup-form-logo'/>
+            
+           {this.form()}
+                   
                 </form>
-            </>
+                </div>
         )
-    }
-}
 
+    } 
+   }
 export default LogInForm;

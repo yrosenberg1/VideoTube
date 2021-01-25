@@ -6,10 +6,10 @@ class SignUpForm extends React.Component{
         super(props)
 
         this.state = {
-            email: "Your email address",
-            password: "Password",
-            first_name: "First name",
-            last_name: "Last name"
+            email: "",
+            password: "",
+            first_name: "",
+            last_name: ""
             // confirm:"Confirm password"
         };
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -51,33 +51,43 @@ class SignUpForm extends React.Component{
                
                
                 <form onSubmit={this.handleSubmit} className='sign-in-form'>
-                <h2 className='signup-form-header'> Create your VideoTube Account </h2>
+                 
+                 <img src={window.googlelogoURL} className='signup-form-logo'/>
+                
+                <h1 className='signup-form-header'> Create your VideoTube Account </h1>
                 <h3 className='signup-form-subheader'>to continue to VideoTube</h3>
-                
-                <input className='signup-form-input' type='text'
+               
+                {/* 'signup-form-input-section'> */}
+                <div>
+                <input className='signup-form-name' type='text'
                     value={this.state.first_name}
-                    onChange={this.handleFirstName} />
+                    onChange={this.handleFirstName}
+                    placeholder="First name" />
                 
-                <input className='signup-form-input' type='text'
+                <input className='signup-form-name' type='text'
                     value={this.state.last_name}
-                    onChange={this.handleLastName} />
-
+                    onChange={this.handleLastName}
+                    placeholder="Last name" />
+                </div>
                     <input className='signup-form-input' type='text'
                     value={this.state.email}
-                    onChange={this.handleEmail} />
+                    onChange={this.handleEmail}
+                    placeholder='Your email address' />
 
                     <input className='signup-form-input' type='password'
                     value={this.state.password}
-                    onChange={this.handlePassword} />
+                    onChange={this.handlePassword}
+                    placeholder='Password' />
 
                     {/* <input type='text'
                     value={this.state.confirm}
                     onChange={this.handleConfirm} /> */}
-
+                
+                <div className='signup-button-link'>
                     <Link className='signup-form-link' to='/login'>Sign in instead </Link>
                     <button className='signup-form-button'>Next</button>
 
-
+                    </div>
                 </form>
             </div>
         )
