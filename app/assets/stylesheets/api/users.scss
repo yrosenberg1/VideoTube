@@ -3,54 +3,345 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.signup-div{
+.signup-div {
     display: flex;
+    font-family: 'Roberto'
 }
 .sign-in-form{
     border: 1px solid lightgray;
-    display: flex;
-    flex-direction: column;
-    justify-content: row;
-    margin-top: 0px; 
-    margin-left: 150px;
+    display: block;
+    margin-left: 200px;
     height: 500px;
     width: 75%;
     align-items: center;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 200px;
 
+    
 
 }
 
+.signup-form-logo{
+    height: 40px;
+    margin-top: 70px;
+    margin-left: 10px;
+}
 .signup-form-header{
-    margin-left: 10 px;
+    margin-left: 100px;
     font-size: 24px;
     min-height:  10px;
-    margin: 10px;
+    margin: 20px;
+    margin-top: 0px;
+    font-family: 'Roberto';
+    font-weight: 500;
     
 }
 
 
 .signup-form-subheader{
-    font-size: 14px;
-    margin: -15px;
+    font-size: 16px;
+    margin:25px;
+    margin-top: -11px;
+    font-weight: lighter;
 }
 .signup-form-input{
- margin-left: 5px;
+ margin-left: 20px;
  border: 1px solid gray;
  border-radius: 5px;
-
+ display: block;
+ align-items: center;
+ margin-top: 30px;
+ height: 25px;
+ width: 350px;
 }
 
 .signup-form-name{
     display: inline-block;
-
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    height: 25px;
 }
 .signup-form-link{
     text-decoration: none;
-    color: blue;
+    color:#1a73e8;
 
 }
 
 .signup-form-button{
-    background-color: lightblue;
+    background-color:#1a73e8;
+    margin-left: 170px;
+    height: 30px;
+    width: 90px;
+    border: none;
+  color: white;
+
+}
+
+.signup-button-link{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 20px;
+   
+}
+
+.login-div{
+    display: flex;
+    font-family: 'Roberto'
+}
+
+.sign-in-form{
+    border: 1px solid lightgray;
+    display: flex;
+    margin-left: 400px;
+    height: 500px;
+    width: 75%;
+    align-items: center;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 400px;
+    flex-direction: column;
+}
+
+.login-form-header{
+    font-size: 26px;
+    min-height:  10px;
+    margin: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-family: 'Roberto';
+    font-weight: 500;
+    
+}
+
+.login-form-subheader{
+    font-size: 18px;
+    margin:25px;
+    margin-top: -11px;
+    font-weight: lighter;
+}
+
+.signup-form-input-section{
+    border: 1px solid gray;
+ border-radius: 5px;
+ display: block;
+ align-items: center;
+ margin-top: 0px;
+ height: 50px;
+ width: 300px;
+ margin-left: 50px;
+ margin-right: 50px;
+}
+
+.demo-mode-text{
+    font-size: 16px;
+    margin:25px;
+    
+    font-weight: lighter;
+}
+
+
+.sign-in-greeting{
+    font-size: 24px;
+    margin-top:25px;
+    margin-left: 0px;
+
+    
+    
+}
+
+.before-password{
+    margin-left: 0px;
+}
+
+.login-button-link{
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: -15px;
+    padding: 20px 10px 20px 20px;
+}
+
+.login-form-link{
+    text-decoration: none;
+    color:#1a73e8;
+}
+
+.nav-bar{
+    display: flex;
+    margin-top: 70px;
+    margin-left: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    margin-top: 0px;
+   
+    
+
+}
+
+.left-side{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    
+    
+}
+
+
+
+.nav-bar-hamburger-button{
+    
+    background:transparent;
+    height: 45px;
+    width: auto;
+   
+    margin-top: 10px;
+    border: none;
+   
+    
+}
+
+.nav-bar-hamburger-button:active {
+    background:transparent;
+    border: none;
+
+}
+.hamburger-logo{
+    max-width: 100%;
+    max-height: 100%;
+}
+// .nav-bar-hamburger-icon.resize {
+//     height: 8px;
+//     width: auto;
+// }
+
+.youtube-logo{
+    margin-left: 0px;
+    height: 120px;
+    width: 120px;
+    margin-top:13px;
+    
+}
+
+.youtube-pic{
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+.center{
+display: flex;
+flex-direction: row;
+margin-top: -80px;
+margin-left: 50px;
+
+
+}
+.search-bar{
+    margin-top: 28px;
+    margin-left: 75px;
+    
+}
+.search-bar-form{
+display: flex;
+flex-direction: row;
+border-bottom: 1px solid lightgray;
+
+}
+
+.search-bar-input{
+height: 28px;
+width: 500px;
+border-radius: 1px;
+border: 1px solid gray;
+
+
+}
+
+
+.search-bar-button{
+    width: 50px;
+    height: auto;
+    border: 1px solid gray;
+    background:rgb(238, 238, 238);
+    margin-bottom: 21px;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.search-bar-image{
+    max-width: 100%;
+    max-height: 100%;
+    background:rgb(238, 238, 238);
+    border-bottom: 1px solid lightgray;
+
+}
+
+.right-side{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.user-profile{
+    display: flex;
+ flex-direction: row;
+ align-self: center;   
+ margin-top: -75px;
+
+}
+
+.upload-video-button{
+    background:transparent;
+    height: 45px;
+    width: auto;
+   
+    margin-top: 15px;
+    border: none;
+    margin-right: 5px;
+    margin-left: 200px;
+}
+
+.upload-vid-pic{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.signed-in-button{
+    background:transparent;
+    height: 45px;
+    width: auto;
+   
+    margin-top: 15px;
+    border: none;
+}
+
+.sign-in-pic{
+    max-width: 100%;
+    max-height: 100%;   
+}
+
+.log-in-link{
+    display: flex;
+    flex-direction: row;
+    align-self: center;   
+    margin-top: -75px;
+    margin-left: 200px;
+}
+
+.log-in-button{
+    background:transparent;
+    height: 45px;
+    width: auto;
+   
+    margin-top: 15px;
+    border: none;
+}
+
+.log-in-image{
+    max-width: 100%;
+    max-height: 100%;   
 }

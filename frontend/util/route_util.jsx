@@ -7,12 +7,17 @@ const Auth = ({component: Component, path, loggedIn, exact}) =>(
     <Route
     path={path}
     exact={exact}
-    render = {props => !loggedIn? <Component {...props} /> : <Redirect to='/' />}
+    render = {props => (
+        !loggedIn ? (
+         <Component {...props} /> 
+        ):( <Redirect to='/' />
+        )
+    )}
     />
-)
+);
 
-const mSTP = (state, ownProps) =>({
-    loggedIn: Boolean(state.session.id) 
-})
+const mSTP = ({session}) =>({
+    loggedIn: Boolean(session.id)}
+);
 
 export const AuthRoute = withRouter(connect(mSTP, null)(Auth))
