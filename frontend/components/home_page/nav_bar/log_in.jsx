@@ -4,17 +4,79 @@ import { Link} from 'react-router-dom';
 class LogIn extends React.Component{
     constructor(props){
         super(props)
-   
+        this.state = {
+            showDropDown: false,
+          }
+        
+        this.handleSignOut = this.handleSignOut.bind(this)
+        this.showDropDown = this.showDropDown.bind(this);
+        // this.closeDropDown = this.closeDropDown.bind(this);
     }
+
+    showDropDown(e) {
+        // debugger
+        e.preventDefault();
+        console.log('clicked')
+        if (this.state.showDropDown === false){
+        this.setState({
+            showDropDown: true})
+        } else {
+            this.setState({
+                showDropDown: false})
+            }
+        
+        };
+    
+
+//     closeDropDown(e){
+//         if (!this.menu.contains(e.target)) {
+//         console.log("remove menu")
+//         this.setState({showDropDown: false}, () => {
+//             document.removeEventListener('click', this.closeDropDown);
+//     });
+
+//     }
+//    }
+    handleSignOut(e){
+        e.preventDefault();
+        this.props.logout();
+    };
 
     userProfile(){
             return (
                 <div className ='user-profile'>
                 <button className='upload-video-button'><img src={window.upload_vidsURL} className='upload-vid-pic' /> </button>
-                <button className='signed-in-button'><img src={window.logged_inURL} className='sign-in-pic' /> </button>
+                    <div className='user-profile-'> </div>
+                <div className='signed-in-button' onClick={this.showDropDown}> <img src={window.logged_inURL} className='sign-in-pic' /> </div>
+                {this.state.showDropDown ? (
+                <div className="user-profile-dropdown" >
+                {/* ref={(element) => {
+                     this.menu = element;
+                 }}>        */}
+                  <div className='name-email-container'>
+                      <div className='container-icon'> <img src={window.logged_inURL} /></div>
+                            <div className='dropdown-name'>
+                               <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
+                            </div>
+                           <div className='dropdown-email'> {this.props.currentUser.email} </div>
+                  </div>    
+                            <div className='bottom-dropdown-container'>
+                            <div className='account-container'>
+                           <div className='account-icon'> <img src={window.yourchannelicon}  /> </div>
+                           <div className='dropdown-account'>Your Account</div>
 
+                           </div>
+                           <div className='sign-out-container' onClick={this.handleSignOut}>
+                               <div className='sign-out-logo'> <img src={window.sign_out_icon} /> </div>  
+                          <div className='dropdown-sign-out'> <p> Sign Out</p> </div>
+                             </div>
+                          </div>
                 </div>
+                  ) : ( null)
+                 }
+                    </div>
             )
+       
     }
 
     loggedOut(){
@@ -30,7 +92,7 @@ class LogIn extends React.Component{
     }
 
     render(){
-        
+        // debugger
         const loggedIn = this.props.currentUser
        const boolean = loggedIn ? this.userProfile() : this.loggedOut()
        

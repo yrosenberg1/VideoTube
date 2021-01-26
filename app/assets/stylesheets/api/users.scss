@@ -166,182 +166,283 @@
     text-decoration: none;
     color:#1a73e8;
 }
-
-.nav-bar{
-    display: flex;
-    margin-top: 70px;
-    margin-left: 10px;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
-    align-items: center;
-    margin-top: 0px;
+//
+// .nav-bar{
+//     display: flex;
+//     margin-top: 70px;
+//     margin-left: 10px;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     position: fixed;
+//     align-items: center;
+//     margin-top: 0px;
    
     
 
-}
-
-.left-side{
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    
-    
-}
-
-
-
-.nav-bar-hamburger-button{
-    
-    background:transparent;
-    height: 45px;
-    width: auto;
-   
-    margin-top: 10px;
-    border: none;
-   
-    
-}
-
-.nav-bar-hamburger-button:active {
-    background:transparent;
-    border: none;
-
-}
-.hamburger-logo{
-    max-width: 100%;
-    max-height: 100%;
-}
-// .nav-bar-hamburger-icon.resize {
-//     height: 8px;
-//     width: auto;
 // }
 
-.youtube-logo{
-    margin-left: 0px;
-    height: 120px;
-    width: 120px;
-    margin-top:13px;
+// .left-side{
+//     display: flex;
+//     flex-direction: row;
+//     align-self: center;
     
-}
-
-.youtube-pic{
-    max-width: 100%;
-    max-height: 100%;
     
-}
-.center{
-display: flex;
-flex-direction: row;
-margin-top: -80px;
-margin-left: 50px;
+// }
 
 
-}
-.search-bar{
-    margin-top: 28px;
-    margin-left: 75px;
+
+// .nav-bar-hamburger-button{
     
-}
-.search-bar-form{
-display: flex;
-flex-direction: row;
-border-bottom: 1px solid lightgray;
-
-}
-
-.search-bar-input{
-height: 28px;
-width: 500px;
-border-radius: 1px;
-border: 1px solid gray;
-
-
-}
-
-
-.search-bar-button{
-    width: 50px;
-    height: auto;
-    border: 1px solid gray;
-    background:rgb(238, 238, 238);
-    margin-bottom: 21px;
-    border-bottom: 1px solid lightgray;
-
-}
-
-.search-bar-image{
-    max-width: 100%;
-    max-height: 100%;
-    background:rgb(238, 238, 238);
-    border-bottom: 1px solid lightgray;
-
-}
-
-.right-side{
-    display: flex;
-    flex-direction: row;
-    align-self: center;
-    border-bottom: 1px solid lightgray;
-
-}
-
-.user-profile{
-    display: flex;
- flex-direction: row;
- align-self: center;   
- margin-top: -75px;
-
-}
-
-.upload-video-button{
-    background:transparent;
-    height: 45px;
-    width: auto;
+//     background:transparent;
+//     height: 45px;
+//     width: auto;
    
-    margin-top: 15px;
-    border: none;
-    margin-right: 5px;
-    margin-left: 200px;
-}
-
-.upload-vid-pic{
-    max-width: 100%;
-    max-height: 100%;
-}
-
-.signed-in-button{
-    background:transparent;
-    height: 45px;
-    width: auto;
+//     margin-top: 10px;
+//     border: none;
    
-    margin-top: 15px;
-    border: none;
-}
+    
+// }
 
-.sign-in-pic{
-    max-width: 100%;
-    max-height: 100%;   
-}
+// .nav-bar-hamburger-button:active {
+//     background:transparent;
+//     border: none;
 
-.log-in-link{
-    display: flex;
-    flex-direction: row;
-    align-self: center;   
-    margin-top: -75px;
-    margin-left: 200px;
-}
+// }
+// .hamburger-logo{
+//     max-width: 100%;
+//     max-height: 100%;
+// }
+// // .nav-bar-hamburger-icon.resize {
+// //     height: 8px;
+// //     width: auto;
+// // }
 
-.log-in-button{
-    background:transparent;
-    height: 45px;
-    width: auto;
+// .youtube-logo{
+//     margin-left: 0px;
+//     height: 120px;
+//     width: 120px;
+//     margin-top:13px;
+    
+// }
+
+// .youtube-pic{
+//     max-width: 100%;
+//     max-height: 100%;
+    
+// }
+// .center{
+// display: flex;
+// flex-direction: row;
+// margin-top: -80px;
+// margin-left: 50px;
+
+
+// }
+// .search-bar{
+//     margin-top: 28px;
+//     margin-left: 75px;
+    
+// }
+// .search-bar-form{
+// display: flex;
+// flex-direction: column;
+// border-bottom: 1px solid lightgray;
+
+// }
+
+// .search-bar-input{
+// height: 28px;
+// width: 500px;
+// border-radius: 1px;
+// border: 1px solid gray;
+
+
+// }
+
+
+// .search-bar-button{
+//     width: 50px;
+//     height: auto;
+//     border: 1px solid gray;
+//     background:rgb(238, 238, 238);
+//     margin-bottom: 21px;
+//     border-bottom: 1px solid lightgray;
+
+// }
+
+// .search-bar-image{
+//     max-width: 100%;
+//     max-height: 100%;
+//     background:rgb(238, 238, 238);
+//     border-bottom: 1px solid lightgray;
+
+// }
+
+// .right-side{
+//     display: flex;
+//     flex-direction: row;
+//     align-self: center;
+//     border-bottom: 1px solid lightgray;
+
+// }
+
+// .user-profile{
+//     display: flex;
+//  flex-direction: row;
+//  align-self: center;   
+//  margin-top: -75px;
+
+// }
+
+// .upload-video-button{
+//     background:transparent;
+//     height: 45px;
+//     width: auto;
    
-    margin-top: 15px;
-    border: none;
-}
+//     margin-top: 15px;
+//     border: none;
+//     margin-right: 5px;
+//     margin-left: 200px;
+// }
 
-.log-in-image{
-    max-width: 100%;
-    max-height: 100%;   
-}
+// .upload-vid-pic{
+//     max-width: 100%;
+//     max-height: 100%;
+// }
+
+// .signed-in-button{
+//     background:transparent;
+//     height: 30px;
+    
+//     z-index: -1;
+//     margin-top: 15px;
+//     border: none;
+// }
+
+// .sign-in-pic{
+//     width: 60px;
+//     height: auto;  
+// }
+
+// .log-in-link{
+//     display: flex;
+//     flex-direction: row;
+//     align-self: center;   
+//     margin-top: -75px;
+//     margin-left: 200px;
+// }
+
+// .log-in-button{
+//     background:transparent;
+//     height: 45px;
+//     width: auto;
+   
+//     margin-top: 15px;
+//     border: none;
+// }
+
+// .log-in-image{
+//     max-width: 100%;
+//     max-height: 100%;   
+// }
+// // .user-profile{
+// //     position: absolute;
+// //     margin-top: -120px;
+// //     margin-left: 300px;
+// // }
+
+// .user-profile-dropdown{
+//     position: relative;
+  
+//   width: 250px;
+// //   border: lightgray solid 1px;
+//     height: 200px;
+//     margin-right: 20px;
+//     float: right;
+
+    
+
+// }
+
+// .dropdown-name{
+//     text-align: center;
+//     font-style: 'Roberto';
+//     font-weight: bold;
+//     margin-left: 50px;
+   
+//     margin-top: 0px;
+
+
+// }
+
+// .dropdown-email{
+   
+//     text-align: center;
+//     font-style: 'Roberto';
+//     font-size: 15px;
+//     align-items: center;
+//     margin-top: 0px;
+//     margin-bottom: 30px;
+//     margin-left: 50px;
+// }
+
+// .name-email-container{
+//     display: flex;
+//     flex-direction: column;   
+//     border: lightgray solid 1px;
+// }
+
+// .container-icon{
+//     height: 10px;
+//     width: auto;
+//     margin-top: 10px;
+//     margin-bottom: 10px;
+//     margin-left: 0px;
+//     margin-right: 10px;
+// }
+
+// .account-container{
+//     display: flex;
+//     flex-direction: row;
+//     padding-bottom: 10px;
+    
+// }
+
+// .sign-out-container{
+//     display: flex;
+//     flex-direction: row;
+// }
+
+// .sign-out-container:hover{
+//     background-color: rgb(236, 234, 234);
+// }
+
+// .account-container:hover{
+//     background-color: rgb(236, 234, 234);
+// }
+// .sign-out-logo{
+//     margin-top: 10px;
+//     margin-left: 10px;
+// }
+// .bottom-dropdown-container{
+//     border: lightgray solid 1px;   
+// }
+
+// .account-icon{
+//     margin-top: 10px;
+//     margin-left: 10px;
+// }
+
+// .dropdown-account{
+//     margin-top: 15px;
+//     margin-left: 10px;
+//     font-size: 15px;
+//     font-family: 'Roberto';
+// }
+
+// .dropdown-sign-out{
+//     margin-top: 15px;
+//     margin-left: 10px;
+//     font-size: 15px;
+//     font-family: 'Roberto';
+// }

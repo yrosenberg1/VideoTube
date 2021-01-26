@@ -1,0 +1,64 @@
+.side-links-container{
+
+    flex-direction: column;
+    display: flex;
+    width: 20px;
+    padding-left: 23px;
+
+    // max-height: -webkit-fill-available;
+}
+
+.home{
+  height:80px;
+  width: 80px;
+}
+.home-icon:hover{
+    opacity: 0.5;
+    background-color: rgb(236, 234, 234);
+
+}
+.home-icon{
+    max-height: -webkit-fill-available;
+    
+}
+
+.trending{
+    height: 80px;
+}
+
+.trending-icon{
+    height: 50px; 
+}
+
+.trending-icon:hover{
+    opacity: 0.5;
+    background-color: rgb(236, 234, 234);
+}
+.subscriptions{
+    height: 80px;
+}
+
+.subscription-icon{
+    height: 50px; 
+    margin-left: -5px;
+    margin-top: -10px;
+}
+.subscription-icon:hover{
+    opacity: 0.5;
+    background-color: rgb(236, 234, 234);
+}
+
+.library{
+    height:80px;   
+}
+
+.library-icon{
+    max-height: 50px;
+    margin-left: -5px;
+    margin-top: -10px;
+
+}
+.library-icon:hover{
+    opacity: 0.5;
+    background-color: rgb(236, 234, 234);
+}

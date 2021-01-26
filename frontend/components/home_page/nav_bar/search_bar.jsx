@@ -15,14 +15,15 @@ class SearchBar extends React.Component{
             this.setState({search : e.target.value})
         }
 
-        handleSubmit(){
+        handleSubmit(e){
             e.preventDefault();
+            console.log('click search button')
         }
 
       
     render(){
         return (
-            <div className='search-bar'>
+            <div>
                  <form onSubmit={this.handleSubmit} className='search-bar-form'>
             <input className='search-bar-input'
                    type='text'
