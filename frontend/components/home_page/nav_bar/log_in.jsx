@@ -16,7 +16,7 @@ class LogIn extends React.Component{
     showDropDown(e) {
         // debugger
         e.preventDefault();
-        console.log('clicked')
+        // console.log('clicked')
         if (this.state.showDropDown === false){
         this.setState({
             showDropDown: true})

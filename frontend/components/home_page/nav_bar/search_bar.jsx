@@ -17,7 +17,7 @@ class SearchBar extends React.Component{
 
         handleSubmit(e){
             e.preventDefault();
-            console.log('click search button')
+            // console.log('click search button')
         }
 
       
