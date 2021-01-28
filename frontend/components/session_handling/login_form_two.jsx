@@ -46,6 +46,13 @@ renderErrors(){
     )
 }
 
+componentWillUnmount(){
+    const errors = [];
+    this.props.clearErrors(errors)
+
+  }
+  
+
 render(){
         
     return (

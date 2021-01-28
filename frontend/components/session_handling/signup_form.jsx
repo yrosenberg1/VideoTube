@@ -54,7 +54,7 @@ class SignUpForm extends React.Component{
             this.setState({last_name : e.target.value})
         }
         renderErrors(){
-            // if (this.state.err === true){
+           
                 return(
                 <ul>
                     {this.props.errors.map((error, i) => (
@@ -64,11 +64,13 @@ class SignUpForm extends React.Component{
                     ))}
                 </ul>
             )
-        // } else {
-        //     return null
-        // }
+        }
 
-           }
+        componentWillUnmount(){
+          const errors = [];
+          this.props.clearErrors(errors)
+
+        }
         
         handleConfirm(e){
             this.setState({confirm : e.target.value})
