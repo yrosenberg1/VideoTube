@@ -8,7 +8,6 @@ class VideoIndexItem extends React.Component{
         super(props)
     }
     render(){
-        debugger
         return (
            
             <div className='video-item-container'>
