@@ -30,7 +30,7 @@ class SearchBar extends React.Component{
                    placeholder='Search'
                    value={this.state.search}
                    onChange={this.handleSearch} />
-                     <button className='search-bar-button'> <img src={window.search_button_iconURL} className='search-bar-image' /> </button>
+                     <button className='search-bar-button'> <i className="fas fa-search"></i> </button>
                      </form>   
 
 

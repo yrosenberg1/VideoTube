@@ -34,6 +34,18 @@ handleBack(e){
     this.props.back()
 }
 
+renderErrors(){
+    return(
+        <ul>
+            {this.props.errors.map((error, i) => (
+                <li key={`error-number-${i}`}>
+                    {error}
+                </li>
+            ))}
+        </ul>
+    )
+}
+
 render(){
         
     return (
@@ -41,17 +53,23 @@ render(){
         <h1 className='sign-in-greeting'> Hi {this.props.email} </h1>
         <p></p>
 
-        <p className='before-password'> To continue, first verify it’s you</p>
+        
         <div>
         <input className='signup-form-input-section' type='password'
         value={this.state.password}
                 placeholder='Enter your password'
                onChange={this.handlePassword} /> 
                </div>
+               <div className='placeholder-space'>
+               <div className='errors'>
+                 {this.renderErrors()}
+                 </div>
+               </div>
                <div className='login-button-link'>
          <Link className='login-form-link'to='/'>Back to Home Page</Link>
 
          <button onClick={() => this.handleSubmit()} className='signup-form-button'>Next</button>
+       
          </div>
         </>
     )

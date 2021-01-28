@@ -5,31 +5,83 @@ class SideLinks extends React.Component {
     constructor(props){
         super(props)
     }
-    render(){
 
+    userProfile(){
+        return (
+        <div className='sign-in-content'>
+            <p> Go to this project's Github</p>
+            <p> repo to see more.</p>
+            <a href='https://github.com/yrosenberg1/VideoTube' className='github-link'>
+                <i className="fab fa-github"></i>
+            </a>
+        </div>
+        )
+    }
+
+    loggedOut(){
+        return (
+        <div className='sign-in-content'>
+                 <p> Sign in to like videos,</p>
+                 <p>comment, and subscribe.</p>
+             < Link to='/login' className='log-in-link'>
+             <button className='log-in-button'>   <img src={window.sign_in_buttonURL} className='log-in-image' />
+             </button>
+
+            </Link>
+            </div>
+        )
+    }
+    render(){
+        const loggedIn = this.props.currentUser
+        const boolean = loggedIn ? this.userProfile() : this.loggedOut()
         return (
             
     <div className='side-links-container'>
+        <div className='home-library-container'>
+            <button className='home-button'><Link className='home' to='/'>
+                <ul className='links-ul'>
+           <li> <i className="fas fa-home">  </i> </li>
+           <li> <p className='home-text'> Home </p></li>
+            </ul>
+            </Link></button>
 
-    <Link className='home' to='/'>
-        <img src={window.home_icon} className='home-icon' />
-    </Link>
+            <button className='library'><Link to='/' >
+            <ul className='links-ul'>
+           <li> <i className="fas fa-video"></i></li>
+           <li> <p className='library-text'>Library</p></li>
+            </ul>
+            </Link>
+            </button>
+            
+        </div>
 
-    <div className='trending'>
-    <img src={window.trending} className='trending-icon' />
+        <div className='history-likes-container'>
+        
+            <Link className='history-link' to='/'>
+            <ul className='links-ul'>
+            <li>  <i className="fas fa-history"></i> </li>
+            <li>  <p>History</p></li>
+            </ul>
+               </Link>
+
+           <Link className='likes-link' to='/'>
+        <ul className='links-ul'>
+       <li> <i className="fas fa-thumbs-up"></i></li>
+       <li><p>Likes</p></li>
+        </ul>
+               </Link>
+       
+        </div>
+
+         <div className='sign-in-tab-container'>
+         {boolean}
+        </div>   
+
     </div>
 
-    <div className='subscriptions'>
 
-    <img src={window.subscriptions} className='subscription-icon' />
-    </div>
-
-    <Link className='library'>
-    <img src={window.library} className='library-icon' />
-    </Link>
-
-    </div>
-
+   
+    
         )
     }
 } ;
@@ -40,3 +92,15 @@ class SideLinks extends React.Component {
 
 
 export default SideLinks;
+
+
+  {/* <button className='trending'>
+    <i className="fas fa-fire"></i>
+    <div className='trending-text'> Trending </div>
+    </button> 
+
+    <button className='subscriptions'>
+
+    <i class="fas fa-photo-video"></i>
+    <div className='subscriptions-text'>Subscriptions</div>
+    </button> */}

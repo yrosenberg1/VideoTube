@@ -13,12 +13,13 @@ class NavBar extends React.Component{
     render(){
         return (
             <div className='nav-bar-container'>
-            <div className='nav-bar'>
+           
                 <div className='left-side'>
                   
-                   <div className='hamburger'>
-                      <button className='nav-bar-hamburger-button'> <img src={window.hamburgerURL} className='hamburger-logo' /> </button>
-                   </div>
+                   {/* <div className='hamburger'> */}
+                      <button className='nav-bar-hamburger-button'> 
+                      <i className="fas fa-bars"></i>  </button>
+                   {/* </div> */}
                   
                    <div className='youtube-logo'>
                        <Link className='youtube-icon' to='/'><img src={window.youtubelogoURL} className='youtube-pic' /></Link>
@@ -29,17 +30,17 @@ class NavBar extends React.Component{
                       < SearchBar />
                </div>
 
-              <div className='right-side'>
+               <div className='right-side'>
 
                 < LogInContainer />
-
-              </div>
-                
+               
+             
+                </div>
 
 
 
             </div>
-            </div>
+           
         )
     }
 };

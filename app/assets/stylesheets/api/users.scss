@@ -5,34 +5,62 @@
 
 .signup-div {
     display: flex;
-    font-family: 'Roberto'
+    font-family: 'Roberto';
+    justify-content: center;
+    
+  
 }
 .sign-in-form{
     border: 1px solid lightgray;
+    margin-top: 200px;
     display: block;
-    margin-left: 200px;
+    // margin-left: 200px;
     height: 500px;
-    width: 75%;
-    align-items: center;
+    width: 448px;
+    padding-left: 40px;
+    padding-top: 48px;
+    padding-right: 40px;
+    padding-bottom: 36px;
+    // width: 75%;
+    // align-items: center;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 200px;
-
+    // margin-top: 10px;
+    // margin-right: 200px;
+    box-sizing: border-box;
     
 
 }
 
+.google-img-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    // margin-top: -70px;
+}
+
+.login-text-container{
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    height: 80px;   
+    width:370px ;
+}
+
+.signup-form-container{
+        display: flex;
+}
+
 .signup-form-logo{
     height: 40px;
-    margin-top: 70px;
-    margin-left: 10px;
+    // margin-top: 70px;
+    // margin-left: 10px;
 }
 .signup-form-header{
-    margin-left: 100px;
+    margin-left: 10px;
     font-size: 24px;
     min-height:  10px;
-    margin: 20px;
-    margin-top: 0px;
+    // margin: 20px;
+    // margin-top: 0px;
     font-family: 'Roberto';
     font-weight: 500;
     
@@ -41,37 +69,51 @@
 
 .signup-form-subheader{
     font-size: 16px;
-    margin:25px;
-    margin-top: -11px;
+    // margin:25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 14px;
     font-weight: lighter;
 }
 .signup-form-input{
- margin-left: 20px;
+ margin-left: 7px;
  border: 1px solid gray;
  border-radius: 5px;
  display: block;
  align-items: center;
  margin-top: 30px;
- height: 25px;
- width: 350px;
+ height: 34px;
+ width: 352px;
+ padding: 7px 9px 7px 9px;
+ box-sizing: border-box;
 }
 
 .signup-form-name{
-    display: inline-block;
-    margin-left: 20px;
+    // display: inline-block;
+    // margin-left: 20px;
     border-radius: 5px;
     border: 1px solid gray;
-    height: 25px;
+    height: 20px;
+    width: 153px;
+    padding: 6px 8px 6px 8px;
+    // box-sizing: border-box;
 }
 .signup-form-link{
     text-decoration: none;
     color:#1a73e8;
+    white-space: nowrap;
+    width: 110px;
+    line-height: 1.4286;
+    margin: 8px;
+    text-transform: none;
+    font-weight: 500;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
 
 }
 
 .signup-form-button{
     background-color:#1a73e8;
-    margin-left: 170px;
+    // margin-left: 170px;
     height: 30px;
     width: 90px;
     border: none;
@@ -80,29 +122,22 @@
 }
 
 .signup-button-link{
-    display: inline-block;
+    display: flex;
     margin-top: 50px;
-    margin-left: 20px;
+    // margin-left: 20px;
+    justify-content: space-between;
    
 }
 
 .login-div{
     display: flex;
-    font-family: 'Roberto'
+    flex-direction: column;
+    font-family: 'Roberto';
+    justify-content: center;
+    align-items: center;
 }
 
-.sign-in-form{
-    border: 1px solid lightgray;
-    display: flex;
-    margin-left: 400px;
-    height: 500px;
-    width: 75%;
-    align-items: center;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-right: 400px;
-    flex-direction: column;
-}
+
 
 .login-form-header{
     font-size: 26px;
@@ -110,16 +145,34 @@
     margin: 20px;
     margin-left: 10px;
     margin-top: 0px;
-    font-family: 'Roberto';
-    font-weight: 500;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-weight: 400;
+    text-align: center;
     
 }
 
+.sign-in-greeting{
+    font-size: 26px;
+    min-height:  10px;
+    margin: 20px;
+    margin-left: 10px;
+    margin-top: 0px;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+
 .login-form-subheader{
-    font-size: 18px;
+    font-size: 16px;
     margin:25px;
     margin-top: -11px;
     font-weight: lighter;
+    text-align: center;
+    padding-top: 8px;
+    line-height: 1.5;
+    letter-spacing: .1px;
+    font-weight: 400;
+    font-family: 'Roboto','Noto Sans Myanmar UI',arial,sans-serif;
 }
 
 .signup-form-input-section{
@@ -128,17 +181,29 @@
  display: block;
  align-items: center;
  margin-top: 0px;
- height: 50px;
- width: 300px;
+ height: 28px;
+ width: 336px;
  margin-left: 50px;
  margin-right: 50px;
+ font-size: 16px;
+
+ margin: 1px 1px 0 1px;
+ padding: 13px 15px;
+
+ &:hover{
+     border: 3px solid #1a73e8;;
+ }
 }
 
 .demo-mode-text{
-    font-size: 16px;
+    // font-size: 16px;
     margin:25px;
     
-    font-weight: lighter;
+    // font-weight: lighter;
+    color: #5f6368;
+    font-size: 14px;
+    line-height: 1.4286;
+    font-family: 'roboto','Noto Sans Myanmar UI',arial,sans-serif;
 }
 
 
@@ -150,299 +215,92 @@
     
     
 }
+.name-container{
+    display: flex;
+    padding-top: 24px;
+    
+    justify-content: space-around;
+    margin-left: 4px;
+}
+
+.google-ltr-pic{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* margin-top: 90px; */
+    height: 501px;
+
+    
+}
 
 .before-password{
     margin-left: 0px;
 }
 
 .login-button-link{
-    display: inline-block;
+    display: flex;
     margin-top: 30px;
     margin-left: -15px;
     padding: 20px 10px 20px 20px;
+    justify-content: space-between;
+
+    
 }
 
 .login-form-link{
     text-decoration: none;
     color:#1a73e8;
+   
+
+
+}
+
+.placeholder-space{
+    height: 100px;
+    width: 100px;
+}
+
+.sign-up-form{
+    
+    margin-top: 30px;
+    display: block;
+   
+    height: 445px;
+    width: 668px;
+    padding-top: 48px;
+    padding-right: 40px;
+    padding-bottom: 36px;
+    padding-left: 40px;
+    border: #ccc9c9 1px solid;
+    border-radius: 4px;
+}
+.errors{
+text-align: center;
+color: red;
+margin-top: 3px;
+width: 300px;
+
 }
 //
-// .nav-bar{
-//     display: flex;
-//     margin-top: 70px;
-//     margin-left: 10px;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     position: fixed;
-//     align-items: center;
-//     margin-top: 0px;
-   
-    
+.signup-errors{
+    text-align: center;
+color: red;
 
-// }
+width: 300px;
 
-// .left-side{
-//     display: flex;
-//     flex-direction: row;
-//     align-self: center;
-    
-    
-// }
+    margin-top: -50px;
+}
 
+.demo-button{
+    // color:blue;
+    // font-size: 14px;
+    // line-height: 1.4286;
+    font-family: 'roboto','Noto Sans Myanmar UI',arial,sans-serif;
+    border-radius: 4px;
+    color: #1a73e8;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: .25px;
+    margin-left: -7px;
 
-
-// .nav-bar-hamburger-button{
-    
-//     background:transparent;
-//     height: 45px;
-//     width: auto;
-   
-//     margin-top: 10px;
-//     border: none;
-   
-    
-// }
-
-// .nav-bar-hamburger-button:active {
-//     background:transparent;
-//     border: none;
-
-// }
-// .hamburger-logo{
-//     max-width: 100%;
-//     max-height: 100%;
-// }
-// // .nav-bar-hamburger-icon.resize {
-// //     height: 8px;
-// //     width: auto;
-// // }
-
-// .youtube-logo{
-//     margin-left: 0px;
-//     height: 120px;
-//     width: 120px;
-//     margin-top:13px;
-    
-// }
-
-// .youtube-pic{
-//     max-width: 100%;
-//     max-height: 100%;
-    
-// }
-// .center{
-// display: flex;
-// flex-direction: row;
-// margin-top: -80px;
-// margin-left: 50px;
-
-
-// }
-// .search-bar{
-//     margin-top: 28px;
-//     margin-left: 75px;
-    
-// }
-// .search-bar-form{
-// display: flex;
-// flex-direction: column;
-// border-bottom: 1px solid lightgray;
-
-// }
-
-// .search-bar-input{
-// height: 28px;
-// width: 500px;
-// border-radius: 1px;
-// border: 1px solid gray;
-
-
-// }
-
-
-// .search-bar-button{
-//     width: 50px;
-//     height: auto;
-//     border: 1px solid gray;
-//     background:rgb(238, 238, 238);
-//     margin-bottom: 21px;
-//     border-bottom: 1px solid lightgray;
-
-// }
-
-// .search-bar-image{
-//     max-width: 100%;
-//     max-height: 100%;
-//     background:rgb(238, 238, 238);
-//     border-bottom: 1px solid lightgray;
-
-// }
-
-// .right-side{
-//     display: flex;
-//     flex-direction: row;
-//     align-self: center;
-//     border-bottom: 1px solid lightgray;
-
-// }
-
-// .user-profile{
-//     display: flex;
-//  flex-direction: row;
-//  align-self: center;   
-//  margin-top: -75px;
-
-// }
-
-// .upload-video-button{
-//     background:transparent;
-//     height: 45px;
-//     width: auto;
-   
-//     margin-top: 15px;
-//     border: none;
-//     margin-right: 5px;
-//     margin-left: 200px;
-// }
-
-// .upload-vid-pic{
-//     max-width: 100%;
-//     max-height: 100%;
-// }
-
-// .signed-in-button{
-//     background:transparent;
-//     height: 30px;
-    
-//     z-index: -1;
-//     margin-top: 15px;
-//     border: none;
-// }
-
-// .sign-in-pic{
-//     width: 60px;
-//     height: auto;  
-// }
-
-// .log-in-link{
-//     display: flex;
-//     flex-direction: row;
-//     align-self: center;   
-//     margin-top: -75px;
-//     margin-left: 200px;
-// }
-
-// .log-in-button{
-//     background:transparent;
-//     height: 45px;
-//     width: auto;
-   
-//     margin-top: 15px;
-//     border: none;
-// }
-
-// .log-in-image{
-//     max-width: 100%;
-//     max-height: 100%;   
-// }
-// // .user-profile{
-// //     position: absolute;
-// //     margin-top: -120px;
-// //     margin-left: 300px;
-// // }
-
-// .user-profile-dropdown{
-//     position: relative;
-  
-//   width: 250px;
-// //   border: lightgray solid 1px;
-//     height: 200px;
-//     margin-right: 20px;
-//     float: right;
-
-    
-
-// }
-
-// .dropdown-name{
-//     text-align: center;
-//     font-style: 'Roberto';
-//     font-weight: bold;
-//     margin-left: 50px;
-   
-//     margin-top: 0px;
-
-
-// }
-
-// .dropdown-email{
-   
-//     text-align: center;
-//     font-style: 'Roberto';
-//     font-size: 15px;
-//     align-items: center;
-//     margin-top: 0px;
-//     margin-bottom: 30px;
-//     margin-left: 50px;
-// }
-
-// .name-email-container{
-//     display: flex;
-//     flex-direction: column;   
-//     border: lightgray solid 1px;
-// }
-
-// .container-icon{
-//     height: 10px;
-//     width: auto;
-//     margin-top: 10px;
-//     margin-bottom: 10px;
-//     margin-left: 0px;
-//     margin-right: 10px;
-// }
-
-// .account-container{
-//     display: flex;
-//     flex-direction: row;
-//     padding-bottom: 10px;
-    
-// }
-
-// .sign-out-container{
-//     display: flex;
-//     flex-direction: row;
-// }
-
-// .sign-out-container:hover{
-//     background-color: rgb(236, 234, 234);
-// }
-
-// .account-container:hover{
-//     background-color: rgb(236, 234, 234);
-// }
-// .sign-out-logo{
-//     margin-top: 10px;
-//     margin-left: 10px;
-// }
-// .bottom-dropdown-container{
-//     border: lightgray solid 1px;   
-// }
-
-// .account-icon{
-//     margin-top: 10px;
-//     margin-left: 10px;
-// }
-
-// .dropdown-account{
-//     margin-top: 15px;
-//     margin-left: 10px;
-//     font-size: 15px;
-//     font-family: 'Roberto';
-// }
-
-// .dropdown-sign-out{
-//     margin-top: 15px;
-//     margin-left: 10px;
-//     font-size: 15px;
-//     font-family: 'Roberto';
-// }
+}

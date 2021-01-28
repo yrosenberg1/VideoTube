@@ -45,16 +45,16 @@ class LogIn extends React.Component{
     userProfile(){
             return (
                 <div className ='user-profile'>
-                <button className='upload-video-button'><img src={window.upload_vidsURL} className='upload-vid-pic' /> </button>
+                <button className='upload-video-button'><i className="fas fa-video"></i> </button>
                     <div className='user-profile-'> </div>
-                <div className='signed-in-button' onClick={this.showDropDown}> <img src={window.logged_inURL} className='sign-in-pic' /> </div>
+                <div className='signed-in-button' onClick={this.showDropDown}> <i className="fas fa-user-circle"></i> </div>
                 {this.state.showDropDown ? (
                 <div className="user-profile-dropdown" >
                 {/* ref={(element) => {
                      this.menu = element;
                  }}>        */}
                   <div className='name-email-container'>
-                      <div className='container-icon'> <img src={window.logged_inURL} /></div>
+                      <div className='container-icon'> <i className="fas fa-user-circle"></i> </div>
                             <div className='dropdown-name'>
                                <h1>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</h1>
                             </div>
@@ -62,12 +62,12 @@ class LogIn extends React.Component{
                   </div>    
                             <div className='bottom-dropdown-container'>
                             <div className='account-container'>
-                           <div className='account-icon'> <img src={window.yourchannelicon}  /> </div>
+                           <div className='account-icon'> <i className="fas fa-user"></i></div>
                            <div className='dropdown-account'>Your Account</div>
 
                            </div>
                            <div className='sign-out-container' onClick={this.handleSignOut}>
-                               <div className='sign-out-logo'> <img src={window.sign_out_icon} /> </div>  
+                               <div className='sign-out-logo'> <i className="fas fa-sign-out-alt"></i> </div>  
                           <div className='dropdown-sign-out'> <p> Sign Out</p> </div>
                              </div>
                           </div>

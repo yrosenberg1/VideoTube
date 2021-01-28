@@ -1,64 +1,151 @@
-.side-links-container{
+// .side-links-container{
 
-    flex-direction: column;
+//     flex-direction: column;
+//     display: flex;
+//     width: 20px;
+//     padding-left: 23px;
+
+//     // max-height: -webkit-fill-available;
+// }
+.home-library-container{
     display: flex;
-    width: 20px;
-    padding-left: 23px;
-
-    // max-height: -webkit-fill-available;
+    flex-direction: column;
+    height: 105px;
+    border-bottom: 1px solid #ccc9c9;
 }
-
-.home{
-  height:80px;
-  width: 80px;
-}
-.home-icon:hover{
-    opacity: 0.5;
-    background-color: rgb(236, 234, 234);
-
-}
-.home-icon{
-    max-height: -webkit-fill-available;
+    .links-ul{
+        display: flex;
+    flex-direction: row;
+    height: 40px;
+    line-height:40px;
+    padding-left: 24px;
+    padding-right: 24px;
     
+    }
+    .links-ul i{
+        font-size: 22px;
+        margin-right:24px;
+        color: #606060;
+        line-height:40px;
+    }
+    .links-ul p{
+        font: 1em sans-serif;
+        font-weight: 400;
+        color: #030303;
+        line-height:40px;
+    }
+.history-likes-container{
+    display: flex;
+    flex-direction: column;
+    height: 97px;
+    border-bottom: 1px solid #ccc9c9;
 }
 
-.trending{
-    height: 80px;
+.sign-in-tab-container{
+    display: flex;
+    flex-direction: column;
+    height: 123px;
+    border-bottom: 1px solid #ccc9c9;
 }
 
-.trending-icon{
-    height: 50px; 
+.home-button{
+    // background-color:#e0dfdf;
+   background-color:#e5e5e5;
 }
 
-.trending-icon:hover{
-    opacity: 0.5;
-    background-color: rgb(236, 234, 234);
+.home-button:hover{
+    background-color: #ccc9c9;
 }
-.subscriptions{
-    height: 80px;
+.home-text{
+    color: #030303;
+    font-weight: bold;
 }
-
-.subscription-icon{
-    height: 50px; 
-    margin-left: -5px;
-    margin-top: -10px;
+.fa-home{
+    color: red;
 }
-.subscription-icon:hover{
-    opacity: 0.5;
-    background-color: rgb(236, 234, 234);
+.history-link:hover, .likes-link:hover, .library:hover{
+    background-color:#eee;
 }
 
-.library{
-    height:80px;   
+.sign-in-content{
+    padding-left: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 32px;
 }
 
-.library-icon{
-    max-height: 50px;
-    margin-left: -5px;
-    margin-top: -10px;
+.fa-github{
+    color:black;
+    font-size: 50px;
+    margin-top: 10px;
+    padding-left: 40px;
 
 }
-.library-icon:hover{
-    opacity: 0.5;
-    background-color: rgb(236, 234, 234);
-}
+// .home-button{
+//     background:transparent;
+//     border: none;
+//     outline:none;
+    
+//     border: none;
+
+//   height:80px;
+//   width: 80px;
+// &:link {
+//     text-decoration: none;
+//   }
+// }
+
+// .fa-home{
+
+// }
+
+// .home-icon:hover{
+//     opacity: 0.5;
+//     background-color: rgb(236, 234, 234);
+
+// }
+// .home-icon{
+//     max-height: -webkit-fill-available;
+    
+// }
+
+// .trending{
+//     height: 80px;
+// }
+
+// .trending-icon{
+//     height: 50px; 
+// }
+
+// .trending-icon:hover{
+//     opacity: 0.5;
+//     background-color: rgb(236, 234, 234);
+// }
+// .subscriptions{
+//     height: 80px;
+// }
+
+// .subscription-icon{
+//     height: 50px; 
+//     margin-left: -5px;
+//     margin-top: -10px;
+// }
+// .subscription-icon:hover{
+//     opacity: 0.5;
+//     background-color: rgb(236, 234, 234);
+// }
+
+// .library{
+//     height:80px;   
+// }
+
+// .library-icon{
+//     max-height: 50px;
+//     margin-left: -5px;
+//     margin-top: -10px;
+
+// }
+// .library-icon:hover{
+//     opacity: 0.5;
+//     background-color: rgb(236, 234, 234);
+// }
