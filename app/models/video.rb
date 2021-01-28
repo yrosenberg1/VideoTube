@@ -1,3 +1,3 @@
-class Video < ApplicationRecord
-    validates
-end
+# class Video < ApplicationRecord
+#     validates
+# end
