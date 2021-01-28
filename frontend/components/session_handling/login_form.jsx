@@ -61,6 +61,7 @@ class LogInForm extends React.Component{
                     password = {this.state.password}
                     handleEmail = {this.handleEmail}
                     errors = {this.props.errors}
+                    clearErrors = {this.props.clearErrors}
                     demo= {this.demo}/>
                 )
                 case 2:
@@ -71,7 +72,8 @@ class LogInForm extends React.Component{
                     step = {this.state.step}
                     password = {this.state.password}
                     form = {this.props.form}
-                    errors = {this.props.errors}/>
+                    errors = {this.props.errors}
+                    clearErrors = {this.props.clearErrors}/>
                     )
         }
     }

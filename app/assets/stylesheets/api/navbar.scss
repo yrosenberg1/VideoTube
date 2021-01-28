@@ -101,17 +101,19 @@ flex-direction: row;
 .search-bar-input{
 height: 30px;
 width: 574px;
-border-radius: 3px;
+// border-radius: 3px;
 border: 1px solid #ccc9c9;
 margin-left: 25px ;
 padding: 2px 12px 2px 12px;
+border-top-left-radius: 3px;
+border-bottom-left-radius: 3px;
 
 &:hover{
-    border: 1px solid blue;
+    // border: 1px solid blue;
 }
 
 &:active{
-    border: 1px solid blue;
+    // border: 1px solid blue;
 }
 
 }
@@ -133,9 +135,11 @@ padding: 2px 12px 2px 12px;
     width: 65px;
     // height: 33px;
     // border: 1px solid gray;
-    background:rgb(238, 238, 238);
-    border-radius: 3px;
-    border: 1px solid #ccc9c9;
+   background-color: #f8f8f8;
+    // border-radius: 3px;
+    border-bottom: 1px solid #ccc9c9;
+    border-top: 1px solid #ccc9c9;
+    border-right: 1px solid #ccc9c9;
     // margin-bottom: 21px;
     // border-bottom: 1px solid lightgray;
 //     position: relative;
@@ -143,7 +147,13 @@ padding: 2px 12px 2px 12px;
 //   top: 0px;
 //   z-index: -1;
 //   background:transparent;
+border-top-right-radius: 3px;
+border-bottom-right-radius: 3px;
 
+
+&:hover{
+   background:rgb(238, 238, 238);
+}
 }
 
 // width: 70px;

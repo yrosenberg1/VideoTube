@@ -21,7 +21,7 @@ export const receiveErrors = errors =>({
 });
 
 export const signup = user => dispatch =>{
-    console.log('test')
+    
     return (
 
     SessionApiUtil.signup(user).then(user =>{
