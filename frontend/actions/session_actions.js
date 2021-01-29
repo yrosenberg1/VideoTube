@@ -25,12 +25,12 @@ export const signup = user => dispatch =>{
     return (
 
     SessionApiUtil.signup(user).then(user =>{
-        console.log(user)
+        // console.log(user)
         return dispatch(receiveCurrentUser(user))},
     error =>{
-        console.log(error.responseJSON)
+        // console.log(error.responseJSON)
         const test = receiveErrors(error.responseJSON)
-        console.log(test)
+        // console.log(test)
         return dispatch(receiveErrors(error.responseJSON))}
     ))};
 
@@ -40,14 +40,14 @@ export const signup = user => dispatch =>{
 
 // );
 export const login = user => dispatch =>{
-    console.log('test')
+    // console.log('test')
     return (
 
     SessionApiUtil.login(user).then(user =>{
-        console.log(user)
+        // console.log(user)
         return dispatch(receiveCurrentUser(user))},
     error =>{
-        console.log(error.responseJSON)
+        // console.log(error.responseJSON)
         const test = receiveErrors(error.responseJSON)
         // console.log(test)
         return dispatch(receiveErrors(error.responseJSON))}
