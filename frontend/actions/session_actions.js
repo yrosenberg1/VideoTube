@@ -44,7 +44,7 @@ export const login = user => dispatch =>{
     return (
 
     SessionApiUtil.login(user).then(user =>{
-        (user)
+        // console.log(user)
         return dispatch(receiveCurrentUser(user))},
     error =>{
         // console.log(error.responseJSON)
