@@ -1,24 +1,33 @@
-# README
+# VideoTube README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[VideoTube](https://videotube-aa.herokuapp.com/#/) is a YouTube clone project, which is an app people
+    can use to share videos and post comments and likes.
 
-Things you may want to cover:
 
-* Ruby version
+<img src="<%= image_url('sidebar.PNG') %>" />
+<img src="<%= image_url('video.PNG') %>" />
 
-* System dependencies
+##   Features
 
-* Configuration
+Users can signup and sign in to watch videos. 
 
-* Database creation
+ 
+ 
+ ## Technologies
 
-* Database initialization
+VideoTube uses:
 
-* How to run the test suite
+   * Ruby on Rails as a backend API. 
 
-* Services (job queues, cache servers, search engines, etc.)
+   * A Postgres database. 
 
-* Deployment instructions
+   * React-Redux for UI.
 
-* ...
+   *  AWS for data hosting 
+
+   * Is deployed on Heroku 
+
+
+
+
+
