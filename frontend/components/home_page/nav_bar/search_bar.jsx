@@ -13,11 +13,12 @@ class SearchBar extends React.Component{
 
         handleSearch(e){
             this.setState({search : e.target.value})
+            console.log(this.state.search)
         }
 
         handleSubmit(e){
             e.preventDefault();
-            // console.log('click search button')
+            console.log('click search button')
         }
 
       

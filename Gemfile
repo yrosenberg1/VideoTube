@@ -48,7 +48,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'spring'
+ 
 
   gem 'better_errors'
 
@@ -56,7 +56,8 @@ group :development do
 
   gem 'pry-rails'
 
-  gem 'annotate'
+  # gem 'annotate'
+  gem 'annotate', '~> 2.7', '>= 2.7.1'
 end
 
 group :test do

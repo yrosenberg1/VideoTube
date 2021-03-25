@@ -1,0 +1,36 @@
+.header-container{
+margin-top: 24px;
+
+font-size: 16px;
+font-weight: 500;
+letter-spacing: normal;
+line-height: 20px;
+margin-bottom: 24px;
+}
+
+.new-comment-container{
+    display: flex;
+ 
+}
+
+.comment-thumbnail{
+    width: 40px;
+height: 40px;
+margin-right: 16px;
+background-color: #465a65;
+color: white;
+border-radius: 50%;
+}
+
+.comment-textarea{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    resize: none;
+    width: 1300px;
+    position: relative;
+    top: -13px;
+    line-height: 21px;
+    font-size: 14px;
+    overflow: visible;
+}
