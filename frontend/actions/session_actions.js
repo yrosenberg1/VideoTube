@@ -28,6 +28,7 @@ export const signup = user => dispatch =>{
         // console.log(user)
         return dispatch(receiveCurrentUser(user))},
     error =>{
+        
         // console.log(error.responseJSON)
         const test = receiveErrors(error.responseJSON)
         // console.log(test)

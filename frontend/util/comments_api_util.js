@@ -16,10 +16,10 @@ export const fetchComments = videoId => (
     })
 );
 
-export const createComment = (video, comment) => (
+export const createComment = (videoId, comment) => (
     $.ajax({
         method: 'POST',
-        url: `api/videos/${video}/comments`,
+        url: `api/videos/${videoId}/comments`,
         data: {comment}
     })
 );

@@ -33,13 +33,15 @@ class LogInFormOne extends React.Component{
         return(
             <ul>
                 {this.props.errors.map((error, i) => (
+                    
                     <li key={`error-number-${i}`}>
                         {error}
                     </li>
-                ))}
+                  ))}
             </ul>
         )
     }
+
     componentWillUnmount(){
         const errors = [];
         this.props.clearErrors(errors)

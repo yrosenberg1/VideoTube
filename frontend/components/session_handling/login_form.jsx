@@ -28,7 +28,9 @@ class LogInForm extends React.Component{
           email: "demo@gmail.com",
           password: "secretPassword"
       }  
+      
       this.props.form(demo)
+      
     }
 
     next(){

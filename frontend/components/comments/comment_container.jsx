@@ -5,7 +5,7 @@ import {fetchComment, fetchComments, createComment, deleteComment} from '../../a
 
 
 const msp = (state, ownProps) => {
-    debugger
+    
     return {
         videos: state.entities.videos,
         comments: state.entities.comments,
@@ -19,7 +19,7 @@ const mdp = dispatch => {
     return {
         fetchComment: comment => dispatch(fetchComment(comment)),
         fetchComments: videoId => dispatch(fetchComments(videoId)),
-        createComment: comment => dispatch(createComment(comment)),
+        createComment: (videoId, comment) => dispatch(createComment(videoId, comment)),
         deleteComment: comment => dispatch(deleteComment(comment))
     }
 }

@@ -1,13 +1,14 @@
 class Api::CommentsController < ApplicationController
     def create
+        
         @comment = Comment.new(comment_params)
-
+        
         if @comment.save
             
             render 'api/comments/show'
         else
             render json: @comment.errors.full_messages, status: 422
-            byebug
+            
         end
     end
 
@@ -26,6 +27,7 @@ class Api::CommentsController < ApplicationController
         if params[:video_id]
             video_comments = Video.find(params[:video_id]).comments
         @comments = video_comments
+        
         render 'api/comments/index'
         else 
             render json: @comments.errors.full_messages, status: 422
@@ -34,7 +36,7 @@ class Api::CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:video_id, :comment_id, :parent_comment_id, :comment_body)
+        params.require(:comment).permit(:video_id, :commenter_id, :parent_comment_id, :comment_body)
 
     end
 end

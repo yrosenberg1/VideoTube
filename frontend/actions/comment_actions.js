@@ -20,9 +20,9 @@ export const removeComment = comment => ({
     comment 
 });
 
-export const fetchComment = (video, comment) => dispatch => {
+export const fetchComment = (videoId, comment) => dispatch => {
     return (
-        CommentApiUtil.fetchComment(video, comment).then (
+        CommentApiUtil.fetchComment(videoId, comment).then (
             comment => {
             return dispatch(receiveComment(comment))},
             error => {  return error })
@@ -42,9 +42,10 @@ export const fetchComments = videoId => dispatch => {
 };
 
 
-export const createComment = (video, comment) => dispatch => {
+export const createComment = (videoId, comment) => dispatch => {
+    debugger
     return (
-        CommentApiUtil.createComment(video, comment).then (
+        CommentApiUtil.createComment(videoId, comment).then (
             comment => {
                 return dispatch(receiveComment(comment))},
                 error => { return error})
