@@ -36,7 +36,54 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
+      if @video.add_views
+        @video.save
         render 'api/videos/show'
+      else
+        render json: @video.errors.full_messages, status: 422
+      end
+
+    end
+
+    def like
+        @like = Like.new(like_dislike:true, liker_id:current_user.id, likeable_id: params[:video_id], likeable_type: 'Video')
+        if @like.save
+            redirect_to api_video_url(params[:video_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
+    def dislike
+        @dislike = Like.new(like_dislike:false, liker_id:current_user.id, likeable_id: params[:video_id], likeable_type: 'Video')
+        if @dislike.save
+            redirect_to api_video_url(params[:video_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
+    def undo
+        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        if @like.delete
+            redirect_to api_video_url(params[:video_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
+    def change
+        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        if @like.like_dislike
+            @like.like_dislike = false
+        else
+            @like.like_dislike = true
+        end
+        if @like.save
+            redirect_to api_video_url(params[:video_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
     end
 
     private

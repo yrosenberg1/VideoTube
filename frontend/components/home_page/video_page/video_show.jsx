@@ -6,6 +6,8 @@ class VideoShow extends React.Component{
     constructor(props){
         super(props)
 
+        this.handleLike = this.handleLike.bind(this)
+        this.handleDislike = this.handleDislike.bind(this)
     }
 
     componentDidMount(){
@@ -16,6 +18,20 @@ class VideoShow extends React.Component{
     //     this.props.fetchVideo(this.props.videoId)
     //     debugger
     // }
+
+    handleLike(){
+        
+       
+        this.props.likeVideo(this.props.videoId)
+        
+    }
+
+    handleDislike(){
+      
+        this.props.dislikeVideo(this.props.videoId)
+        
+    }
+
     render(){
         
         if (Object.entries(this.props.videos).length === 0 ){
@@ -26,6 +42,7 @@ class VideoShow extends React.Component{
        
        const video = this.props.videos[this.props.videoId]
        if (video) {
+           debugger
          string = video.date.split(" ")
          
        }
@@ -53,10 +70,10 @@ class VideoShow extends React.Component{
                         <div  className='video-main-title'><p> {video.title}</p></div>
                         <div className='video-user-interactions'>
                             <ul className='video-views'>
-                        <li> 0 views {'\u2022'} {string[0].slice(0,3) + " " + string[1] + " " + string[2]}</li>
+                        <li> {video.views} views {'\u2022'} {string[0].slice(0,3) + " " + string[1] + " " + string[2]}</li>
                         
-                        <li>  <i className="far fa-thumbs-up"> </i></li>
-                        <li>  <i className="far fa-thumbs-down"> </i></li>
+                        <li><button onClick={() => this.handleLike()}>  <i className="fas fa-thumbs-up"> </i></button></li>
+                        <li><button onClick={() => this.handleDislike()}>  <i className="fas fa-thumbs-down"> </i></button></li>
                         </ul>
 
                         </div>

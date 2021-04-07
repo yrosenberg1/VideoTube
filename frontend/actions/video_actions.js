@@ -1,14 +1,17 @@
 import * as VideoApiUtil from '../util/video_api_util';
-
+import * as LikeApiUtil from '../util/like_api_util';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
 export const RECEIVE_VIDEOS = 'RECEIVE_VIDEOS';
 export const REMOVE_VIDEO = 'REMOVE_VIDEO';
 
 
-export const receiveVideo = (video) => ({
+export const receiveVideo = (video) => {
+    debugger
+    return{
+    
     type: RECEIVE_VIDEO,
-    video 
-});
+    video }
+};
 
 export const receiveVideos = videos => ({
     type: RECEIVE_VIDEOS,
@@ -56,5 +59,41 @@ export const deleteVideo = videoId => dispatch => {
     return VideoApiUtil.deleteVideo(videoId).then(
         () => { return dispatch(removeVideo(videoId))},
         errors => {return errors}
+    )
+};
+
+
+export const likeVideo = videoId => dispatch => {
+    return LikeApiUtil.likeVideo(videoId).then(
+      
+           video => { debugger
+               return  dispatch(receiveVideo(video))},
+           errors => {
+               debugger 
+               return errors}
+    )
+};
+
+export const dislikeVideo = videoId => dispatch => {
+    return LikeApiUtil.dislikeVideo(videoId).then(
+        video =>{
+            return dispatch(receiveVideo(video))},
+            errors => {return errors}
+    )
+};
+
+export const undoLike = videoId => dispatch => {
+    return LikeApiUtil.undoLike(videoId).then(
+        video =>{
+            return dispatch(receiveVideo(video))},
+            errors => {return errors}
+    )
+};
+
+export const changeLike = videoId => dispatch => {
+    return LikeApiUtil.changeLike(videoId).then(
+        video =>{
+            return dispatch(receiveVideo(video))},
+            errors => {return errors}
     )
 };

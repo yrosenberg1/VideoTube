@@ -37,6 +37,9 @@ class Comment < ApplicationRecord
     foreign_key: :parent_comment_id,
     class_name: :Comment
 
+    has_many :likes, as: :likeable
+
+
     def date_modifier
   
         distance_of_time_in_words(self.created_at, Time.now)

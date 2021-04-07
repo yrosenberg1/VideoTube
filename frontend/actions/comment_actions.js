@@ -43,7 +43,7 @@ export const fetchComments = videoId => dispatch => {
 
 
 export const createComment = (videoId, comment) => dispatch => {
-    debugger
+    
     return (
         CommentApiUtil.createComment(videoId, comment).then (
             comment => {

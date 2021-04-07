@@ -28,7 +28,7 @@ class Comment extends React.Component{
     }
 
     handleSubmit(e){
-        debugger
+        
         e.preventDefault();
 
         if (this.props.user){
@@ -39,7 +39,7 @@ class Comment extends React.Component{
                 
 
             }
-            debugger
+            
             this.props.createComment(this.props.videoId, comment)
             // this.setState({ text: "" })
         } else {
@@ -66,7 +66,7 @@ class Comment extends React.Component{
         
 
       let videoComments =  comments.map((comment, i) => {
-          debugger
+          
             return (
                 <ul className='user-comments' key={i}>
                      <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
