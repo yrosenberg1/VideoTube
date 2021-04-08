@@ -1,6 +1,7 @@
 import React from 'react';
 import { deleteComment } from '../../actions/comment_actions';
 import { Redirect } from 'react-router-dom';
+import CommentItem from './comment_item';
 
 class Comment extends React.Component{
     constructor(props){
@@ -10,6 +11,8 @@ class Comment extends React.Component{
             // video_id: this.props.video
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleLikeComment = this.handleLikeComment.bind(this);
+        this.handleDislikeComment = this.handleDislikeComment.bind(this);
     }
 
 
@@ -21,6 +24,14 @@ class Comment extends React.Component{
 
     componentDidUpdate(prevProps, prevState){
 
+    }
+
+    handleLikeComment(){
+        debugger
+    }
+
+    handleDislikeComment(){
+        debugger
     }
 
     update(field){
@@ -69,13 +80,14 @@ class Comment extends React.Component{
           
             return (
                 <ul className='user-comments' key={i}>
-                     <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
+                     {/* <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
                     <li>{comment.commenter.first_name} {comment.commenter.last_name} {comment.timestamp} ago</li>
                     <p> {comment.comment_body}</p>
                    
-                    <li>  <i className="far fa-thumbs-up"> </i></li>
-                        <li>  <i className="far fa-thumbs-down"> </i></li>
-                        <li><button>REPLY</button></li>
+                    <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i></button></li>
+                    <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i></button></li>
+                    <li><button>REPLY</button></li> */}
+                     <CommentItem comment={comment} /> 
                 </ul>
             )
         })

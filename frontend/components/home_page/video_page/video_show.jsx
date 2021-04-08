@@ -4,7 +4,9 @@ import CommentContainer from '../../comments/comment_container';
 
 class VideoShow extends React.Component{
     constructor(props){
-        super(props)
+    super(props)
+
+        
 
         this.handleLike = this.handleLike.bind(this)
         this.handleDislike = this.handleDislike.bind(this)
@@ -19,17 +21,71 @@ class VideoShow extends React.Component{
     //     debugger
     // }
 
+    // setLikesArray(){
+    //     this.props.videos[this.props.videoId].likes.map(like => {
+        
+    //         return (
+    //             like.liker_id
+    //         )
+    //     })
+    // }
+    // setDislikesArray(){
+    //   this.props.videos[this.props.videoId].dislikes.map(dislike => {
+        
+    //         return (
+    //             dislike.liker_id
+    //         )
+    //     })
+    // }
+
     handleLike(){
         
+      const likerIdsArray = this.props.videos[this.props.videoId].likes.map(like => {
+            // debugger
+            return (
+                like.liker_id
+            )
+        })
+      const dislikesIdsArray = this.props.videos[this.props.videoId].dislikes.map(dislike => {
+            // debugger
+            return (
+                dislike.liker_id
+            )
+        })
+        
+        if (likerIdsArray.includes(this.props.userId)){
+            
+            this.props.undoLike(this.props.videoId)
+        } else if (dislikesIdsArray.includes(this.props.userId)){
+            
+            this.props.changeLike((this.props.videoId))
+        } else {
        
         this.props.likeVideo(this.props.videoId)
-        
+        }
     }
 
     handleDislike(){
+        const likerIdsArray = this.props.videos[this.props.videoId].likes.map(like => {
+            // debugger
+            return (
+                like.liker_id
+            )
+        })
+      const dislikesIdsArray = this.props.videos[this.props.videoId].dislikes.map(dislike => {
+            // debugger
+            return (
+                dislike.liker_id
+            )
+        })
+        if (dislikesIdsArray.includes(this.props.userId)){
+            this.props.undoLike(this.props.videoId)
+        } else if (likerIdsArray.includes(this.props.userId)){
+            this.props.changeLike((this.props.videoId))
+        } else {
       
         this.props.dislikeVideo(this.props.videoId)
-        
+        }
     }
 
     render(){
@@ -42,13 +98,14 @@ class VideoShow extends React.Component{
        
        const video = this.props.videos[this.props.videoId]
        if (video) {
-           debugger
+           
          string = video.date.split(" ")
          
        }
        
        
        const uploader = video.uploader
+
         return (
             
         <div className='home-page-container'>
@@ -72,8 +129,8 @@ class VideoShow extends React.Component{
                             <ul className='video-views'>
                         <li> {video.views} views {'\u2022'} {string[0].slice(0,3) + " " + string[1] + " " + string[2]}</li>
                         
-                        <li><button onClick={() => this.handleLike()}>  <i className="fas fa-thumbs-up"> </i></button></li>
-                        <li><button onClick={() => this.handleDislike()}>  <i className="fas fa-thumbs-down"> </i></button></li>
+                        <li><button onClick={() => this.handleLike()}>  <i className="fas fa-thumbs-up"> </i> {video.likes.length}</button></li>
+                        <li><button onClick={() => this.handleDislike()}>  <i className="fas fa-thumbs-down"> </i> {video.dislikes.length}</button></li>
                         </ul>
 
                         </div>

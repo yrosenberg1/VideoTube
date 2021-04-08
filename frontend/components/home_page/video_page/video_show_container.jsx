@@ -5,13 +5,14 @@ import {likeVideo, dislikeVideo, undoLike, changeLike} from '../../../actions/vi
 // import correct actions here
 
 const msp = (state, ownProps) => {
-    debugger
+    
     return {
         videos: state.entities.videos,
         videoId: ownProps.match.params.id,
+        video: state.entities.videos[ownProps.match.params.id],
         userId: state.session.id
-
     }
+    
 }
 
 const mdp = dispatch => {

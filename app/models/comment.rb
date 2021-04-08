@@ -50,4 +50,11 @@ class Comment < ApplicationRecord
       self.created_at.to_date.to_s(:long)
       end
 
+      def filter_likes
+        self.likes.select {|like| like.like_dislike == true }
+      end
+      
+      def filter_dislikes
+        self.likes.select {|dislike| dislike.like_dislike == false}
+      end
 end

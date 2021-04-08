@@ -1,5 +1,5 @@
 import * as CommentApiUtil from '../util/comments_api_util';
-
+import * as LikeApiUtil from '../util/like_api_util';
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
@@ -75,3 +75,46 @@ export const updateComment = comment => dispatch => {
 
 };
 
+export const likeComment = (videoId, commentId) => dispatch => {
+    return LikeApiUtil.likeComment(videoId, commentId).then(
+      
+           comment => { 
+               return  dispatch(receiveComment(comment))},
+           errors => {
+                
+               return errors}
+    )
+};
+
+export const dislikeComment = (videoId, commentId) => dispatch => {
+    return LikeApiUtil.dislikeComment(videoId, commentId).then(
+      
+           comment => { 
+               return  dispatch(receiveComment(comment))},
+           errors => {
+                
+               return errors}
+    )
+};
+
+export const undoLikeComment = (videoId, commentId) => dispatch => {
+    return LikeApiUtil.undoLikeComment(videoId, commentId).then(
+      
+           comment => { 
+               return  dispatch(receiveComment(comment))},
+           errors => {
+                
+               return errors}
+    )
+};
+
+export const changeLikeComment = (videoId, commentId) => dispatch => {
+    return LikeApiUtil.changeLikeComment(videoId, commentId).then(
+      
+           comment => { 
+               return  dispatch(receiveComment(comment))},
+           errors => {
+                
+               return errors}
+    )
+};

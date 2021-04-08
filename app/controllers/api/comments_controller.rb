@@ -33,6 +33,52 @@ class Api::CommentsController < ApplicationController
             render json: @comments.errors.full_messages, status: 422
         end
     end
+
+    def like
+        byebug
+        @like = Like.new(like_dislike:true, liker_id:current_user.id, likeable_id: params[:comment_id], likeable_type: 'Comment')
+        if @like.save
+            redirect_to api_comment_url(params[:comment_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
+    def dislike
+        @dislike = Like.new(like_dislike:false, liker_id:current_user.id, likeable_id: params[:commment_id], likeable_type: 'Comment')
+        if @dislike.save
+            redirect_to api_commment_url(params[:comment_id])
+        else
+            render json: @dislike.errors.full_messages, status: 422
+        end
+    end
+
+    def undo
+        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
+        
+        if @like.delete
+            
+            redirect_to api_comment_url(params[:comment_id])
+        else
+            
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
+    def change
+        @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
+        if @like.like_dislike
+            @like.like_dislike = false
+        else
+            @like.like_dislike = true
+        end
+        if @like.save
+            redirect_to api_comment_url(params[:comment_id])
+        else
+            render json: @like.errors.full_messages, status: 422
+        end
+    end
+
     private
 
     def comment_params

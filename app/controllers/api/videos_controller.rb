@@ -65,9 +65,12 @@ class Api::VideosController < ApplicationController
 
     def undo
         @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:video_id], likeable_type: "Video")
+        
         if @like.delete
+            
             redirect_to api_video_url(params[:video_id])
         else
+            
             render json: @like.errors.full_messages, status: 422
         end
     end

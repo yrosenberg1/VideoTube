@@ -6,7 +6,7 @@ export const REMOVE_VIDEO = 'REMOVE_VIDEO';
 
 
 export const receiveVideo = (video) => {
-    debugger
+    
     return{
     
     type: RECEIVE_VIDEO,
@@ -66,10 +66,10 @@ export const deleteVideo = videoId => dispatch => {
 export const likeVideo = videoId => dispatch => {
     return LikeApiUtil.likeVideo(videoId).then(
       
-           video => { debugger
+           video => { 
                return  dispatch(receiveVideo(video))},
            errors => {
-               debugger 
+                
                return errors}
     )
 };
