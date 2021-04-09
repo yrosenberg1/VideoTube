@@ -11,7 +11,8 @@
 #  api_video_comment_change POST   /api/videos/:video_id/comments/:comment_id/change(.:format)                              api/comments#change {:format=>"json"}
 #        api_video_comments GET    /api/videos/:video_id/comments(.:format)                                                 api/comments#index {:format=>"json"}
 #                           POST   /api/videos/:video_id/comments(.:format)                                                 api/comments#create {:format=>"json"}
-#         api_video_comment PATCH  /api/videos/:video_id/comments/:id(.:format)                                             api/comments#update {:format=>"json"}
+#         api_video_comment GET    /api/videos/:video_id/comments/:id(.:format)                                             api/comments#show {:format=>"json"}
+#                           PATCH  /api/videos/:video_id/comments/:id(.:format)                                             api/comments#update {:format=>"json"}
 #                           PUT    /api/videos/:video_id/comments/:id(.:format)                                             api/comments#update {:format=>"json"}
 #                           DELETE /api/videos/:video_id/comments/:id(.:format)                                             api/comments#destroy {:format=>"json"}
 #            api_video_like POST   /api/videos/:video_id/like(.:format)                                                     api/videos#like {:format=>"json"}
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     # resources :comments, only: [:create, :destroy, :update, :index]
     resources :videos, only: [:create, :destroy, :update, :index, :show] do 
-      resources :comments, only: [:create, :destroy, :update, :index] do
+      resources :comments, only: [:create, :destroy, :update, :index, :show] do
         post :like, to: 'comments#like', as: 'like'
         post :dislike, to: 'comments#dislike', as: 'dislike'
         post :undo, to: 'comments#undo', as: 'undo'

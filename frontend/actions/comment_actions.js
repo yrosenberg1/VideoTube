@@ -76,6 +76,7 @@ export const updateComment = comment => dispatch => {
 };
 
 export const likeComment = (videoId, commentId) => dispatch => {
+    
     return LikeApiUtil.likeComment(videoId, commentId).then(
       
            comment => { 

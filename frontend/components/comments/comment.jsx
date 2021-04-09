@@ -1,7 +1,7 @@
 import React from 'react';
 import { deleteComment } from '../../actions/comment_actions';
 import { Redirect } from 'react-router-dom';
-import CommentItem from './comment_item';
+import CommentItemContainer from './coment_item_container';
 
 class Comment extends React.Component{
     constructor(props){
@@ -11,8 +11,7 @@ class Comment extends React.Component{
             // video_id: this.props.video
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleLikeComment = this.handleLikeComment.bind(this);
-        this.handleDislikeComment = this.handleDislikeComment.bind(this);
+       
     }
 
 
@@ -26,14 +25,7 @@ class Comment extends React.Component{
 
     }
 
-    handleLikeComment(){
-        debugger
-    }
-
-    handleDislikeComment(){
-        debugger
-    }
-
+  
     update(field){
         return e => this.setState({[field]: e.currentTarget.value})
     }
@@ -51,14 +43,18 @@ class Comment extends React.Component{
 
             }
             
+        
             this.props.createComment(this.props.videoId, comment)
-            // this.setState({ text: "" })
+           
+            this.setState({ text: "" })
+            debugger
         } else {
            
             this.props.history.push("/login")
             
             
         }
+        debugger
     }
 
 
@@ -87,7 +83,7 @@ class Comment extends React.Component{
                     <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i></button></li>
                     <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i></button></li>
                     <li><button>REPLY</button></li> */}
-                     <CommentItem comment={comment} /> 
+                     <CommentItemContainer comment={comment} /> 
                 </ul>
             )
         })
@@ -109,7 +105,7 @@ class Comment extends React.Component{
                         <textarea
                         className='comment-textarea'
                             onChange={this.update('text')}
-                       
+                            value={this.state.text}
                             placeholder="Add a public comment..."
                             >
 

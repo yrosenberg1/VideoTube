@@ -11,7 +11,8 @@ const commentsReducer = (state = {}, action) => {
             break;
         
         case RECEIVE_COMMENT:
-            newState[action.comment] = action.comment
+            
+            newState[action.comment.id] = action.comment
         return newState
         break;
         case DELETE_COMMENT:
