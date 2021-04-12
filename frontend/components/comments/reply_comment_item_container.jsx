@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import CommentItem from './comment_item';
+import ReplyCommentItem from './reply_comment_item';
 import {withRouter} from 'react-router';
 import {fetchComment, fetchComments, createComment, deleteComment, likeComment, dislikeComment, undoLikeComment, changeLikeComment} from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
-    
+    debugger
     return {
         videos: state.entities.videos,
         comments: state.entities.comments,
@@ -30,4 +30,4 @@ const mdp = dispatch => {
     }
 }
 
-export default withRouter(connect(msp, mdp)(CommentItem));
+export default withRouter(connect(msp, mdp)(ReplyCommentItem));

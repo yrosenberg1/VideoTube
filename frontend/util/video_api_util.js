@@ -16,6 +16,14 @@ export const fetchVideos = () => (
      }) 
   );
  
+ export const fetchSearchVideos = keyword => (
+     $.ajax({
+         method: 'GET',
+         url: `/api/videos/search`,
+         data: {keyword}
+
+     })
+ )  
  
  export const uploadVideo = video => (
      $.ajax({

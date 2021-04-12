@@ -45,6 +45,12 @@ class Api::VideosController < ApplicationController
 
     end
 
+    def search
+        @videos = Video.where("title LIKE ?", "%" + params[:keyword] + "%")
+        
+        render 'api/videos/index'
+    end
+
     def like
         @like = Like.new(like_dislike:true, liker_id:current_user.id, likeable_id: params[:video_id], likeable_type: 'Video')
         if @like.save

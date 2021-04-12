@@ -5,6 +5,7 @@
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>"json"}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>"json"}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>"json"}
+#         search_api_videos GET    /api/videos/search(.:format)                                                             api/videos#search {:format=>"json"}
 #    api_video_comment_like POST   /api/videos/:video_id/comments/:comment_id/like(.:format)                                api/comments#like {:format=>"json"}
 # api_video_comment_dislike POST   /api/videos/:video_id/comments/:comment_id/dislike(.:format)                             api/comments#dislike {:format=>"json"}
 #    api_video_comment_undo POST   /api/videos/:video_id/comments/:comment_id/undo(.:format)                                api/comments#undo {:format=>"json"}
@@ -41,6 +42,10 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     # resources :comments, only: [:create, :destroy, :update, :index]
     resources :videos, only: [:create, :destroy, :update, :index, :show] do 
+      collection do
+        get 'search'
+      end
+    
       resources :comments, only: [:create, :destroy, :update, :index, :show] do
         post :like, to: 'comments#like', as: 'like'
         post :dislike, to: 'comments#dislike', as: 'dislike'
@@ -51,6 +56,7 @@ Rails.application.routes.draw do
       post :dislike, to: 'videos#dislike', as: 'dislike'
       post :undo, to: 'videos#undo', as: 'undo'
       post :change, to: 'videos#change', as: 'change'
+     
     end
     end
   

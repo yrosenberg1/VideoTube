@@ -1,7 +1,7 @@
 import React from 'react';
-import ReplyCommentItemContainer from './reply_comment_item_container';
 
-class CommentItem extends React.Component {
+
+class ReplyCommentItem extends React.Component {
     constructor(props) {
         super(props)
         
@@ -115,34 +115,30 @@ class CommentItem extends React.Component {
         
     }
 
-    replyButton(){
+    // replyButton(){
         
-        let replies = this.props.comment.replies
-        
-        
-        if (!replies.length){
-            
-        return null 
-        } else {
-            
-           let replyComments = replies.map((reply, i) => {
-                
-                return (
-                    
-                    <ul className='user-reply-comments' key={i}>
-                        <ReplyCommentItemContainer comment={reply} />
-                    
-                    </ul>
-                )
-            }, this)
+    //     let replies = this.props.comment.replies
+    //     // this.props
+    //     debugger
+    //     if (!replies.length){
+    //         debugger
+    //     return null 
+    //     } else {
+    //         debugger
+    //         replies.map((reply, i) => {
+    //             return (
+    //                 <ul className='user-comments' key={i}>
+    //                     <ReplyCommentItemContainer comment = {this.props.comments[reply]} />
+    //                 </ul>
+    //             )
+    //         })
            
-            return ( replyComments )
-        }
-    }
+    //     }
+    // }
 
     render(){
-        
         let {comment} = this.props
+        debugger
         
         
         return (
@@ -170,7 +166,7 @@ class CommentItem extends React.Component {
                             <button className='comment-submit'>Comment</button>
                             </div>
                     </form></div>
-                    {this.replyButton()}
+                    {/* {this.replyButton()} */}
 
                     </div>
         )
@@ -178,4 +174,4 @@ class CommentItem extends React.Component {
 
 }
 
-export default CommentItem;
+export default ReplyCommentItem;

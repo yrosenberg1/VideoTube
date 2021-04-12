@@ -57,4 +57,8 @@ class Comment < ApplicationRecord
       def filter_dislikes
         self.likes.select {|dislike| dislike.like_dislike == false}
       end
+
+      def reply_comments
+        self.replies
+      end
 end

@@ -19,6 +19,8 @@ class SearchBar extends React.Component{
         handleSubmit(e){
             e.preventDefault();
             console.log('click search button')
+            this.props.fetchSearchVideos(this.state.search)
+            this.setState({search : ""})
         }
 
       

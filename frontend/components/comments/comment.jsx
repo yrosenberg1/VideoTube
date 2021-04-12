@@ -47,14 +47,14 @@ class Comment extends React.Component{
             this.props.createComment(this.props.videoId, comment)
            
             this.setState({ text: "" })
-            debugger
+            
         } else {
            
             this.props.history.push("/login")
             
             
         }
-        debugger
+        
     }
 
 
@@ -74,19 +74,14 @@ class Comment extends React.Component{
 
       let videoComments =  comments.map((comment, i) => {
           
+          if (comment.parent_comment_id === null){
             return (
                 <ul className='user-comments' key={i}>
-                     {/* <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
-                    <li>{comment.commenter.first_name} {comment.commenter.last_name} {comment.timestamp} ago</li>
-                    <p> {comment.comment_body}</p>
-                   
-                    <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i></button></li>
-                    <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i></button></li>
-                    <li><button>REPLY</button></li> */}
+                    
                      <CommentItemContainer comment={comment} /> 
                 </ul>
-            )
-        })
+            )}
+        }, this)
 
         return (
             <div className='comment-container'>
