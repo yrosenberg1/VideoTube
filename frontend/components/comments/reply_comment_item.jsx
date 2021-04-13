@@ -138,7 +138,7 @@ class ReplyCommentItem extends React.Component {
 
     render(){
         let {comment} = this.props
-        debugger
+        
         
         
         return (

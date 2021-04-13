@@ -6,7 +6,7 @@ import {fetchSearchVideos} from './../../../actions/video_actions'
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         videos: state.entities.videos,
     }

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import CommentContainer from '../../comments/comment_container';
+import SideLinksContainer from './../side_links/side_links_container';
 
 class VideoShow extends React.Component{
     constructor(props){
@@ -111,6 +112,9 @@ class VideoShow extends React.Component{
         <div className='home-page-container'>
         
          < NavBar />
+         <div className='side-bar-video-container'>
+                < SideLinksContainer />
+            </div>
           <div className='video-show-body'>
 
              <div className='video-show-main-container'>

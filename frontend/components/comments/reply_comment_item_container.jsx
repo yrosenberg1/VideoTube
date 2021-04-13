@@ -4,7 +4,7 @@ import {withRouter} from 'react-router';
 import {fetchComment, fetchComments, createComment, deleteComment, likeComment, dislikeComment, undoLikeComment, changeLikeComment} from '../../actions/comment_actions';
 
 const msp = (state, ownProps) => {
-    debugger
+    
     return {
         videos: state.entities.videos,
         comments: state.entities.comments,
