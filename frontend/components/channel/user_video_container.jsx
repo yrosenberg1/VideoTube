@@ -1,13 +1,13 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import Channel from './channel';
+import UserVideos from './user_videos';
+import {fetchUserVideos} from './../../actions/video_actions';
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    
     return {
-        userId: state.session.id,
-        user: state.entities.users[ownProps.match.params.id],
+      videos: state.entities.videos 
 
     }
 };
@@ -19,4 +19,4 @@ const mDTP = dispatch => {
     }
 };
 
-export default withRouter(connect(mSTP, mDTP)(Channel));
+export default withRouter(connect(mSTP, mDTP)(UserVideos));

@@ -4,14 +4,10 @@ import VideoForm from './video_form';
 import {uploadVideo} from '../../../actions/video_actions';
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
-        newVideo: {
-            title: '',
-            description: '',
-            uploader_id: ""
-
-        },
+        userId: state.session.id,
+        user: state.entities.users[ownProps.match.params.id],
         formType: 'Upload Video'
     }
 };

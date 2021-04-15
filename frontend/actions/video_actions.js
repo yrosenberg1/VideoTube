@@ -34,6 +34,16 @@ export const fetchVideos = () => dispatch => {
     )
 };
 
+export const fetchUserVideos = userId => dispatch => {
+    return VideoApiUtil.fetchUserVideos(userId).then(
+        videos => {  
+            return dispatch(receiveVideos(videos))},
+        errors => { return errors}
+
+        
+    )
+};
+
 export const fetchSearchVideos = keyword => dispatch => {
     return VideoApiUtil.fetchSearchVideos(keyword).then(
         videos => {

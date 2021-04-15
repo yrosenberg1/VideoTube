@@ -28,7 +28,14 @@ class Api::VideosController < ApplicationController
     end
 
     def index 
+        
+        if params[:userId]
+            
+            @videos = Video.where("uploader_id": params[:userId])
+        else
+            
         @videos = Video.all
+        end
         
         render 'api/videos/index'
       
@@ -97,6 +104,6 @@ class Api::VideosController < ApplicationController
 
     private
     def video_params
-        params.require(:video).permit(:uploader_id,:title, :description)
+        params.require(:video).permit(:uploader_id,:title, :description, :views)
     end
 end

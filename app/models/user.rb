@@ -20,6 +20,7 @@
 #
 
 class User < ApplicationRecord
+  include ActionView::Helpers::DateHelper
 
     validates :first_name, :last_name, :email, :session_token, presence: true
     validates :email, :session_token, uniqueness: true
@@ -78,4 +79,8 @@ class User < ApplicationRecord
     def ensure_session_token
       self.session_token = SecureRandom.urlsafe_base64
     end
+
+    def date_format
+      self.created_at.to_date.to_s(:long)
+      end
   end

@@ -1,0 +1,237 @@
+
+
+.studio-navbar-container{
+    height: 64px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 4px 1px;
+  
+    display: flex;
+    justify-content: space-between;
+}
+
+.studio-left-side{
+    display: flex;
+    flex-direction: row;
+height: auto;   
+padding: 10px;
+   
+    
+ }
+.youtube-studio-logo {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+   & a{
+    font-size: 28px;
+    display: flex;
+    line-height: 40px;
+    font-family: 'Standard CT Bold Cond';
+
+    & img{
+        width: 34px;
+        height: 34px;
+        padding-right: 7px;
+    }
+   } 
+}
+
+.studio-navbar-hamburger-button{
+    background: transparent;
+    height: 10px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 2px;
+    margin-right: 24px;
+    border: none;
+    outline: none;
+
+}
+
+.studio-upload-video-button{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: .14px;
+    font-family: 'Roboto';
+}
+
+.studio-user-profile{
+    width: -webkit-fill-available;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.studio-upload-video-button {
+    height: 34px;
+    width: 81.5px;
+    padding-left: 10px;
+    padding-right: 16px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: .14px;
+    font-family: 'Roboto';
+   
+    color: 1px rgba(0, 0, 0, 0.12);
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+
+    & p{
+        height: 18px;
+        width: 51.5px;
+        padding-left: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+}
+
+.studio-signed-in-button{
+    margin-right: 14px;
+    cursor: pointer;
+    width: 48px;
+    height: 32px;
+    padding: 1px 6px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.studio-profile-dropdown{
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    z-index: 9999;
+    box-sizing: border-box;
+    top: 42px;
+    
+    right: 30px;
+    background: white;
+    border-left: 1px solid;
+    border-right: 1px solid;
+   
+    border-color: rgba(0,0,0,.12);
+   
+    border-right-color: rgba(0, 0, 0, 0.12);
+  
+    border-left-color: rgba(0, 0, 0, 0.12);
+    
+
+}
+
+.studio-name-icon-container {
+    height: 40px;
+    width: 266px;
+    padding: 16px;
+    border-bottom: 1px solid;
+    border-color: rgba(0, 0, 0, 0.12);
+    display: flex;
+}
+
+.studio-container-icon {
+    margin-right: 16px;
+}
+
+.studio-dropdown-name {
+    font-size: 16px;
+    font-family: 'Roboto';
+    line-height: 20px;
+    font-weight: 500;
+    padding: 10px 0px;
+}
+.dropdown-button-container {
+    width: 298px;
+    height: 160px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid;
+    border-color: rgba(0,0,0,.12);
+
+    & div{
+        width: 298px;
+        height: 40px;
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 36px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        cursor: pointer;
+        display: flex;
+
+    &:hover{
+        background-color: #eceaea;
+    }    
+        & p{
+            height: 21px;
+            line-height: 21px;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Roboto';
+        }
+    }
+
+    & img, & i{
+        margin-right:16px ;
+        line-height: 24px;
+        height: 24px;
+        width: 24px;
+        color: #909090;
+
+    }
+
+    & div:last-child {
+        margin-bottom: 8px;
+        border-bottom: 1px solid;
+        border-color: rgba(0,0,0,.12);
+    }
+    & a{
+        display: flex;
+    }
+}
+
+.video-upload-dropdown {
+    position: absolute;
+    display: flex;
+    height: 48px;
+    width: 185px;
+    box-sizing: border-box;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 0px 24px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 14%), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .20);
+    right: 92px;
+    top: 38px;
+    background: white;
+
+    &:hover{
+        background-color: #eceaea;
+    }
+
+    & img{
+        width: 24px;
+        height: 24px;
+        margin-right: 16px;
+       
+        padding-bottom: 0px;
+        border-bottom-width: 4px;
+        margin-bottom: 4px;
+        margin-top: 10px;
+    }
+
+    & p{
+        width: 95px;
+        font-size: 15px;
+        line-height: 46px;
+        font-weight: 400;
+        font-family: 'Roboto';
+    }
+}

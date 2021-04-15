@@ -4,7 +4,7 @@ export const fetchVideos = () => (
     $.ajax({
         method: 'GET',
         url: '/api/videos',
-        // data: {user}
+       
     }) 
  );
  
@@ -15,6 +15,14 @@ export const fetchVideos = () => (
          
      }) 
   );
+
+  export const fetchUserVideos = userId => (
+      $.ajax({
+          method: 'GET',
+          url: 'api/videos',
+          data: {userId}
+      })
+  )
  
  export const fetchSearchVideos = keyword => (
      $.ajax({

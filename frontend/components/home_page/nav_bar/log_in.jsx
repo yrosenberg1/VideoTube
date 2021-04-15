@@ -14,7 +14,7 @@ class LogIn extends React.Component{
         this.showDropDown = this.showDropDown.bind(this);
         this.showUploadDropDown = this.showUploadDropDown.bind(this);
         this.uploadVideoModal = this.uploadVideoModal.bind(this);
-        // this.closeDropDown = this.closeDropDown.bind(this);
+        
     }
 
     showDropDown(e) {
@@ -48,6 +48,9 @@ class LogIn extends React.Component{
             e.preventDefault();
             console.log("videoModal")
             this.props.openModal("modal")
+            this.props.history.push(`/channel/${this.props.currentUser.id}/videos/upload`)
+          
+           
             
         }
 //     closeDropDown(e){
@@ -68,17 +71,15 @@ class LogIn extends React.Component{
         
             return (
                 <div className ='user-profile'>
-                <button className='upload-video-button' onClick={this.showUploadDropDown}> <img src={window.video_call}/> </button>
+                <button className='upload-video-button' onClick={this.showUploadDropDown}> <img src={window.video_call_png}/> </button>
                {this.state.showUploadDropDown ? (
-                   <div className="video-upload-dropdown" ><p> <Link to='/channel/videos/upload' onClick={this.uploadVideoModal}>Upload video</Link></p> </div>
+                   <div className="video-upload-dropdown" ><p onClick={this.uploadVideoModal}>Upload video</p> </div>
                ) : (null)}
                     <div className='user-profile-'> </div>
                 <div className='signed-in-button' onClick={this.showDropDown}> <i className="fas fa-user-circle"></i> </div>
                 {this.state.showDropDown ? (
                 <div className="user-profile-dropdown" >
-                {/* ref={(element) => {
-                     this.menu = element;
-                 }}>        */}
+                
                   <div className='name-email-container'>
                       <div className='container-icon'> <i className="fas fa-user-circle"></i> </div>
                             <div className='dropdown-name'>
@@ -89,7 +90,7 @@ class LogIn extends React.Component{
                             <div className='bottom-dropdown-container'>
                             <div className='account-container'>
                            <div className='account-icon'> <i className="fas fa-user"></i></div>
-                           <div className='dropdown-account'><Link to={`/channel/${this.props.currentUser.id}`}>Your Account</Link></div>
+                           <div className='dropdown-account'><Link to={`/channel/${this.props.currentUser.id}`}>Your channel</Link></div>
 
                            </div>
                            <div className='sign-out-container' onClick={this.handleSignOut}>

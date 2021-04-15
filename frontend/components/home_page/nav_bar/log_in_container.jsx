@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router';
 import { openModal } from '../../../actions/modal_actions';
 import {logout} from '../../../actions/session_actions';
 
 import LogIn from './log_in';
-    
+
 const mSTP = ({session, entities:{users}}) =>({
     currentUser: users[session.id]
     })
@@ -15,4 +16,4 @@ const mSTP = ({session, entities:{users}}) =>({
     })
     
     
-    export default connect(mSTP, mDTP)(LogIn);
+    export default withRouter(connect(mSTP, mDTP)(LogIn));
