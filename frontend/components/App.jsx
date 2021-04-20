@@ -7,7 +7,7 @@ import SignupFormContainer from './session_handling/signup_form_container';
 import HomePage from './home_page/home_page';
 import VideoShowContainer from './home_page/video_page/video_show_container';
 import ChannelContainer from './channel/channel_container';
-import VideoFormContainer from './home_page/video_page/create_video_form_container';
+import StudioManagerContainer from './studio/studio_manager_container';
 
 const App = () => (
     <div>
@@ -19,7 +19,7 @@ const App = () => (
         <AuthRoute exact path="/signup" component={SignupFormContainer} />  
         <Route exact path="/videos/:id" component={VideoShowContainer} />
         <ProtectedRoute exact path="/channel/:id" component={ChannelContainer} />
-        <ProtectedRoute exact path="/channel/:id/videos/upload" component={VideoFormContainer} />
+        <ProtectedRoute exact path="/channel/:id/videos/upload" component={StudioManagerContainer} />
         < Route path='/' component ={HomePage} />
         </Switch>
         

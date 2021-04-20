@@ -12,20 +12,38 @@ class StudioNavBar extends React.Component{
             showDropDown: false,
             showUploadDropDown: false
         };
+        this.userProfile = React.createRef();
         this.handleSignOut = this.handleSignOut.bind(this)
         this.showDropDown = this.showDropDown.bind(this);
         this.showUploadDropDown = this.showUploadDropDown.bind(this);
         this.uploadVideoModal = this.uploadVideoModal.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
     }
 
     showDropDown(e){
         e.preventDefault();
         if (this.state.showDropDown === false){
-            this.setState({showDropDown: true})
+         
+            this.setState({showDropDown: true}, () => {
+                document.addEventListener('click', this.closeDropDown)
+            } )
+               
         } else {
             this.setState({showDropDown: false})
+                
         }
     };
+
+    closeDropDown(e){
+        console.log('close dropdown')
+        
+        if (this.userProfile.current.contains(e.target)){ return
+        } else {
+        this.setState({showDropDown: false})
+        debugger
+            document.removeEventListener('click', this.closeDropDown) ;
+    }
+}
 
     showUploadDropDown(e){
         e.preventDefault();
@@ -40,7 +58,7 @@ class StudioNavBar extends React.Component{
 
     uploadVideoModal(e){
         e.preventDefault();
-        console.log("videoModal")
+      
         this.props.openModal("modal")
     }
 
@@ -81,6 +99,7 @@ class StudioNavBar extends React.Component{
                    {this.state.showUploadDropDown ? ( 
                        <div className="video-upload-dropdown"onClick={this.uploadVideoModal}><img src={window.studio_video_upload} /><p>Upload videos</p></div>
                    ) : null}
+                   <div ref={this.userProfile} className='studio-sign-in-container'>
                    <div className='studio-signed-in-button' onClick={this.showDropDown}><i className="fas fa-user-circle"></i> </div>
                    {this.state.showDropDown ? (
                        <div className='studio-profile-dropdown'>
@@ -95,6 +114,7 @@ class StudioNavBar extends React.Component{
                             </div>
                         </div> 
                    ) : null}
+                   </div>
                </div>
           </div>
     </div>

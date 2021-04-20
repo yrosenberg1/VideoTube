@@ -17,7 +17,7 @@ class Channel extends React.Component {
             value: 'VIDEOS'
         }
 
-        // this.renderMain = this.renderMain.bind(this);
+       
         this.button = React.createRef();
         this.buttonValues = this.buttonValues.bind(this);
     }

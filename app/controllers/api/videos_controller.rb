@@ -1,6 +1,7 @@
 class Api::VideosController < ApplicationController
 
     def create 
+        
         @video = Video.new(video_params)
 
         if @video.save
@@ -104,6 +105,6 @@ class Api::VideosController < ApplicationController
 
     private
     def video_params
-        params.require(:video).permit(:uploader_id,:title, :description, :views)
+        params.require(:video).permit(:uploader_id,:title, :description, :views, :video)
     end
 end

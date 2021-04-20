@@ -7,9 +7,10 @@ import StudioSide from './studio_side';
 
 
 const mSTP = (state, ownProps) =>{
-
-    return {
     
+    return {
+        user:  state.entities.users[state.session.id],
+        userId: state.session.id
     }
 };
     

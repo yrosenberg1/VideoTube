@@ -34,10 +34,13 @@ export const fetchVideos = () => (
  )  
  
  export const uploadVideo = video => (
+     
      $.ajax({
          method: 'POST',
          url: '/api/videos',
-         data: {video}
+         data: video,
+         contentType: false,
+         processData: false
         
      }) 
   );

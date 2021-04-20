@@ -20,7 +20,7 @@
 class Video < ApplicationRecord
     include ActionView::Helpers::DateHelper
     validates :uploader_id, :title, :description, :views, presence: true
-
+    # validate :ensure_video
 
     belongs_to :uploader,
     primary_key: :id,
@@ -34,6 +34,12 @@ class Video < ApplicationRecord
 
     has_many :likes, as: :likeable
 
+    has_one_attached :video
+
+# def ensure_video
+#   unless self.video.attached?
+#     errors[:video] << "must be attached"
+# end
 
 def date_modifier
   
@@ -57,6 +63,10 @@ end
 
 def filter_dislikes
   self.likes.select {|dislike| dislike.like_dislike == false}
+end
+
+def num_comments
+  self.comments.length
 end
 
 end
