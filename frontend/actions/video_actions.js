@@ -62,7 +62,7 @@ export const fetchVideo = videoId => dispatch => {
 };
 
 export const uploadVideo = video => dispatch => {
-    debugger
+    
     return VideoApiUtil.uploadVideo(video).then(
         video => {return dispatch(receiveVideo(video))},
         errors => { return errors}
@@ -70,7 +70,7 @@ export const uploadVideo = video => dispatch => {
 };
 
 export const updateVideo = video => dispatch => {
-    debugger
+    
     return VideoApiUtil.updateVideo(video).then(
         video => { return dispatch(receiveVideo(video))},
         errors => { return errors}

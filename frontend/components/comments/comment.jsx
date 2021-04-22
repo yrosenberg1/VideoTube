@@ -8,9 +8,12 @@ class Comment extends React.Component{
         super(props);
 
         this.state = {
-            // video_id: this.props.video
+            text: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.inputFocus = this.inputFocus.bind(this);
+        this.closeButtons = this.closeButtons.bind(this);
+        
        
     }
 
@@ -25,13 +28,24 @@ class Comment extends React.Component{
 
     }
 
+    inputFocus(e){
+        
+        e.currentTarget.parentElement.nextElementSibling.nextElementSibling.style["display"] = 'block'
+    }
+    
+    closeButtons(e){
+        e.target.parentElement.style["display"] = 'none'
+        this.setState({text: ""})
+    
+    }
   
     update(field){
+        
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
     handleSubmit(e){
-        
+        debugger
         e.preventDefault();
 
         if (this.props.user){
@@ -70,8 +84,9 @@ class Comment extends React.Component{
 
     render(){
         let comments = Object.values(this.props.comments)
+        let text = this.state.text
+        let row = (this.state.text.length / 170) + 1        
         
-
       let videoComments =  comments.map((comment, i) => {
           
           if (comment.parent_comment_id === null){
@@ -96,19 +111,22 @@ class Comment extends React.Component{
                        {/* <li ><button className='comment-thumbnail'>{this.props.user.first_name[0]}</button></li> */}
                        {this.renderprofile()}
                    
-                    <form className='comment-form' onSubmit={this.handleSubmit}>
+                    <form className='comment-form' onSubmit={(e) => text.length ? this.handleSubmit(e) : () => false}>
+                    <div className='textarea-wrapper'>
                         <textarea
+                        rows = {`${row}`}
                         className='comment-textarea'
+                            onFocus={this.inputFocus}
                             onChange={this.update('text')}
                             value={this.state.text}
                             placeholder="Add a public comment..."
                             >
 
-                            </textarea>
+                            </textarea></div>
                             <br/>
                           <div className= 'new-comment-buttons'>
-                            <button className='comment-cancel'>Cancel</button>
-                            <button className='comment-submit'>Comment</button>
+                            <button type='button' onClick={this.closeButtons} className='comment-cancel'>Cancel</button>
+                            <button className={text.length ? 'active-button' : 'comment-submit'}>Comment</button>
                             </div>
                     </form>
                     </div>

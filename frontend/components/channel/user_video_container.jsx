@@ -7,7 +7,7 @@ import {fetchUserVideos} from './../../actions/video_actions';
 const mSTP = (state, ownProps) => {
     
     return {
-      videos: state.entities.videos 
+      videos: ownProps.videos 
 
     }
 };

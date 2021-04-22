@@ -7,11 +7,21 @@ class About extends React.Component{
 
     render(){
         let {user} = this.props;
+        let {videos} = this.props;
+       
+        let ViewsArray = Object.values(videos).map(video => video.views)
+        let totalViews = ViewsArray.reduce((acc,val) => acc + val)
+         
+
         
         return (
-        <div>
+            <div className='about-container'>
+                <div className='about-filler'></div>
+        <div className='about-info-container'>
             <p>Stats</p>
             <p> Joined {user.date}</p>
+            <p>{totalViews} views</p>
+        </div>
         </div>
         )
     }

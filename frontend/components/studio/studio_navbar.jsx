@@ -13,9 +13,11 @@ class StudioNavBar extends React.Component{
             showUploadDropDown: false
         };
         this.userProfile = React.createRef();
+        this.uploadVideoBtn = React.createRef();
         this.handleSignOut = this.handleSignOut.bind(this)
         this.showDropDown = this.showDropDown.bind(this);
         this.showUploadDropDown = this.showUploadDropDown.bind(this);
+        this.closeUploadDropDown = this.closeUploadDropDown.bind(this);
         this.uploadVideoModal = this.uploadVideoModal.bind(this);
         this.closeDropDown = this.closeDropDown.bind(this);
     }
@@ -35,12 +37,12 @@ class StudioNavBar extends React.Component{
     };
 
     closeDropDown(e){
-        console.log('close dropdown')
+        
         
         if (this.userProfile.current.contains(e.target)){ return
         } else {
         this.setState({showDropDown: false})
-        debugger
+        
             document.removeEventListener('click', this.closeDropDown) ;
     }
 }
@@ -48,12 +50,22 @@ class StudioNavBar extends React.Component{
     showUploadDropDown(e){
         e.preventDefault();
         if (this.state.showUploadDropDown === false){
-            this.setState({
-                showUploadDropDown: true})
+            this.setState({showUploadDropDown: true}, () => {
+                document.addEventListener('click', this.closeUploadDropDown)
+            })
             } else {
                 this.setState({
                     showUploadDropDown: false})
                 }
+    }
+
+    closeUploadDropDown(e){
+        if (this.uploadVideoBtn.current.contains(e.target)){ return
+        } else {
+        this.setState({showUploadDropDown: false})
+        
+            document.removeEventListener('click', this.closeUploadDropDown) ;
+    }
     }
 
     uploadVideoModal(e){
@@ -67,7 +79,10 @@ class StudioNavBar extends React.Component{
         this.props.logout();
     };
         
-      
+    componentWillUnmount(){
+        document.removeEventListener('click', this.closeUploadDropDown) ;
+        document.removeEventListener('click', this.closeDropDown) 
+    }
        
         
 
@@ -95,7 +110,7 @@ class StudioNavBar extends React.Component{
 
                <div className='right-side'>
                <div className='studio-user-profile'>
-                   <div className='studio-upload-video-button' onClick={this.showUploadDropDown}><img src={window.video_call}/><p> CREATE </p></div>
+                   <div ref={this.uploadVideoBtn} className='studio-upload-video-button' onClick={this.showUploadDropDown}><img src={window.video_call}/><p> CREATE </p></div>
                    {this.state.showUploadDropDown ? ( 
                        <div className="video-upload-dropdown"onClick={this.uploadVideoModal}><img src={window.studio_video_upload} /><p>Upload videos</p></div>
                    ) : null}

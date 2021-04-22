@@ -1,5 +1,8 @@
 .main-user-profile-container{
     width: -webkit-fill-available;
+    margin-top: 56px;
+    margin-left: 245px;
+    height: 700px;
 }
 
 .user-information-container{
@@ -17,8 +20,12 @@
     padding-right: 107px;
     padding-left: 107px;
     padding-bottom: 4px;
+    align-items: center;
 }
 
+.user-thumbnail-container{
+    margin-right: 24px;
+}
 
 .user-thumbnail{
     background-color: #465a65;
@@ -33,6 +40,13 @@
     display: flex;
     width: -webkit-fill-available;
     justify-content: space-between;
+   
+
+    & li:first-child{
+        font-size: 24px;
+        line-height: 30px;
+        color: #030303;
+    }
 }
 
 .manage-video-button, .select-video-button{
@@ -53,4 +67,103 @@ font-weight: 500;
     justify-content: space-around;
     width: 1089px;
     height: 48px;
+
+    & button{
+        color:  #636363;
+        font-weight: 500;
+        padding: 4px 4px;
+        width: 85px;
+        font-family: 'roboto';
+        font-size: 14px;
+    }
+    
+
+    & .selected-button{
+        border-bottom:3px solid #606060 ;
+        color: rgb(3, 3, 3);
+        font-weight: 500;
+    }
 }
+
+.about-container {
+    height: 173px;
+    width: 1284px;
+    margin: auto;
+    padding-top: 16px;
+    display: flex;
+}
+
+.about-filler {
+    height: 157px;
+    width: 792px;
+    padding-right: 96px;
+}
+
+.about-info-container {
+    width: 396px;
+    margin-top: 12px;
+
+    & p{
+        padding: 12px 0px;
+        height: 20px;
+        border-bottom: 1px solid #ccc9c9;
+        font-size: 14px;
+        line-height: 21px;
+        color:rgb(3, 3, 3)
+    }
+    
+    & p:first-child{
+      font-size: 16px; 
+      line-height: 20px; 
+      font-weight: 500;
+    }
+    
+    }
+
+    .main-container{
+        height: 4000px;
+        width: 1903px;
+        background: #f1f1f1; 
+
+    }
+
+    .user-video-container{
+        width: 1284px;
+        margin: auto;
+    }
+    
+    .user-video-index-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .user-vid-title{
+        height: 56px;
+        padding: 8px 0px;
+        & p{
+            font-weight: 400;
+            height: 37px;
+            line-height: 37px;
+            font-family: 'Roboto';
+            font-size: 16px;
+            color: #030303;
+        }
+        }
+    
+        .user-video-item{
+            margin-right: 4px;
+            margin-bottom: 24px;
+        }
+
+        .user-vid-item-title{
+            font-size: 11.7px;
+            font-weight: 700;
+            font-family: 'Roboto';
+            padding: 8px 0px;
+        }
+        
+        li.user-vid-info {
+            font-size: 13px;
+            line-height: 18px;
+            color: #606060;
+        }

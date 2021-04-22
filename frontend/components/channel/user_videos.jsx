@@ -9,12 +9,8 @@ class UserVideos extends React.Component{
         }
         
     }
-    componentDidMount(){
-       this.props.fetchUserVideos(this.props.userId)
-        
-        
-    }
-
+  
+    
     render(){
         const videos = Object.values(this.props.videos)
         
@@ -28,15 +24,18 @@ class UserVideos extends React.Component{
             )
         }
         return (
+            <div className='user-video-container'>
+                  <div className='user-vid-title'><p>Uploads</p></div>
             <div className='user-video-index-container'>
                 {videos.map((video, i) => {
                     return (
-                        <ul key={`${video.id,i}`}>
+                        <ul  className='user-video-item' key={`${video.id,i}`}>
                         <UserVideosItem video={video} />
                         </ul>
                     )
                 })}
       
+        </div>
         </div>
         )
     }

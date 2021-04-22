@@ -114,7 +114,7 @@ class VideoShow extends React.Component{
          < NavBar />
          <div className='side-bar-video-container'>
                 < SideLinksContainer />
-            </div>
+           
           <div className='video-show-body'>
 
              <div className='video-show-main-container'>
@@ -162,9 +162,9 @@ class VideoShow extends React.Component{
               </div>
              </div>
             
-             <div className='video-show-right-side-container'>
-
+             <div className='video-show-right-side-container'></div>
              </div>
+             <div className='right-side-container'></div>
           </div>    
     
        </div>

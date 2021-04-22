@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router';
-// import { openModal } from '../../../actions/modal_actions';
+import { openModal } from '../../actions/modal_actions';
+
 // import {logout} from '../../../actions/session_actions';
 import StudioMain from './studio_main';
 import {fetchUserVideos} from './../../actions/video_actions';

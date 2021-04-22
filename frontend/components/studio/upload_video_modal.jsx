@@ -2,12 +2,13 @@ import React from 'react';
 
 import UploadVideoContainer from './upload_video_container';
 import SelectVideoContainer from './select_file_container';
+import DeleteVideoContainer from './delete_video_container';
 import {closeModal} from '../../actions/modal_actions';
 import {connect} from 'react-redux';
 
 
-function UploadVideoModal({modal, closeModal, videoInfo}){
-    debugger
+function UploadVideoModal({modal, closeModal, video}){
+    
     if (!modal){
         
         return null;
@@ -24,10 +25,13 @@ function UploadVideoModal({modal, closeModal, videoInfo}){
             break;
         case 'uploadVideo':
             
-             component = <UploadVideoContainer  video={videoInfo} />;    
+             component = <UploadVideoContainer  video={video} />;    
             break;
-            
-    
+
+            case "deleteVideo":
+                debugger
+                component = <DeleteVideoContainer />
+                break
         default:
             return null;
     }
@@ -43,11 +47,11 @@ function UploadVideoModal({modal, closeModal, videoInfo}){
 }
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         modal: ownProps.video ? ownProps.modal : state.ui.modal, 
         // modal: state.ui.modal,
-        videoInfo: ownProps.video
+        video: ownProps.video
     }
 };
 

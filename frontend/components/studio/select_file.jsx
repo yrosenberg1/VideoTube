@@ -10,25 +10,28 @@ class SelectFile extends React.Component{
             videoFile: null,
             videoUrl: null
         }
-
+        
         this.input = React.createRef();
         this.handleVideoFile = this.handleVideoFile.bind(this);
     };
-
-    componentDidMount(){
+    
+    // componentDidMount(){
         
-    document.body.classList.add('modal-open-scroll');
+    //     document.body.classList.add('modal-open-scroll');
         
         
-    }
-  
+    // }
+    
+    // componentWillUnmount(){
+    //     document.body.classList.remove('modal-open-scroll');
+    // }
     handleVideoFile(e){
-        debugger
+        
         const file = e.target.files[0]
         const fileReader = new FileReader();
         
         fileReader.onloadend = () =>  {
-            debugger
+            
             return (
             this.setState({videoFile: file, videoUrl: fileReader.result})
             )
@@ -38,21 +41,11 @@ class SelectFile extends React.Component{
 
         if(file) {
        fileReader.readAsDataURL(file); 
-       debugger
+       
         }
-        debugger
+        
     }
 
-    componentWillUnmount(){
-        document.body.classList.remove('modal-open-scroll');
-    }
-    
-    
-    handleSubmit(e){
-            e.preventDefault();
-            const formData = new FormData();
-            formData.append("video[title]", this.state.title);
-        }
     
     render(){
         console.log(this.state);
@@ -64,7 +57,7 @@ class SelectFile extends React.Component{
      
        const  renderUpload2 = this.state.videoFile ?  <UploadVideoModal video={this.state} modal={"uploadVideo"} /> : null
         
-        debugger
+        
         return (
             
             <div className='modal'>

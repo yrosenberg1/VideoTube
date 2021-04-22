@@ -5,7 +5,7 @@ import UploadVideo from './upload_video';
 import {uploadVideo} from '../../actions/video_actions'
 import {openModal, closeModal} from '../../actions/modal_actions';
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         userId: state.session.id,
         user: state.entities.users[ownProps.match.params.id],

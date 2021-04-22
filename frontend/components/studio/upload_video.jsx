@@ -32,14 +32,14 @@ componentDidMount(){
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        
         const formData = new FormData();
             formData.append("video[title]", this.state.title);
             formData.append("video[uploader_id]", this.props.userId);
             formData.append("video[description]", this.state.description);
             formData.append("video[views]", 0);
             formData.append("video[video]", this.props.video.videoFile);
-       debugger
+       
         this.props.uploadVideo(formData).then(this.props.closeModal())
         
     };

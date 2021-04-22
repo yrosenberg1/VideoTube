@@ -21,8 +21,10 @@ class Channel extends React.Component {
         this.button = React.createRef();
         this.buttonValues = this.buttonValues.bind(this);
     }
+   
 
     componentDidMount() {
+        this.props.fetchUserVideos(this.props.userId)
         this.button.current.click()
       }
 
@@ -46,13 +48,13 @@ class Channel extends React.Component {
                  <div className='user-dashboard-container'>
                      {/* <button value='HOME' onClick={this.buttonValues}>HOME</button> */}
                      <button ref={this.button} value='VIDEOS' onClick={this.buttonValues}>VIDEOS</button>
-                     <button value='PLAYLISTS' onClick={this.buttonValues}>PLAYLISTS</button>
+                     {/* <button value='PLAYLISTS' onClick={this.buttonValues}>PLAYLISTS</button> */}
                      {/* <button value='CHANNELS' onClick={this.buttonValues}>CHANNELS</button> */}
                      {/* <button value='DISCUSSION' onClick={this.buttonValues}>DISCUSSION</button> */}
                      <button value='ABOUT' onClick={this.buttonValues}>ABOUT</button>
                  </div>
             </div>
-           {this.renderMain()}
+           <div className='main-container'>{this.renderMain()} </div>
             </div>
         )
     }
@@ -74,6 +76,7 @@ class Channel extends React.Component {
                 <UserVideosContainer 
                     user = {this.props.user}
                     userId ={this.props.userId}
+                    videos ={this.props.videos}
                    
                 />
                 )
@@ -103,7 +106,9 @@ class Channel extends React.Component {
                 return (
                 <About 
                     user = {this.props.user}
-                    userId ={this.props.userId}/>
+                    userId ={this.props.userId}
+                    videos ={this.props.videos}
+                    /> 
                 )
                 break;
         
@@ -115,10 +120,14 @@ class Channel extends React.Component {
 
     buttonValues(e){
         e.preventDefault();
+        e.target.parentElement.childNodes.forEach( node => { node.classList.remove('selected-button')})
+        e.target.classList.add('selected-button')
+        
         switch (e.currentTarget.value) {
             case 'HOME':
-             return  this.setState({value:'HOME'})
-               
+             return ( 
+                 this.setState({value:'HOME'})
+             )
            case 'VIDEOS':
                
                return  this.setState({value:'VIDEOS'})

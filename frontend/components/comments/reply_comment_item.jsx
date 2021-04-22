@@ -4,14 +4,18 @@ import React from 'react';
 class ReplyCommentItem extends React.Component {
     constructor(props) {
         super(props)
-        
+        let {comment} = this.props
+        let name = comment.commenter
         this.state = {
-
+            text: `@${name.first_name} ${name.last_name}`
         }
 
         this.handleLikeComment = this.handleLikeComment.bind(this);
         this.handleDislikeComment = this.handleDislikeComment.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.openReplies = this.openReplies.bind(this);
+        this.closeReplies = this.closeReplies.bind(this);
+        this.updateWrapper = this.updateWrapper.bind(this)
         // this.replyButton = this.replyButton.bind(this);
     }
 
@@ -35,7 +39,7 @@ class ReplyCommentItem extends React.Component {
                 video_id: this.props.videoId,
                 commenter_id: this.props.user.id,
                 comment_body: this.state.text,
-                parent_comment_id: this.props.comment.id
+                parent_comment_id: this.props.comment.parent_comment_id
                 
 
             }
@@ -115,55 +119,66 @@ class ReplyCommentItem extends React.Component {
         
     }
 
-    // replyButton(){
+    openReplies(e){
         
-    //     let replies = this.props.comment.replies
-    //     // this.props
-    //     debugger
-    //     if (!replies.length){
-    //         debugger
-    //     return null 
-    //     } else {
-    //         debugger
-    //         replies.map((reply, i) => {
-    //             return (
-    //                 <ul className='user-comments' key={i}>
-    //                     <ReplyCommentItemContainer comment = {this.props.comments[reply]} />
-    //                 </ul>
-    //             )
-    //         })
-           
-    //     }
-    // }
+        e.target.parentElement.parentElement.parentElement.parentElement.nextElementSibling.children[0].style["display"] = 'block'
+    }
+        
+    closeReplies(e){
+        
+      e.target.parentElement.parentElement.style["display"] = 'none'
+    //   e.target.parentElement.previousElementSibling.previousElementSibling.value = ""
 
+      let {comment} = this.props
+      let name = comment.commenter
+      this.setState({text: `@${name.first_name} ${name.last_name}`})
+   }
+        
+   updateWrapper(e){
+       
+    e.target.parentElement.dataset.replicatedValue = e.target.value
+}
+   
     render(){
         let {comment} = this.props
+        let name = comment.commenter
         
-        
-        
+        let text = this.state.text
+        let string =text.split(" ").join("")
+        let spaceLength = (text.length - string.length) * 0.5
+        let stringLength = string.length 
+        let row = ((spaceLength + stringLength) / 175) + 1
+        console.log(`row:${row}`)
+        console.log(`length:${this.state.text.length}`)
+        console.log(spaceLength)
+        console.log(stringLength)
+
         return (
             <div>
-            <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
-                    <li>{comment.commenter.first_name} {comment.commenter.last_name} {comment.timestamp} ago</li>
-                    <p> {comment.comment_body}</p>
-                   
+           <div className='reply-container'><div> <li><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li> </div>
+               <div>     <li className='name-li'><p>{comment.commenter.first_name} {comment.commenter.last_name} </p><p className='date-p'>{comment.timestamp} ago</p></li>
+                    <p className="comment-body"> {comment.comment_body}</p>
+                   <ul className='reply-user-interact'>
                     <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i> {comment.likes.length !== 0 ? comment.likes.length : null}</button></li>
                     <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</button></li>
-                    <li><button >REPLY</button></li> 
+                    <li><button  onClick={this.openReplies}>REPLY</button></li></ul> </div></div>
                     <div>
                     <form className='reply-comment-form' onSubmit={this.handleSubmit}>
+                    <div className='textarea-wrapper'>
                         <textarea
                         className='comment-textarea'
+                            rows = {`${row}`}
                             onChange={this.update('text')}
                             value={this.state.text}
+                            onInput={this.updateWrapper}
                             placeholder="Add a public reply..."
                             >
 
-                            </textarea>
+                            </textarea></div>
                             <br/>
-                          <div className= 'new-comment-buttons'>
-                            <button className='comment-cancel'>Cancel</button>
-                            <button className='comment-submit'>Comment</button>
+                          <div className= 'reply-comment-buttons'>
+                            <button type="button" onClick={this.closeReplies} className='comment-cancel'>Cancel</button>
+                            <button className={text.length ? 'active-button' : 'comment-submit'}>Comment</button>
                             </div>
                     </form></div>
                     {/* {this.replyButton()} */}

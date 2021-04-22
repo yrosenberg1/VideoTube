@@ -6,13 +6,19 @@ class CommentItem extends React.Component {
         super(props)
         
         this.state = {
+            text: "",
+            toggleBtn: false
 
         }
 
         this.handleLikeComment = this.handleLikeComment.bind(this);
         this.handleDislikeComment = this.handleDislikeComment.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.replyButton = this.replyButton.bind(this);
+        this.openReplies = this.openReplies.bind(this);
+        this.closeReplies = this.closeReplies.bind(this);
+        this.updateWrapper = this.updateWrapper.bind(this)
+        this.replyButton = this.replyButton.bind(this);
+        this.toggleOn = this.toggleOn.bind(this);
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -22,8 +28,34 @@ class CommentItem extends React.Component {
             }
     }
 
+    openReplies(e){
+        
+        e.target.parentElement.parentElement.nextElementSibling.children[0].style["display"] = 'block'
+    }
+        
+   closeReplies(e){
+       
+       e.target.parentElement.parentElement.style["display"] = 'none'
+       this.setState({text: ""})
+    }
+        
+   updateWrapper(e){
+       
+       e.target.parentElement.dataset.replicatedValue = e.target.value
+   }
     update(field){
         return e => this.setState({[field]: e.currentTarget.value})
+    }
+
+    toggleOn(e){
+        e.preventDefault();
+        if (this.state.toggleBtn === false){
+            this.setState({
+                toggleBtn: true})
+            } else {
+                this.setState({
+                    toggleBtn: false})
+                }
     }
 
     handleSubmit(e){
@@ -86,7 +118,7 @@ class CommentItem extends React.Component {
     }
 
     handleDislikeComment(){
-        
+        debugger
         let {comment} = this.props
      
         const commentLikesArray = comment.likes.map(like => {
@@ -116,15 +148,20 @@ class CommentItem extends React.Component {
     }
 
     replyButton(){
+       
         
         let replies = this.props.comment.replies
         
         
-        if (!replies.length){
+        // if (!replies.length){
             
-        return null 
-        } else {
-            
+        // return null 
+        // } else {
+        //     debugger
+
+        //   return (
+        //       <div className=''></div>
+        //   )  
            let replyComments = replies.map((reply, i) => {
                 
                 return (
@@ -136,42 +173,54 @@ class CommentItem extends React.Component {
                 )
             }, this)
            
-            return ( replyComments )
-        }
+            return (replyComments)
+        // }
     }
 
     render(){
         
         let {comment} = this.props
-        
+        let {replies} = this.props.comment
+        let text = this.state.text
+        let numReplies = replies.length === 1 ? "reply" : replies.length + " replies"
+        let toggled = this.state.toggleBtn ?   <div onClick={this.toggleOn} className='reply-toggle-btn'> Hide {numReplies} </div> : <div onClick={this.toggleOn} className='reply-toggle-btn'> View {numReplies}</div> 
+        let replyButton = replies.length ? toggled : null
+       
+      
+        let row = (this.state.text.length / 170) + 1
         
         return (
             <div>
-            <li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
-                    <li>{comment.commenter.first_name} {comment.commenter.last_name} {comment.timestamp} ago</li>
-                    <p> {comment.comment_body}</p>
-                   
+               
+            <div className='comment-profile'><li ><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li>
+                    <li className='name-li'><p>{comment.commenter.first_name} {comment.commenter.last_name} </p><p className='date-p'>  {comment.timestamp} ago</p></li></div>
+                    <p className='comment-body'> {comment.comment_body}</p>
+                    <ul className='comment-user-interact'>
                     <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i> {comment.likes.length !== 0 ? comment.likes.length : null}</button></li>
                     <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</button></li>
-                    <li><button >REPLY</button></li> 
+                    <li ><button onClick={this.openReplies}>REPLY</button></li> </ul>
                     <div>
                     <form className='reply-comment-form' onSubmit={this.handleSubmit}>
+                       <div className='textarea-wrapper'>
                         <textarea
+                        rows = {`${row}`}
                         className='comment-textarea'
                             onChange={this.update('text')}
+                            onInput={this.updateWrapper}
                             value={this.state.text}
                             placeholder="Add a public reply..."
                             >
 
-                            </textarea>
+                            </textarea></div>
                             <br/>
-                          <div className= 'new-comment-buttons'>
-                            <button className='comment-cancel'>Cancel</button>
-                            <button className='comment-submit'>Comment</button>
+                          <div className= 'reply-comment-buttons'>
+                            <button type="button" onClick={this.closeReplies} className='comment-cancel-button'>Cancel</button>
+                            <button type="submit" className={text.length ? 'active-button' : 'comment-submit'}>Comment</button>
                             </div>
                     </form></div>
-                    {this.replyButton()}
-
+                    {replyButton}
+                    { this.state.toggleBtn ? this.replyButton() : null}
+                   
                     </div>
         )
     }

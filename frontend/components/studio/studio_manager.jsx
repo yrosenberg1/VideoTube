@@ -12,7 +12,17 @@ class StudioManager extends React.Component {
       
     };
 
-    
+    componentDidMount(){
+        
+        document.body.classList.add('modal-open-scroll');
+            
+            
+        }
+
+    componentWillUnmount(){
+            document.body.classList.remove('modal-open-scroll');
+        }
+           
     
     render(){
         

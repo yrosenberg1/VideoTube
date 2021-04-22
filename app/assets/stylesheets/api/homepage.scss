@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     // justify-content: space-around;
-    height: 1400px;
+    
     
 }
 
@@ -19,6 +19,11 @@
     width: 240px;
     margin-top: 16px;
     margin-right: 5px;
+
+    margin-top: 56px;
+    position: fixed;
+    background: white;
+    height: 100%;
 
 }
 
@@ -42,4 +47,6 @@
     padding-bottom: 24px;
     padding-right: 80px;
     box-sizing: border-box;
+    margin-top: 56px;
+    margin-left: 245px;
 }

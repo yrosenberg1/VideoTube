@@ -9,10 +9,13 @@ class LogIn extends React.Component{
             showDropDown: false,
             showUploadDropDown: false
           }
-        
+        this.profile = React.createRef();
+        this.uploadVideoBtn = React.createRef();
         this.handleSignOut = this.handleSignOut.bind(this)
         this.showDropDown = this.showDropDown.bind(this);
+        this.closeDropDown = this.closeDropDown.bind(this);
         this.showUploadDropDown = this.showUploadDropDown.bind(this);
+        this.closeUploadDropDown = this.closeUploadDropDown.bind(this);
         this.uploadVideoModal = this.uploadVideoModal.bind(this);
         
     }
@@ -23,7 +26,9 @@ class LogIn extends React.Component{
         // console.log('clicked')
         if (this.state.showDropDown === false){
         this.setState({
-            showDropDown: true})
+            showDropDown: true}, () => {
+                document.addEventListener('click', this.closeDropDown)
+            } )
         } else {
             this.setState({
                 showDropDown: false})
@@ -31,37 +36,58 @@ class LogIn extends React.Component{
         
         };
 
+        closeDropDown(e){
+        
+        
+            if (this.profile.current.contains(e.target)){ return
+            } else {
+            this.setState({showDropDown: false})
+            
+                document.removeEventListener('click', this.closeDropDown) ;
+        }
+    }
+    
+
         showUploadDropDown(e){
             e.preventDefault();
-            console.log("showUploadDropDown")
+           
             if (this.state.showUploadDropDown === false){
                 this.setState({
-                    showUploadDropDown: true})
+                    showUploadDropDown: true}, () => {
+                        document.addEventListener('click', this.closeUploadDropDown)
+                    })
                 } else {
                     this.setState({
                         showUploadDropDown: false})
                     }
         }
+
+        closeUploadDropDown(e){
+            e.preventDefault()
+            if (this.uploadVideoBtn.current.contains(e.target)){return}
+             else {
+                debugger
+            this.setState({showUploadDropDown: false})
+            
+                document.removeEventListener('click', this.closeUploadDropDown) ;
+        }
+        }
     
+
+        componentWillUnmount(){
+            document.removeEventListener('click', this.closeUploadDropDown) ;
+            document.removeEventListener('click', this.closeDropDown) 
+        }
 
         uploadVideoModal(e){
             e.preventDefault();
-            console.log("videoModal")
             this.props.openModal("modal")
             this.props.history.push(`/channel/${this.props.currentUser.id}/videos/upload`)
-          
-           
-            
-        }
-//     closeDropDown(e){
-//         if (!this.menu.contains(e.target)) {
-//         console.log("remove menu")
-//         this.setState({showDropDown: false}, () => {
-//             document.removeEventListener('click', this.closeDropDown);
-//     });
 
-//     }
-//    }
+        }
+    
+
+
     handleSignOut(e){
         e.preventDefault();
         this.props.logout();
@@ -71,12 +97,12 @@ class LogIn extends React.Component{
         
             return (
                 <div className ='user-profile'>
-                <button className='upload-video-button' onClick={this.showUploadDropDown}> <img src={window.video_call_png}/> </button>
+                <div className='ref-upload' ref={this.uploadVideoBtn}><button className='upload-video-button' onClick={this.showUploadDropDown}> <img src={window.video_call_png}/> </button>
                {this.state.showUploadDropDown ? (
-                   <div className="video-upload-dropdown" ><p onClick={this.uploadVideoModal}>Upload video</p> </div>
-               ) : (null)}
-                    <div className='user-profile-'> </div>
-                <div className='signed-in-button' onClick={this.showDropDown}> <i className="fas fa-user-circle"></i> </div>
+                   <div className="video-upload-dropdown" ><img src={window.navbarUpload} /><p onClick={this.uploadVideoModal}>Upload video</p> </div>
+               ) : (null)} </div>
+                    {/* <div className='user-profile-'> </div> */}
+                <div ref={this.profile}><div className='signed-in-button' onClick={this.showDropDown}> <i className="fas fa-user-circle"></i> </div>
                 {this.state.showDropDown ? (
                 <div className="user-profile-dropdown" >
                 
@@ -100,7 +126,7 @@ class LogIn extends React.Component{
                           </div>
                 </div>
                   ) : ( null)
-                 }
+                 }</div>
                     </div>
             )
        
