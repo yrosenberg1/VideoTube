@@ -9,12 +9,18 @@ class DeleteVideo extends React.Component{
             modal: this.props.modal
         }
         this.closeModal = this.closeModal.bind(this);
+        this.deleteVideo = this.deleteVideo.bind(this);
     }
 
 
     closeModal(){
         this.setState({modal: null})
         this.props.deleteOn()
+    }
+
+    deleteVideo(){
+        debugger
+        this.props.deleteVideo(this.props.video.id).then(this.closeModal())
     }
 
     confirmDelete(e){
@@ -44,7 +50,8 @@ debugger
             </div>
 
             <div className='delete-modal-buttons-container'>
-                <button ></button>
+                <button onClick={this.closeModal}>Cancel</button>
+                <button onClick={this.deleteVideo}>Delete Forever</button>
             </div>
         </div>
         </div>

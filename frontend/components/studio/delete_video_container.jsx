@@ -1,14 +1,13 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import DeleteVideo from './delete_video';
-
+import {deleteVideo} from './../../actions/video_actions';
 
 
 const mSTP = (state, ownProps) => {
     
     return {
-        userId: state.session.id,
-        user: state.entities.users[ownProps.match.params.id],
+      
         video: ownProps.video,
         modal: ownProps.modal,
         cancelDel: ownProps.canceldelete
@@ -18,7 +17,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        
+        deleteVideo: videoId => dispatch(deleteVideo(videoId))
     }
 };
 

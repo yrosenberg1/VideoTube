@@ -575,3 +575,193 @@ padding: 10px;
     height: 288px;
     background: white;
 }
+
+.studio-header-container {
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    width: 1072px;
+    padding: 0px 24px;
+
+    & h1 {
+        font-family: 'YT Sans', 'Roboto', 'Arial', sans-serif;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 32px;
+    }
+}
+
+.studio-edit-btns-container, .activate-btns {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 246.05px;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    color:  #cccccc;
+    // color: #065fd4;
+}    
+
+ .studio-edit-btns-container div, .studio-edit-btns-container .edit-form-btn{
+        width: 124px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        cursor: default;
+    }
+
+    .studio-edit-btns-container .edit-form-btn{
+        width: 67px;
+        background: #cccccc;
+        color: white;
+        border-radius: 4px;
+    }
+
+    .activate-btns div, .activate-btns .edit-form-btn{
+        width: 124px;
+        height: 36px;
+        text-align: center;
+        line-height: 36px;
+        cursor: pointer;
+        color: #065fd4;
+    }
+
+    .activate-btns .edit-form-btn{
+        width: 67px;
+        background: #065fd4;
+        color: white;
+        border-radius: 4px;
+    }
+
+.edit-video-main-container {
+    padding: 0px 24px;
+    display: flex;
+}
+
+
+
+.edit-title-container, .edit-description-container{
+    width: 670px;
+    height: 81px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 11px 12px;
+    padding-top: 0px;
+    margin-bottom: 24px;
+
+    & p{
+        margin-top: 8px;
+    margin-bottom: 3px;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+}
+.edit-description-container{
+    height: 215px;
+}
+.input-count-p{
+    text-align: end;
+}
+
+textarea.edit-title-text {
+    resize: none;
+    outline: none;
+    border: none;
+    font-family: 'Roboto';
+    font-size: 15px;
+    height: 31px;
+    width: 670px;
+    line-height: 31px;
+    overflow: hidden;
+    color: rgba(0,0,0,0.87);
+}
+
+textarea.edit-desc-text {
+    resize: none;
+    outline: none;
+    border: none;
+    font-family: 'Roboto';
+    font-size: 15px;
+    height: 31px;
+    width: 670px;
+    line-height: 31px;
+    overflow: hidden;
+    color: rgba(0,0,0,0.87);
+}
+
+textarea.edit-desc-text {
+    height: 165px;
+    line-height: 20px;
+}
+
+.input-count-p{
+    text-align: end;
+}
+
+.edit-thumbnail-container{
+    width: 696px;
+    height: 158px;
+}
+
+.edit-right-side-container {
+    width: 352px;
+    height: 380px;
+    padding-left: 24px;
+}
+
+.studio-content-btn a{
+    display: flex;
+    width: 255px;
+    height: 56px;
+    margin-top: 8px;
+    padding-left: 16px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'YT Sans', 'ROBOTO';
+    justify-content: space-evenly;
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+
+    &:hover{
+        background-color: #eceaea;
+    }
+
+    & p{
+        height: 48px;
+        line-height:  48px;
+    }
+}
+
+.video-edit-side{
+    padding: 0px 16px;
+    padding-top: 8px;
+    padding-bottom: 14px;
+}
+
+.video-edit-side-info{
+    padding: 0px 24px;
+    height: 56px;
+    font-family: 'YT-Sans', 'Roboto';
+    font-weight: 500;
+    font-size: 15px;
+
+    & .vid-edit-title{
+        font-family: 'Roboto', 'Noto', sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.132px;
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 2px;
+        color: rgba(0, 0, 0, 0.55);
+ 
+    }
+}

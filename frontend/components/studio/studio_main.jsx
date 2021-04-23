@@ -93,7 +93,7 @@ class StudioMain extends React.Component {
         return (
         <div className='studio-main-container'>
          <div className='studio-main-header'>
-          <div className='channel-header-container'> <h1> Channel content</h1> </div>
+          <div className='channel-header-container'> <h1> Video details</h1> </div>
           <div className='upload-header-container'>  <p>Uploads</p> </div>
          </div>
          <div className='studio-main-filter-container'>

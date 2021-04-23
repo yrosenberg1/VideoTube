@@ -68,7 +68,7 @@ debugger
                          <div className='video-des'>{video.description}</div> 
                          </div>
                         <div className='video-hover-container'>
-                         <div> <img src={window.create_hover} /></div>
+                         <div><Link to={`/studio/video/${video.id}`}> <img src={window.create_hover} /></Link></div>
                          <div> <img src={window.comment_hover} /></div>
                          <div><Link to={`/videos/${video.id}` }> <img src={window.gray_youtube_logo_hover} /></Link></div>
                          <div onClick={this.deleteVideo}> <img src={window.delete_hover} /></div>

@@ -7,6 +7,7 @@ class StudioSide extends React.Component {
     }
 
     render(){
+        debugger
         let {user} = this.props;
         return (
         <div className='studio-side-container'>

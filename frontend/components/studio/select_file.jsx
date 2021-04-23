@@ -15,16 +15,7 @@ class SelectFile extends React.Component{
         this.handleVideoFile = this.handleVideoFile.bind(this);
     };
     
-    // componentDidMount(){
-        
-    //     document.body.classList.add('modal-open-scroll');
-        
-        
-    // }
-    
-    // componentWillUnmount(){
-    //     document.body.classList.remove('modal-open-scroll');
-    // }
+  
     handleVideoFile(e){
         
         const file = e.target.files[0]

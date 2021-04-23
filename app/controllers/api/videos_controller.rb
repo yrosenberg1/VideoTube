@@ -12,6 +12,7 @@ class Api::VideosController < ApplicationController
     end
 
     def destroy
+        
         @video = Video.find(params[:id])
     if    @video.destroy
     else
@@ -22,7 +23,8 @@ class Api::VideosController < ApplicationController
 
     def update
         @video = Video.find(params[:id])
-        if @video.update(comment_params)
+        if @video.update(video_params)
+            render 'api/videos/show'
         else
             render json: @video.errors.full_messages, status: 422
         end
