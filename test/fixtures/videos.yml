@@ -5,7 +5,6 @@
 #  id          :bigint           not null, primary key
 #  description :string           not null
 #  title       :string           not null
-#  views       :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  uploader_id :integer          not null

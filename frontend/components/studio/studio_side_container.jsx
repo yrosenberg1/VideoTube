@@ -10,7 +10,8 @@ const mSTP = (state, ownProps) =>{
     
     return {
         user:  state.entities.users[state.session.id],
-        userId: state.session.id
+        userId: state.session.id,
+        buttonSwitch: ownProps.buttonSwitch
     }
 };
     

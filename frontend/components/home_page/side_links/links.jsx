@@ -64,12 +64,15 @@ class SideLinks extends React.Component {
             </ul>
                </Link>
 
-           <Link className='likes-link' to='/'>
+        { loggedIn ?  <Link className='likes-link' to={`/video/playlist/${this.props.currentUser.id}/`}>
         <ul className='links-ul'>
        <li> <i className="fas fa-thumbs-up"></i></li>
-       <li><p>Likes</p></li>
+       <li><p>Liked videos</p></li>
         </ul>
-               </Link>
+               </Link> :  <ul className='links-ul'>
+       <li> <i className="fas fa-thumbs-up"></i></li>
+       <li><p>Liked videos</p></li>
+        </ul>}
        
         </div>
 

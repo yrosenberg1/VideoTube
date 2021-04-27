@@ -8,7 +8,7 @@ class UserVideosItem extends React.Component{
 
     render(){
         let {video} = this.props;
-        debugger
+        
         return (
           
         <div> <Link to={`/videos/${video.id}` }>

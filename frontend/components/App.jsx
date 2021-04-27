@@ -9,7 +9,7 @@ import VideoShowContainer from './home_page/video_page/video_show_container';
 import ChannelContainer from './channel/channel_container';
 import StudioManagerContainer from './studio/studio_manager_container';
 import StudioEditVideoContainer from './studio/edit_video_container';
-
+import PlayListContainer from './home_page/video_page/playlist_container';
 const App = () => (
     <div>
         {/* <Switch>
@@ -21,7 +21,8 @@ const App = () => (
         <Route exact path="/videos/:id" component={VideoShowContainer} />
         <ProtectedRoute exact path="/channel/:id" component={ChannelContainer} />
         <ProtectedRoute exact path="/channel/:id/videos/upload" component={StudioManagerContainer} />
-        <ProtectedRoute exact path="/studio/video/:id" component={StudioEditVideoContainer} />
+        <ProtectedRoute exact path="/studio/video/:id/:component" component={StudioEditVideoContainer} />
+        <ProtectedRoute exact path="/video/playlist/:id/" component={PlayListContainer} />
         < Route path='/' component ={HomePage} />
         </Switch>
         

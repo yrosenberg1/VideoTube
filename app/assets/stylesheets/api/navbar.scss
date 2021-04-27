@@ -112,13 +112,7 @@ padding: 2px 12px 2px 12px;
 border-top-left-radius: 3px;
 border-bottom-left-radius: 3px;
 
-&:hover{
-    // border: 1px solid blue;
-}
 
-&:active{
-    // border: 1px solid blue;
-}
 
 &:focus{
     outline: 1px solid blue;
@@ -264,7 +258,7 @@ border-bottom-right-radius: 3px;
   
   width: 250px;
 //   border: lightgray solid 1px;
-    height: 185px;
+    height: 225px;
     margin-right: 13px;
     right: 0%;
     background-color: #fff;
@@ -354,12 +348,33 @@ border-bottom-right-radius: 3px;
     margin-top: 15px;
     margin-left: 10px;
     font-size: 15px;
-    font-family: 'Roberto';
+    font-family: 'Roboto';
 }
 
 .dropdown-sign-out{
     margin-top: 15px;
     margin-left: 10px;
     font-size: 15px;
-    font-family: 'Roberto';
+    font-family: 'Roboto';
+}
+
+.studio-link-container {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+
+    &:hover{
+        background-color: rgb(236, 234, 234);
+    }
+}
+
+.studio-link-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.dropdown-studio {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 15px;
 }

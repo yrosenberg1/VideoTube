@@ -24,6 +24,21 @@ export const fetchVideos = () => (
       })
   )
  
+  export const fetchUserLikedVideos = userId => (
+      $.ajax({
+          method: 'GET',
+          url: 'api/videos?likes=vids',
+          data: {userId}
+      })
+  )
+  export const fetchUserWatchedVideos = userId => (
+      $.ajax({
+          method: 'GET',
+          url: 'api/videos?watched=vids',
+          data: {userId}
+      })
+  )
+ 
  export const fetchSearchVideos = keyword => (
      $.ajax({
          method: 'GET',

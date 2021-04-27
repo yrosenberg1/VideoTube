@@ -66,7 +66,7 @@ class LogIn extends React.Component{
             e.preventDefault()
             if (this.uploadVideoBtn.current.contains(e.target)){return}
              else {
-                debugger
+                
             this.setState({showUploadDropDown: false})
             
                 document.removeEventListener('click', this.closeUploadDropDown) ;
@@ -118,6 +118,10 @@ class LogIn extends React.Component{
                            <div className='account-icon'> <i className="fas fa-user"></i></div>
                            <div className='dropdown-account'><Link to={`/channel/${this.props.currentUser.id}`}>Your channel</Link></div>
 
+                           </div>
+                           <div className='studio-link-container'>
+                               <div className='studio-link-icon'><i className="fas fa-cog"></i></div>
+                               <div className='dropdown-studio'><Link to={`/channel/${this.props.currentUser.id}/videos/upload`}>VideoTube Studio</Link></div>
                            </div>
                            <div className='sign-out-container' onClick={this.handleSignOut}>
                                <div className='sign-out-logo'> <i className="fas fa-sign-out-alt"></i> </div>  

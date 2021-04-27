@@ -1,0 +1,110 @@
+
+.playlists-container{
+    display: flex;
+    margin-left: 245px;
+    margin-top: 56px;
+    flex-direction: column;
+    width: 1655px;
+}
+
+.playlist-desc {
+    text-align: center;
+}
+
+.playlist-header {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    font-weight: 400;
+    height: 30px;
+    width: 320px;
+    font-family: 'Roboto';
+    margin: auto;
+    padding-top: 25px;
+}
+
+.playlist-count {
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 10px;
+    color: rgb(96, 96, 96);
+}
+
+.playlist-user-name {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+.liked-vids-container ul {
+    display: flex;
+    flex-direction: row;
+    margin-left: 312px;
+    height: 101px;
+    width: 860px;
+    padding: 16px 0px;
+    cursor: pointer;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+
+    &:hover{
+        background: #e5e5e5;
+    }
+
+}
+
+.like-vid-link {
+    display: flex;
+    align-items: center;
+}
+
+.like-vid-link img {
+    height: 67.15px;
+    width: 120px;
+}
+
+.like-num {
+    width: 36px;
+    text-align: center;
+    line-height: 101px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(96, 96, 96);
+}
+
+.liked-vids-container {
+    background: #f1f1f1;
+    margin-left: 10px;
+    padding-top: 10px;
+    
+    min-height: 749px;
+
+}
+
+.liked-vids-info {
+    margin-left: 8px;
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    width: 696px;
+}
+
+.playlist-vid-title{
+    font-size: 16px;
+}
+
+.playlist-vid-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(3, 3, 3);
+    margin-bottom: 8px;
+    font-family: 'Roboto';
+    line-height: 20px;
+}
+
+.playlist-vid-uploader {
+    font-size: 13px;
+    line-height: 18px;
+    color: rgb(96,96,96);
+}

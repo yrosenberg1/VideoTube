@@ -4,6 +4,7 @@ import UploadVideo from './upload_video';
 
 import {uploadVideo} from '../../actions/video_actions'
 import {openModal, closeModal} from '../../actions/modal_actions';
+import {createView} from '../../actions/view_actions';
 const mSTP = (state, ownProps) => {
     
     return {
@@ -18,7 +19,8 @@ const mDTP = dispatch => {
     return {
         uploadVideo: video => dispatch(uploadVideo(video)),
         openModal: modal => dispatch(openModal(modal)),
-        closeModal: () => dispatch(closeModal())  
+        closeModal: () => dispatch(closeModal()),
+        createView: view => dispatch(createView(view))  
     }
 };
 

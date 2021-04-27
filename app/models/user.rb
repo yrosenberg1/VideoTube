@@ -42,6 +42,9 @@ class User < ApplicationRecord
     foreign_key: :uploader_id,
     class_name: :Video 
     
+    has_many :watched_videos,
+    foreign_key: :user_id,
+    class_name: :VideoHistory
 
     attr_reader :password
     after_initialize :ensure_session_token

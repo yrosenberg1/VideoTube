@@ -57,7 +57,7 @@ if (total === 0){
     }    
      slider = numLikes ? <li>  <input type="range" name="likes-slider" id="likes-slider" min="0" max="100" step="1" value={origRatio} readOnly /></li> : null 
 }
-debugger
+
         return (
             <>
                         <div onMouseEnter={this.showButtons} onMouseLeave={this.hideButtons} className='video-row-container'>
@@ -68,8 +68,9 @@ debugger
                          <div className='video-des'>{video.description}</div> 
                          </div>
                         <div className='video-hover-container'>
-                         <div><Link to={`/studio/video/${video.id}`}> <img src={window.create_hover} /></Link></div>
-                         <div> <img src={window.comment_hover} /></div>
+                         {/* <div><Link to={`/studio/video/${video.id}/`}> <img src={window.create_hover} /></Link></div> */}
+                         <div><Link to={`/studio/video/${video.id}/Details`}> <img src={window.create_hover} /></Link></div>
+                         <div><Link to={`/studio/video/${video.id}/Comments`}><img src={window.comment_hover} /></Link></div>
                          <div><Link to={`/videos/${video.id}` }> <img src={window.gray_youtube_logo_hover} /></Link></div>
                          <div onClick={this.deleteVideo}> <img src={window.delete_hover} /></div>
                        </div>

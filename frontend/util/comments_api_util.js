@@ -16,6 +16,14 @@ export const fetchComments = videoId => (
     })
 );
 
+export const fetchUserComments = user_id => (
+    $.ajax({
+        method: 'GET',
+        url: `api/comments/`,
+        data: {user_id}
+
+    })
+);
 export const createComment = (videoId, comment) => (
     $.ajax({
         method: 'POST',

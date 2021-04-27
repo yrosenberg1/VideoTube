@@ -4,6 +4,7 @@ json.timestamp comment.date_modifier
 json.date comment.date_format
 json.likes comment.filter_likes
 json.dislikes comment.filter_dislikes
+json.video comment.video
 json.replies comment.reply_comments.each do |reply|
     
     json.extract! reply, :video_id, :commenter_id, :parent_comment_id, :comment_body, :id

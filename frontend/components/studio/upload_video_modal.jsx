@@ -29,10 +29,11 @@ function UploadVideoModal({modal, closeModal, video}){
             break;
 
             case "deleteVideo":
-                debugger
+                
                 component = <DeleteVideoContainer />
                 break
         default:
+          
             return null;
     }
     

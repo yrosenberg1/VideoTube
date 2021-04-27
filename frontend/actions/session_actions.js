@@ -27,7 +27,7 @@ export const signup = user => dispatch =>{
     SessionApiUtil.signup(user).then(user =>{
         // console.log(user)
         return dispatch(receiveCurrentUser(user))},
-    error =>{
+    error => {
         
         // console.log(error.responseJSON)
         const test = receiveErrors(error.responseJSON)

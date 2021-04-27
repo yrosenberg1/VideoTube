@@ -118,7 +118,7 @@ class CommentItem extends React.Component {
     }
 
     handleDislikeComment(){
-        debugger
+        
         let {comment} = this.props
      
         const commentLikesArray = comment.likes.map(like => {
@@ -196,9 +196,9 @@ class CommentItem extends React.Component {
                     <li className='name-li'><p>{comment.commenter.first_name} {comment.commenter.last_name} </p><p className='date-p'>  {comment.timestamp} ago</p></li></div>
                     <p className='comment-body'> {comment.comment_body}</p>
                     <ul className='comment-user-interact'>
-                    <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i> {comment.likes.length !== 0 ? comment.likes.length : null}</button></li>
-                    <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</button></li>
-                    <li ><button onClick={this.openReplies}>REPLY</button></li> </ul>
+                    <li><button onClick={() => this.handleLikeComment()}>  <img src={window.grayThumbsUp}/> <p>{comment.likes.length !== 0 ? comment.likes.length : null}</p></button></li>
+                    <li><button onClick={() => this.handleDislikeComment()}>  <img src={window.grayThumbsDown}/> <p>{comment.dislikes.length !== 0 ? comment.dislikes.length : null}</p></button></li>
+                    <li ><button onClick={this.openReplies}>reply</button></li> </ul>
                     <div>
                     <form className='reply-comment-form' onSubmit={this.handleSubmit}>
                        <div className='textarea-wrapper'>
@@ -215,7 +215,7 @@ class CommentItem extends React.Component {
                             <br/>
                           <div className= 'reply-comment-buttons'>
                             <button type="button" onClick={this.closeReplies} className='comment-cancel-button'>Cancel</button>
-                            <button type="submit" className={text.length ? 'active-button' : 'comment-submit'}>Comment</button>
+                            <button type="submit" className={text.length ? 'active-button' : 'comment-submit'}>Reply</button>
                             </div>
                     </form></div>
                     {replyButton}

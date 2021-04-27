@@ -159,8 +159,8 @@ class ReplyCommentItem extends React.Component {
                <div>     <li className='name-li'><p>{comment.commenter.first_name} {comment.commenter.last_name} </p><p className='date-p'>{comment.timestamp} ago</p></li>
                     <p className="comment-body"> {comment.comment_body}</p>
                    <ul className='reply-user-interact'>
-                    <li><button onClick={() => this.handleLikeComment()}>  <i className="far fa-thumbs-up"> </i> {comment.likes.length !== 0 ? comment.likes.length : null}</button></li>
-                    <li><button onClick={() => this.handleDislikeComment()}>  <i className="far fa-thumbs-down"> </i> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</button></li>
+                    <li><button onClick={() => this.handleLikeComment()}>  <img src={window.grayThumbsUp}/><p>{comment.likes.length !== 0 ? comment.likes.length : null}</p></button></li>
+                    <li><button onClick={() => this.handleDislikeComment()}> <img src={window.grayThumbsDown}/><p> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</p></button></li>
                     <li><button  onClick={this.openReplies}>REPLY</button></li></ul> </div></div>
                     <div>
                     <form className='reply-comment-form' onSubmit={this.handleSubmit}>
@@ -178,7 +178,7 @@ class ReplyCommentItem extends React.Component {
                             <br/>
                           <div className= 'reply-comment-buttons'>
                             <button type="button" onClick={this.closeReplies} className='comment-cancel'>Cancel</button>
-                            <button className={text.length ? 'active-button' : 'comment-submit'}>Comment</button>
+                            <button className={text.length ? 'active-button' : 'comment-submit'}>Reply</button>
                             </div>
                     </form></div>
                     {/* {this.replyButton()} */}

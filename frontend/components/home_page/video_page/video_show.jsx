@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../nav_bar/nav_bar';
 import CommentContainer from '../../comments/comment_container';
 import SideLinksContainer from './../side_links/side_links_container';
+import { addView } from '../../../util/views_api_util';
 
 class VideoShow extends React.Component{
     constructor(props){
@@ -11,6 +12,7 @@ class VideoShow extends React.Component{
 
         this.handleLike = this.handleLike.bind(this)
         this.handleDislike = this.handleDislike.bind(this)
+        this.addView = this.addView.bind(this)
     }
 
     componentDidMount(){
@@ -38,6 +40,15 @@ class VideoShow extends React.Component{
     //         )
     //     })
     // }
+
+    addView(){
+        let view = {
+            video_id: this.props.videoId
+        }
+
+        this.props.addView(view)
+        debugger
+    }
 
     handleLike(){
         
@@ -120,21 +131,23 @@ class VideoShow extends React.Component{
              <div className='video-show-main-container'>
               <div className='video-body'>
                 <div><img className='video-screen' src={window.youtube_one} /></div>
+                
+                 {/* <div>
+                     <video onPlay={this.addView} className='video-screen' controls>
+                         <source src={video.videoUrl} type='video/mp4'/></video>
+                 </div> */}
                 <div>
                     <div className='video-main-details'>
-                        {/* supposed to have 4 child divs: 
-                        1.video title 
-                        2. likes and other video info 
-                        2.uploader info
-                        3. comments */}
+                        
                         <div className='video-info-render'>
                         <div  className='video-main-title'><p> {video.title}</p></div>
                         <div className='video-user-interactions'>
                             <ul className='video-views'>
-                        <li> {video.views} views {'\u2022'} {string[0].slice(0,3) + " " + string[1] + " " + string[2]}</li>
-                        
-                        <li><button onClick={() => this.handleLike()}>  <i className="fas fa-thumbs-up"> </i> {video.likes.length}</button></li>
-                        <li><button onClick={() => this.handleDislike()}>  <i className="fas fa-thumbs-down"> </i> {video.dislikes.length}</button></li>
+                             <div><li> {video.views} views {'\u2022'} {string[0].slice(0,3) + " " + string[1] + " " + string[2]}</li></div>
+                        <div className='commments-handler-container'>
+                        <li><button onClick={() => this.handleLike()}>  <img src={window.grayThumbsUp}/> <p> {video.likes.length}</p></button></li>
+                        <li><button onClick={() => this.handleDislike()}>   <img src={window.grayThumbsDown}/><p> {video.dislikes.length}</p></button></li>
+                        </div>
                         </ul>
 
                         </div>

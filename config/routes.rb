@@ -3,8 +3,15 @@
 #                    Prefix Verb   URI Pattern                                                                              Controller#Action
 #                      root GET    /                                                                                        static_pages#root
 #                 api_users POST   /api/users(.:format)                                                                     api/users#create {:format=>"json"}
+#                 api_views POST   /api/views(.:format)                                                                     api/views#create {:format=>"json"}
+#                  api_view PATCH  /api/views/:id(.:format)                                                                 api/views#update {:format=>"json"}
+#                           PUT    /api/views/:id(.:format)                                                                 api/views#update {:format=>"json"}
+#              api_comments GET    /api/comments(.:format)                                                                  api/comments#index {:format=>"json"}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>"json"}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>"json"}
+#            api_video_view GET    /api/videos/:video_id/views/:id(.:format)                                                api/views#show {:format=>"json"}
+#                           PATCH  /api/videos/:video_id/views/:id(.:format)                                                api/views#update {:format=>"json"}
+#                           PUT    /api/videos/:video_id/views/:id(.:format)                                                api/views#update {:format=>"json"}
 #         search_api_videos GET    /api/videos/search(.:format)                                                             api/videos#search {:format=>"json"}
 #    api_video_comment_like POST   /api/videos/:video_id/comments/:comment_id/like(.:format)                                api/comments#like {:format=>"json"}
 # api_video_comment_dislike POST   /api/videos/:video_id/comments/:comment_id/dislike(.:format)                             api/comments#dislike {:format=>"json"}
@@ -39,9 +46,12 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     resources :users, only: [:create]
+    resources :views, only: [:create, :update]
+     resources :comments, only: [:index]
     resource :session, only: [:create, :destroy]
     # resources :comments, only: [:create, :destroy, :update, :index]
     resources :videos, only: [:create, :destroy, :update, :index, :show] do 
+       resources :views, only: [:show, :update]
       collection do
         get 'search'
       end
@@ -56,7 +66,7 @@ Rails.application.routes.draw do
       post :dislike, to: 'videos#dislike', as: 'dislike'
       post :undo, to: 'videos#undo', as: 'undo'
       post :change, to: 'videos#change', as: 'change'
-     
+      
     end
     end
   

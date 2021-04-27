@@ -4,14 +4,24 @@ import StudioNavBarContainer from './studio_navbar_container';
 import StudioSideContainer from './studio_side_container';
 import StudioMainContainer from './studio_main_container';
 import UploadVideoModal from './upload_video_modal';
+import StudioChannelCommentsContainer from './studio_channel_comments_container';
 
 class StudioManager extends React.Component {
 
     constructor(props){
         super(props);
-      
+        this.state ={
+            component: "Content"
+        }
+     this.handleToggle = this.handleToggle.bind(this);
     };
 
+    handleToggle(component){
+       
+            this.setState({component:component})
+    debugger
+   }
+    
     componentDidMount(){
         
         document.body.classList.add('modal-open-scroll');
@@ -31,8 +41,8 @@ class StudioManager extends React.Component {
             <div>
                 <StudioNavBarContainer />
                 <div className='side-main-container'>
-                    <StudioSideContainer />
-                    <StudioMainContainer />
+                    <StudioSideContainer buttonSwitch={this.handleToggle} />
+                { this.state.component === "Content" ? <StudioMainContainer /> : <StudioChannelCommentsContainer /> }
                 </div>
                 
                 <UploadVideoModal />

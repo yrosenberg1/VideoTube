@@ -44,12 +44,30 @@ export const fetchUserVideos = userId => dispatch => {
         
     )
 };
+export const fetchUserLikedVideos = userId => dispatch => {
+    return VideoApiUtil.fetchUserLikedVideos(userId).then(
+        videos => {  
+            return dispatch(receiveVideos(videos))},
+        errors => { return errors}
+
+        
+    )
+};
+export const fetchUserWatchedVideos = userId => dispatch => {
+    return VideoApiUtil.fetchUserWatchedVideos(userId).then(
+        videos => {  
+            return dispatch(receiveVideos(videos))},
+        errors => { return errors}
+
+        
+    )
+};
 
 export const fetchSearchVideos = keyword => dispatch => {
     return VideoApiUtil.fetchSearchVideos(keyword).then(
         videos => {
             return dispatch(receiveVideos(videos))},
-            erros => { return errors}
+            errors => { return errors}
         
     )
 }; 

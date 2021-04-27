@@ -4,10 +4,20 @@ import {Link} from 'react-router-dom';
 class StudioSide extends React.Component {
     constructor(props){
         super(props)
+
+        this.sideBtns = this.sideBtns.bind(this);
+    }
+
+    sideBtns(e){
+        debugger
+        e.preventDefault();
+        e.target.parentElement.parentElement.childNodes.forEach( node => { node.classList.remove('selected-button')})
+        e.target.parentElement.classList.add('selected-button')
+        this.props.buttonSwitch(e.target.innerText)
     }
 
     render(){
-        debugger
+        
         let {user} = this.props;
         return (
         <div className='studio-side-container'>
@@ -20,8 +30,9 @@ class StudioSide extends React.Component {
             </div>
 
             <div className='studio-side-buttons'>
-             <div><p>Content</p></div>
-             <div><p>Comments</p></div>
+             {/* <div className='selected-button' onClick={this.sideBtns}><p> <i className="fas fa-pen"></i> Content</p></div> */}
+             <div className='selected-button' onClick={this.sideBtns}><p> <i className="fas fa-pen"></i>Content</p></div>
+             <div onClick={this.sideBtns}><p> <i className="far fa-comment-alt"></i>Comments</p></div>
              {/* <div><p>Playlists</p></div> */}
             </div>
         </div>

@@ -61,4 +61,11 @@ class Comment < ApplicationRecord
       def reply_comments
         self.replies
       end
+
+      def video
+        
+        @video = Video.find(self.video_id)
+       
+        
+    end
 end

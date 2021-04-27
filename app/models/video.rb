@@ -5,7 +5,6 @@
 #  id          :bigint           not null, primary key
 #  description :string           not null
 #  title       :string           not null
-#  views       :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  uploader_id :integer          not null
@@ -19,8 +18,8 @@
 
 class Video < ApplicationRecord
     include ActionView::Helpers::DateHelper
-    validates :uploader_id, :title, :description, :views, presence: true
-    # validate :ensure_video
+    validates :uploader_id, :title, :description, presence: true
+    validate :ensure_video
 
     belongs_to :uploader,
     primary_key: :id,
@@ -32,14 +31,23 @@ class Video < ApplicationRecord
     foreign_key: :video_id,
     class_name: :Comment
 
+    has_many :watched,
+    foreign_key: :video_id,
+    class_name: :VideoHistory
+
+    has_one :view,
+    foreign_key: :video_id,
+    class_name: :View
+
     has_many :likes, as: :likeable
 
     has_one_attached :video
 
-# def ensure_video
-#   unless self.video.attached?
-#     errors[:video] << "must be attached"
-# end
+def ensure_video
+  unless self.video.attached?
+    errors[:video] << "must be attached"
+  end
+end
 
 def date_modifier
   
@@ -53,8 +61,11 @@ end
 
 
 
-def add_views
-  self.views += 1
+def views
+  if !self.view
+    View.create({video_id:self.id})
+  end
+  self.view.num_views 
 end
 
 def filter_likes

@@ -25,10 +25,22 @@ class Api::CommentsController < ApplicationController
     def index 
         
         if params[:video_id]
+            
             video_comments = Video.find(params[:video_id]).comments
         @comments = video_comments
         
         render 'api/comments/index'
+        elsif params[:user_id]
+            
+            user_comments = User.find(params[:user_id]).comments
+            
+            @comments = user_comments
+            
+             
+        render 'api/comments/index'
+     
+      
+            
         else 
             render json: @comments.errors.full_messages, status: 422
         end
@@ -66,7 +78,7 @@ class Api::CommentsController < ApplicationController
         end
     end
 
-    def undo
+def undo 
         @like = Like.find_by(liker_id: current_user.id, likeable_id: params[:comment_id], likeable_type: "Comment")
         
         if @like.delete

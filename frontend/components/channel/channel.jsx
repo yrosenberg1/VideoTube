@@ -120,8 +120,9 @@ class Channel extends React.Component {
 
     buttonValues(e){
         e.preventDefault();
-        e.target.parentElement.childNodes.forEach( node => { node.classList.remove('selected-button')})
-        e.target.classList.add('selected-button')
+        
+        e.target.parentElement.childNodes.forEach( node => { node.classList.remove('channel-selected-button')})
+        e.target.classList.add('channel-selected-button')
         
         switch (e.currentTarget.value) {
             case 'HOME':

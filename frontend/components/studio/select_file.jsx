@@ -13,6 +13,7 @@ class SelectFile extends React.Component{
         
         this.input = React.createRef();
         this.handleVideoFile = this.handleVideoFile.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     };
     
   
@@ -37,7 +38,9 @@ class SelectFile extends React.Component{
         
     }
 
-    
+    closeModal(){
+        this.props.closeModal()
+    }
     render(){
         console.log(this.state);
         
@@ -55,7 +58,9 @@ class SelectFile extends React.Component{
                 <div className='modal-content'>
                     <div className='modal-header'>
                         <h2>Upload Videos</h2>
-                        <span className='close-btn'>  <img src={window.close_svg}/></span>
+                        <span className='close-btn' onClick={this.closeModal}> 
+                         {/* <img src={window.close_svg}/> */}
+                         <i className="fas fa-times"></i></span>
                     </div>
                     <div className='modal-body'>
                      <label htmlFor="file-upload">   <div className='upload-img'> <img src={window.large_file_upload} /></div></label>

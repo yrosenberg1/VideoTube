@@ -40,6 +40,16 @@ export const fetchComments = videoId => dispatch => {
         
         )
 };
+export const fetchUserComments = userId => dispatch => {
+    return (
+        CommentApiUtil.fetchUserComments(userId).then (
+        comments => {
+            
+            return dispatch(receiveComments(comments))},
+            error => {return error })
+        
+        )
+};
 
 
 export const createComment = (videoId, comment) => dispatch => {

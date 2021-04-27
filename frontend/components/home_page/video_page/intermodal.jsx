@@ -1,48 +1,48 @@
-import React from 'react';
-import UploadVideoModal from './upload_video_modal';
+// import React from 'react';
+// import UploadVideoModal from './upload_video_modal';
 
-class InterModal extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            show: true
-        }
-}
+// class InterModal extends React.Component{
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             show: true
+//         }
+// }
 
-componentDidMount(){
-    // this.props.closeModal()
+// componentDidMount(){
+//     // this.props.closeModal()
     
     
-    //  return (
-    // //   <UploadVideoModal video={this.props.videoInfo} modal={"uploadVideo"} /> 
-    //  )
+//     //  return (
+//     // //   <UploadVideoModal video={this.props.videoInfo} modal={"uploadVideo"} /> 
+//     //  )
 
-}
+// }
 
-closeModal(){
-    this.setState({show: null})
-}
+// closeModal(){
+//     this.setState({show: null})
+// }
 
 
-componentWillUnmount(){
-    debugger
-}
-render(){
+// componentWillUnmount(){
+//     debugger
+// }
+// render(){
     
     
-if (!this.state.show) {return null } else {
-debugger
-return (
+// if (!this.state.show) {return null } else {
+// debugger
+// return (
         
-    <div className='modal-background' onClick={this.closeModal}>
+//     <div className='modal-background' onClick={this.closeModal}>
 
-          {/* <UploadVideoModal video={this.props.videoInfo} /> */}
+//           {/* <UploadVideoModal video={this.props.videoInfo} /> */}
   
-    </div>
-    )
-}
+//     </div>
+//     )
+// }
 
-}
+// }
 
-}
-export default InterModal;
+// }
+// export default InterModal;

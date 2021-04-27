@@ -3,7 +3,7 @@ class Api::VideosController < ApplicationController
     def create 
         
         @video = Video.new(video_params)
-
+      
         if @video.save
             render 'api/videos/show'
         else 
@@ -32,7 +32,15 @@ class Api::VideosController < ApplicationController
 
     def index 
         
-        if params[:userId]
+        if params[:userId] && (params["likes"] == "vids")
+            liked_vids = Like.where(["like_dislike = ? and liker_id = ? and likeable_type = ?","true", params[:userId], "Video"])
+            @videos = liked_vids.map {|like| like.likeable}
+            
+        elsif params[:userId] && (params["watched"] == "vids")   
+          watched_vids = User.find(params[:id]).watched_videos
+          @videos = watched_vids.map {|watch| watch.video}
+          
+        elsif params[:userId]
             
             @videos = Video.where("uploader_id": params[:userId])
         else
@@ -46,8 +54,7 @@ class Api::VideosController < ApplicationController
 
     def show
         @video = Video.find(params[:id])
-      if @video.add_views
-        @video.save
+      if @video
         render 'api/videos/show'
       else
         render json: @video.errors.full_messages, status: 422
@@ -107,6 +114,6 @@ class Api::VideosController < ApplicationController
 
     private
     def video_params
-        params.require(:video).permit(:uploader_id,:title, :description, :views, :video)
+        params.require(:video).permit(:uploader_id,:title, :description, :video)
     end
 end
