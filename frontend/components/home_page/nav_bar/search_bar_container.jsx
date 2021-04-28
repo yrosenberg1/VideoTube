@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router';
 import SearchBar from './search_bar';
-import {fetchSearchVideos} from './../../../actions/video_actions'
+import {fetchSearchVideos, fetchVideos} from './../../../actions/video_actions'
 
 
 
@@ -15,7 +15,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchSearchVideos: search => dispatch(fetchSearchVideos(search))
+        fetchSearchVideos: search => dispatch(fetchSearchVideos(search)),
+        fetchVideos: () => dispatch(fetchVideos())
     }
 }
     
