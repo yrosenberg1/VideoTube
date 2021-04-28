@@ -1,0 +1,46 @@
+.side-bar-video-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.side-links-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 240px;
+  margin-top: 16px;
+  margin-right: 5px;
+  margin-top: 56px;
+  position: fixed;
+  background: white;
+  height: 100%;
+}
+
+.nav-bar-container {
+  height: 56px;
+}
+
+.video-index-container {
+  background-color: #f9f9f9;
+  width: 1663px;
+  height: 1350px;
+  margin-top: 16px;
+  padding-top: 24px;
+  padding-left: 80px;
+  padding-bottom: 24px;
+  padding-right: 80px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 56px;
+  margin-left: 245px;
+}
+/*# sourceMappingURL=homepage.css.map */

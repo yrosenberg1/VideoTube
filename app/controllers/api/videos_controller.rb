@@ -63,6 +63,7 @@ class Api::VideosController < ApplicationController
     end
 
     def search
+        
         @videos = Video.where("title LIKE ?", "%" + params[:keyword] + "%")
         
         render 'api/videos/index'

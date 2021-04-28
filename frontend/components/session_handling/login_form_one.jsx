@@ -66,7 +66,7 @@ class LogInFormOne extends React.Component{
 
                 
                <p className='demo-mode-text'> Use Demo Mode to Sign In with a demo account.
-               <button className='demo-button' onClick={() => this.props.demo()}> Demo Mode </button></p>
+               <button className='demo-button' type='submit' onClick={() => this.props.demo()}> Demo Mode </button></p>
                
                <div className='login-button-link'>
                  <Link className='signup-form-link' to='/signup'> Create account </Link>

@@ -18,9 +18,14 @@ class SearchBar extends React.Component{
 
         handleSubmit(e){
             e.preventDefault();
-            console.log('click search button')
+        
             this.props.fetchSearchVideos(this.state.search)
-            this.setState({search : ""})
+            .then((this.props.history.push(`/search/${this.state.search}`)))
+            .then(this.setState({search : ""}))
+          
+          
+            // this.props.history.push(`/search/${this.state.search}`)
+            // this.setState({search: ""})
         }
 
       
@@ -29,13 +34,15 @@ class SearchBar extends React.Component{
             <div>
                  <form onSubmit={this.handleSubmit} className='search-bar-form'>
             <input className='search-bar-input'
-                   type='text'
+                   type='search'
                    placeholder='Search'
                    value={this.state.search}
                    onChange={this.handleSearch} />
                      <button className='search-bar-button'> <i className="fas fa-search"></i> </button>
                      </form>   
-
+                    <div className='search-bar-dropdown'>
+                        
+                    </div>
 
             </div>
         )

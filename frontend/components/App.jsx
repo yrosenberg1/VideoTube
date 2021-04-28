@@ -10,6 +10,7 @@ import ChannelContainer from './channel/channel_container';
 import StudioManagerContainer from './studio/studio_manager_container';
 import StudioEditVideoContainer from './studio/edit_video_container';
 import PlayListContainer from './home_page/video_page/playlist_container';
+import SearchItemContainer from './home_page/video_page/search_item_container';
 const App = () => (
     <div>
         {/* <Switch>
@@ -19,6 +20,7 @@ const App = () => (
          <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />  
         <Route exact path="/videos/:id" component={VideoShowContainer} />
+        <Route exact path="/search/:query" component={SearchItemContainer} />
         <ProtectedRoute exact path="/channel/:id" component={ChannelContainer} />
         <ProtectedRoute exact path="/channel/:id/videos/upload" component={StudioManagerContainer} />
         <ProtectedRoute exact path="/studio/video/:id/:component" component={StudioEditVideoContainer} />

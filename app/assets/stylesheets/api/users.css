@@ -1,0 +1,317 @@
+body {
+  font-family: 'Roboto';
+}
+
+.signup-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Roboto';
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-in-form {
+  border: 1px solid lightgray;
+  margin-top: 100px;
+  display: block;
+  height: 500px;
+  width: 448px;
+  padding-left: 40px;
+  padding-top: 48px;
+  padding-right: 40px;
+  padding-bottom: 36px;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.google-img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-text-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 80px;
+  width: 370px;
+}
+
+.signup-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.signup-form-logo {
+  height: 40px;
+}
+
+.signup-form-header {
+  margin-left: 10px;
+  font-size: 24px;
+  min-height: 10px;
+  font-family: 'Roboto';
+  font-weight: 500;
+}
+
+.signup-form-subheader {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 14px;
+  font-family: 'Roboto';
+}
+
+.signup-form-input {
+  margin-left: 7px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+  height: 34px;
+  width: 352px;
+  padding: 7px 9px 7px 9px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.signup-form-name {
+  border-radius: 5px;
+  border: 1px solid gray;
+  height: 20px;
+  width: 153px;
+  padding: 6px 8px 6px 8px;
+}
+
+.signup-form-link {
+  text-decoration: none;
+  color: #1a73e8;
+  white-space: nowrap;
+  width: 110px;
+  line-height: 1.4286;
+  margin: 8px;
+  text-transform: none;
+  font-weight: 500;
+  font-family: 'Roboto','Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+}
+
+.signup-form-button {
+  background-color: #1a73e8;
+  height: 30px;
+  width: 90px;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.signup-form-button:hover {
+  background-color: #165ebd;
+}
+
+.signup-button-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 50px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: 'Roberto';
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form-header {
+  font-size: 26px;
+  min-height: 10px;
+  margin: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+  font-family: 'Roboto','Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.sign-in-greeting {
+  font-size: 26px;
+  min-height: 10px;
+  margin: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+  font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+
+.login-form-subheader {
+  font-size: 16px;
+  margin: 25px;
+  margin-top: -11px;
+  font-weight: lighter;
+  text-align: center;
+  padding-top: 8px;
+  line-height: 1.5;
+  letter-spacing: .1px;
+  font-weight: 400;
+  font-family: 'Roboto','Noto Sans Myanmar UI',arial,sans-serif;
+}
+
+.signup-form-input-section {
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: block;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 0px;
+  height: 28px;
+  width: 336px;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 16px;
+  margin: 1px 1px 0 1px;
+  padding: 13px 15px;
+}
+
+.signup-form-input-section:focus {
+  border: 1px solid #1a73e8;
+}
+
+.demo-mode-text {
+  margin: 25px;
+  color: #5f6368;
+  font-size: 14px;
+  line-height: 1.4286;
+  font-family: 'roboto','Noto Sans Myanmar UI',arial,sans-serif;
+}
+
+.sign-in-greeting {
+  font-size: 24px;
+  margin-top: 25px;
+  margin-left: 0px;
+  margin-bottom: 70px;
+}
+
+.name-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 24px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: 4px;
+}
+
+.google-ltr-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  /* margin-top: 90px; */
+  height: 501px;
+}
+
+.before-password {
+  margin-left: 0px;
+}
+
+.login-button-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  margin-left: -15px;
+  padding: 20px 10px 20px 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.login-form-link {
+  text-decoration: none;
+  color: #1a73e8;
+  font-family: 'Roboto';
+}
+
+.placeholder-space {
+  height: 100px;
+  width: 100px;
+}
+
+.sign-up-form {
+  margin-top: 30px;
+  display: block;
+  height: 445px;
+  width: 668px;
+  padding-top: 48px;
+  padding-right: 40px;
+  padding-bottom: 36px;
+  padding-left: 40px;
+  border: #ccc9c9 1px solid;
+  border-radius: 4px;
+}
+
+.errors {
+  text-align: center;
+  color: red;
+  margin-top: 3px;
+  width: 300px;
+  font-family: 'Roboto';
+}
+
+.signup-errors {
+  text-align: center;
+  color: red;
+  width: 300px;
+  margin-top: -50px;
+}
+
+.demo-button {
+  font-family: 'roboto','Noto Sans Myanmar UI',arial,sans-serif;
+  border-radius: 4px;
+  color: #1a73e8;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: .25px;
+  margin-left: -7px;
+}
+/*# sourceMappingURL=users.css.map */

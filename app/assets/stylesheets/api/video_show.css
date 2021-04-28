@@ -1,0 +1,125 @@
+.video-show-main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.video-show-body {
+  background-color: #f9f9f9;
+  margin-top: 16px;
+  padding-left: 100px;
+  margin-top: 56px;
+  margin-left: 245px;
+  padding-top: 10px;
+}
+
+.video-screen {
+  width: 1280px;
+  height: 715px;
+}
+
+.video-views {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.video-views li {
+  font-size: 14px;
+  line-height: 21px;
+  color: #606060;
+}
+
+.video-uploader-info {
+  height: 168px;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.video-uploader-info i {
+  font-size: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+  width: 48px;
+}
+
+.video-main-title {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.video-info-render {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px 0 0 0;
+  line-height: 30px;
+}
+
+.video-profile-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 12px;
+}
+
+.video-uploader-name {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  padding-top: 17px;
+}
+
+.video-description {
+  margin-left: 64px;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.right-side-container {
+  width: 254px;
+  background-color: #f9f9f9;
+}
+
+.commments-handler-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 200px;
+  padding-bottom: 10px;
+  border-radius: 1px;
+  border-bottom: 2px solid #cccccc;
+}
+
+.commments-handler-container li button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 65px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: gray;
+  font-size: 20px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=video_show.css.map */

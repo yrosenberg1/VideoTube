@@ -1,0 +1,296 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.modal {
+  background: white;
+  height: 841px;
+  width: 960px;
+  border-radius: 6px;
+  -webkit-box-shadow: black 0px 24px 38px 3px, black 0px 9px 46px 8px, black 0px 11px 15px -7px;
+          box-shadow: black 0px 24px 38px 3px, black 0px 9px 46px 8px, black 0px 11px 15px -7px;
+}
+
+.modal-header {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 920px;
+  padding-left: 24px;
+  padding-right: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 63px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.modal-body-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0px 48px;
+}
+
+.upload-img {
+  height: 136px;
+  width: 136px;
+  border-radius: 50%;
+  background-color: #ebebeb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.modal-body {
+  width: 706px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  padding-top: 16px;
+  padding-right: 24px;
+  padding-left: 16px;
+  padding-bottom: 24px;
+  margin-top: 211px;
+}
+
+p.drag-instruction {
+  margin-top: 23px;
+  margin-bottom: 48px;
+}
+
+p.copy-disclaimer {
+  margin-top: 225.5px;
+}
+
+#file-upload {
+  display: none;
+}
+
+.upload-title-container {
+  height: 81px;
+  width: 536px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 0px 12px;
+  padding-bottom: 11px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+.upload-description-container {
+  height: 152px;
+  width: 510px;
+  padding: 0px 12px;
+  padding-bottom: 11px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 24px;
+}
+
+.upload-modal-form-container {
+  width: 536px;
+  padding-right: 24px;
+}
+
+.upload-vid-form div .upload-modal-name {
+  margin-top: 8px;
+  margin-bottom: 3px;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #737373;
+}
+
+.upload-modal-count {
+  margin-bottom: 3px;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: end;
+  color: #737373;
+}
+
+form.upload-vid-form textarea {
+  border: none;
+  resize: none;
+  height: 33.5px;
+  width: 510px;
+  line-height: 24px;
+  padding: 1px 0px;
+  font-size: 16px;
+  font-family: 'Roboto';
+  outline: none;
+}
+
+form.upload-vid-form .desc-text {
+  width: 510px;
+  height: 112px;
+}
+
+.thumbnail-header-div {
+  height: 24px;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.thumbnail-upload-instruct {
+  font-family: 'Roboto', 'Noto', sans-serif;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 13px;
+  line-height: 20px;
+  padding-bottom: 6px;
+}
+
+.select-thumbnail-button {
+  padding: 0px 8px;
+  height: 68px;
+  width: 111px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-color: gray;
+  border: 1px dashed gray;
+  border-color: gray;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: #737373;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.select-thumbnail-button p {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.select-thumbnail-button:hover {
+  background-color: #eceaea;
+}
+
+.select-thumbnail-button:hover img, .select-thumbnail-button:hover p {
+  -webkit-filter: brightness(0.4);
+          filter: brightness(0.4);
+}
+
+input#thumb-file-upload {
+  display: none;
+}
+
+.upload-modal-footer {
+  height: 207px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.submit-btn-container {
+  height: 36px;
+  padding: 8px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.upload-form-submit-btn {
+  height: 36px;
+  width: 65px;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  background-color: #065fd4;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: 'Roboto';
+}
+
+.video-preview-container {
+  background: #f9f9f9;
+}
+
+.video-fileName p {
+  margin-top: 12px;
+  padding-left: 12px;
+  color: #707070;
+  font-size: 12px;
+}
+
+.video-fileName-title p {
+  font-size: 15px;
+  line-height: 24px;
+  color: #404040;
+}
+
+.close-btn {
+  cursor: pointer;
+}
+
+.close-btn i {
+  font-size: 24px;
+  color: #737373;
+}
+
+.close-btn:hover i {
+  color: black;
+}
+/*# sourceMappingURL=modal.css.map */
