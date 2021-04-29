@@ -381,7 +381,7 @@ border-bottom-right-radius: 3px;
 }
 
 .search-bar-dropdown {
-    height: 200px;
+    height: 188px;
     width: 574px;
     margin-left: 24px;
     background: white;
@@ -391,7 +391,7 @@ border-bottom-right-radius: 3px;
     margin-top: 2px;
     display: flex;
     flex-direction: column;
-
+    overflow: hidden;
     position: absolute;
     top: 49px;
     z-index: 41;

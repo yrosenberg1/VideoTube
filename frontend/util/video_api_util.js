@@ -76,7 +76,7 @@ export const fetchVideos = () => (
   )
 
   export const createWatchVideo = history => {
-    debugger
+    
     
       $.ajax({
           method: 'POST',

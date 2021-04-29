@@ -124,7 +124,7 @@ class VideoShow extends React.Component{
          
        }
        
-       debugger
+       
        const uploader = video.uploader
 
         return (

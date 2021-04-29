@@ -148,10 +148,10 @@ class CommentItem extends React.Component {
     }
 
     replyButton(){
-       debugger
+       
         
         let replies = this.props.comment.replies
-        debugger
+        
         
         // if (!replies.length){
             
