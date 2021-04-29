@@ -40,12 +40,11 @@ componentDidMount(){
             formData.append("video[title]", this.state.title);
             formData.append("video[uploader_id]", this.props.userId);
             formData.append("video[description]", this.state.description);
-            formData.append("video[views]", 0);
+            
             formData.append("video[video]", this.props.video.videoFile);
        
         this.props.uploadVideo(formData).then(
-        () => {  
-            return null}
+        () => this.props.closeModal()
         )
         //ap this.props.closeModal()
         
@@ -62,11 +61,10 @@ componentDidMount(){
 
         let {videoFile, videoUrl} = this.props.video
         const preview = videoUrl ? <video controls src={videoUrl} height='171' width='304'/> : null
-        (`videofile:${videoFile}`)
-        (`videourl:${videoUrl}`)
+       
         let title = videoFile.name;
         let trimTitle = title.split(".")[0];
-        (this.state)
+       
         
         return (
             <div className='modal'>

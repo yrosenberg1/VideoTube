@@ -5,6 +5,8 @@ class Api::VideosController < ApplicationController
         @video = Video.new(video_params)
       
         if @video.save
+            View.create({video_id: @video.id})
+            byebug
             render 'api/videos/show'
         else 
             render json: @video.errors.full_messages, status: 422
