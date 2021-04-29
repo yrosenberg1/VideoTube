@@ -12,7 +12,9 @@ class UserVideosItem extends React.Component{
         return (
           
         <div> <Link to={`/videos/${video.id}` }>
-            <li><img width='218' height="118"src={window.youtube_three} /></li>
+            {/* <li><img width='218' height="118"src={window.youtube_three} /></li> */}
+            <li> <video width='218' height="118">
+             <source src={video.videoUrl} type='video/mp4'/></video>  </li>
             <li className='user-vid-item-title'>{video.title}</li>
             <li className='user-vid-info'><span>{video.views} views </span> • <span>{video.timestamp} ago</span></li>
             </Link></div>

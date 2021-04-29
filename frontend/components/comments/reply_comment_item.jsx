@@ -49,7 +49,7 @@ class ReplyCommentItem extends React.Component {
             this.props.createComment(this.props.videoId, comment)
            
             this.setState({ text: "" })
-            // debugger
+            // 
         } else {
            
             this.props.history.push("/login")
@@ -140,6 +140,7 @@ class ReplyCommentItem extends React.Component {
 }
    
     render(){
+        
         let {comment} = this.props
         let name = comment.commenter
         
@@ -148,21 +149,22 @@ class ReplyCommentItem extends React.Component {
         let spaceLength = (text.length - string.length) * 0.5
         let stringLength = string.length 
         let row = ((spaceLength + stringLength) / 175) + 1
-        console.log(`row:${row}`)
-        console.log(`length:${this.state.text.length}`)
-        console.log(spaceLength)
-        console.log(stringLength)
-
+       
+        
         return (
             <div>
-           <div className='reply-container'><div> <li><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li> </div>
+           <div className='reply-container'>
+               <div> <li><button className='comment-thumbnail'>{comment.commenter.first_name[0]}</button></li> </div>
                <div>     <li className='name-li'><p>{comment.commenter.first_name} {comment.commenter.last_name} </p><p className='date-p'>{comment.timestamp} ago</p></li>
-                    <p className="comment-body"> {comment.comment_body}</p>
+                    <p className="reply-comment-body"> {comment.comment_body}</p>
                    <ul className='reply-user-interact'>
                     <li><button onClick={() => this.handleLikeComment()}>  <img src={window.grayThumbsUp}/><p>{comment.likes.length !== 0 ? comment.likes.length : null}</p></button></li>
                     <li><button onClick={() => this.handleDislikeComment()}> <img src={window.grayThumbsDown}/><p> {comment.dislikes.length !== 0 ? comment.dislikes.length : null}</p></button></li>
-                    <li><button  onClick={this.openReplies}>REPLY</button></li></ul> </div></div>
-                    <div>
+                    <li><button  onClick={this.openReplies}>REPLY</button></li>
+                    </ul> 
+               </div>
+            </div>
+            <div>
                     <form className='reply-comment-form' onSubmit={this.handleSubmit}>
                     <div className='textarea-wrapper'>
                         <textarea
@@ -174,7 +176,8 @@ class ReplyCommentItem extends React.Component {
                             placeholder="Add a public reply..."
                             >
 
-                            </textarea></div>
+                            </textarea>
+                    </div>
                             <br/>
                           <div className= 'reply-comment-buttons'>
                             <button type="button" onClick={this.closeReplies} className='comment-cancel'>Cancel</button>

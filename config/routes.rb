@@ -9,6 +9,7 @@
 #              api_comments GET    /api/comments(.:format)                                                                  api/comments#index {:format=>"json"}
 #               api_session DELETE /api/session(.:format)                                                                   api/sessions#destroy {:format=>"json"}
 #                           POST   /api/session(.:format)                                                                   api/sessions#create {:format=>"json"}
+# api_video_video_histories POST   /api/videos/:video_id/video_histories(.:format)                                          api/video_histories#create {:format=>"json"}
 #            api_video_view GET    /api/videos/:video_id/views/:id(.:format)                                                api/views#show {:format=>"json"}
 #                           PATCH  /api/videos/:video_id/views/:id(.:format)                                                api/views#update {:format=>"json"}
 #                           PUT    /api/videos/:video_id/views/:id(.:format)                                                api/views#update {:format=>"json"}
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     # resources :comments, only: [:create, :destroy, :update, :index]
     resources :videos, only: [:create, :destroy, :update, :index, :show] do 
+       resources :video_histories, only: [:create]
        resources :views, only: [:show, :update]
       collection do
         get 'search'
@@ -66,6 +68,7 @@ Rails.application.routes.draw do
       post :dislike, to: 'videos#dislike', as: 'dislike'
       post :undo, to: 'videos#undo', as: 'undo'
       post :change, to: 'videos#change', as: 'change'
+      
       
     end
     end

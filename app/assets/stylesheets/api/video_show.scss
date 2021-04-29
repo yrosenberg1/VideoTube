@@ -1,6 +1,10 @@
 .video-show-main-container{
     display: flex;
     flex-direction: row;
+
+    z-index: -3;
+    background: #f9f9f9;
+    position: relative;
 }
 
 .video-show-body{
@@ -10,11 +14,16 @@
     margin-top: 56px;
     margin-left: 245px;
     padding-top: 10px;
+
+    padding-right: 20px;    
+    z-index: -2;
+    position: absolute;
 }
 
 .video-screen{
     width: 1280px;
     height: 715px;
+    z-index: -1;
 }
 
 .video-views{

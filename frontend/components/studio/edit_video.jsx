@@ -62,7 +62,7 @@ class EditVideo extends React.Component{
             formData.append("video[description]", this.state.description);
             formData.append("video[views]", this.props.video.views);
             formData.append("video[video]", this.props.video.videoUrl);
-            console.log(formData)
+            (formData)
        
        
         
@@ -97,7 +97,7 @@ class EditVideo extends React.Component{
         let {comments} = this.props
         comments = Object.values(comments)
         if (!video){return null}
-        console.log(this.state)
+        (this.state)
         return(
             <div>
             <StudioNavBarContainer />
@@ -106,7 +106,8 @@ class EditVideo extends React.Component{
                     <div className='studio-content-btn'><Link to={`/channel/${this.props.userId}/videos/upload` }><img height="24px" width="24px" src={window.backArrowGray} /><p>Channel content</p></Link></div>
                     
                     <div className='video-edit-side-thumbnail-container'>
-                        <div className='video-edit-side'><img width='224' height='127' src={window.youtube_four} /></div>
+                        {/* <div className='video-edit-side'><img width='224' height='127' src={window.youtube_four} /></div> */}
+                        <div className='video-edit-side'>  <video width='224' height='127'><source src={video.videoUrl} type='video/mp4'/></video> </div>
                       <div className='video-edit-side-info'> 
                         <div>Your video</div>
                         <div className='vid-edit-title'>{video.title}</div>
@@ -166,7 +167,8 @@ class EditVideo extends React.Component{
                                         {/* <label htmlFor="upload-vid-form"><button type='submit' value={this.props.formType}>Publish</button></label> */}
                             </form></div>
                             <div className='edit-right-side-container'>
-                                <div><img width='352' height='198' src={window.youtube_four} /></div>
+                                <div><video width='352' height='198' key={video.videoUrl} controls>
+                         <source src={video.videoUrl} type='video/mp4'/></video></div>
                                 <div>Filename</div>
                             </div>
                                      </div>

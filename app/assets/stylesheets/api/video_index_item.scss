@@ -7,6 +7,7 @@
     margin-bottom: 40px;
     margin-left: 8px;
     margin-right: 8px;
+    cursor: pointer;
 
 }
 
@@ -70,10 +71,15 @@ width: 36px;
 }
 .row{
     display: flex;
+  
    
 }
 
 ul.video-index-search-flex {
     display: flex;
     flex-wrap: wrap;
+}
+
+video.video-thumbnail {
+    height: 202px;
 }

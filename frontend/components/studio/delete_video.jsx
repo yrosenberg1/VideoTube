@@ -47,7 +47,7 @@ class DeleteVideo extends React.Component{
             <div className='delete-modal-header'><p>Permanently delete this video?</p></div>
             <div className='delete-video-info-container'>
                 <div className='delete-video-main-container'>
-            <div className='delete-video-thumbnail-container'><img src={window.youtube_one} /></div>
+            <div className='delete-video-thumbnail-container'>  <video ><source src={video.videoUrl} type='video/mp4'/></video> </div>
             <div className='delete-vid-info'>
                 <li>{video.title}</li>
                 <li>published {video.timestamp} ago</li>

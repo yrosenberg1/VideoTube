@@ -21,9 +21,9 @@ class LogIn extends React.Component{
     }
 
     showDropDown(e) {
-        // debugger
+        // 
         e.preventDefault();
-        // console.log('clicked')
+        // ('clicked')
         if (this.state.showDropDown === false){
         this.setState({
             showDropDown: true}, () => {
@@ -90,6 +90,7 @@ class LogIn extends React.Component{
 
     handleSignOut(e){
         e.preventDefault();
+        document.removeEventListener('click', this.closeDropDown) ;
         this.props.logout();
     };
 
@@ -149,7 +150,7 @@ class LogIn extends React.Component{
     }
 
     render(){
-        // debugger
+        // 
         const loggedIn = this.props.currentUser ? this.userProfile() : this.loggedOut()
        
         return (

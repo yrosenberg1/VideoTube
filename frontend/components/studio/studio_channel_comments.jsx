@@ -21,12 +21,12 @@ render(){
             if(comment.parent_comment_id === null){
                 let video = comment.video
                 return (
-                    <div className='studio-channel-comments-container'>
+                    <div key={idx} className='studio-channel-comments-container'>
                     <ul className='studio-user-comments' key={idx}>
                          <StudioCommentItemContainer comment={comment} />
                     </ul>
                     <div className='studio-channel-comments-vid-container'>
-                        {/* <div>thumbnail</div> */}
+                      
                         <div>{video.title}</div>
                         <div>{video.description}</div>
                        
@@ -37,7 +37,7 @@ render(){
             }
         })
 //   
-   debugger
+   
     
     return (
         <div>

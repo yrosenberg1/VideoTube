@@ -76,7 +76,7 @@ class SignUpForm extends React.Component{
             this.setState({confirm : e.target.value})
         }
     render(){
-        // debugger
+        // 
         return (
            
             <div className='signup-div'>

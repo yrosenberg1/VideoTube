@@ -19,7 +19,7 @@ class StudioManager extends React.Component {
     handleToggle(component){
        
             this.setState({component:component})
-    debugger
+    
    }
     
     componentDidMount(){

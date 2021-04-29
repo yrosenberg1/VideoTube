@@ -74,3 +74,14 @@ export const fetchVideos = () => (
           url: `/api/videos/${videoId}`
       })
   )
+
+  export const createWatchVideo = history => {
+    debugger
+    
+      $.ajax({
+          method: 'POST',
+          url: `/api/videos/${history.video_id}/video_histories`,
+          data: {history}
+
+      })
+    }

@@ -10,8 +10,7 @@
 #
 # Indexes
 #
-#  index_video_histories_on_user_id   (user_id)
-#  index_video_histories_on_video_id  (video_id)
+#  index_video_histories_on_user_id_and_video_id  (user_id,video_id) UNIQUE
 #
 
 class VideoHistory < ApplicationRecord

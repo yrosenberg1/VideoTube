@@ -3,7 +3,7 @@ class Api::ViewsController < ApplicationController
     def create
         @view = View.new(views_params)
         if @view.save
-            byebug
+            render json: ["created a view"]
         else
             render json: @view.errors.full_messages, status: 422
         end
@@ -11,11 +11,11 @@ class Api::ViewsController < ApplicationController
 
     def update
         @view = View.find_by(video_id:params[:view][:video_id])
-        byebug
+        
         @view.num_views += 1
-        byebug
+        
         if @view.update(views_params)
-            byebug
+            
         else
             render json: @view.errors.full_messages, status: 422
         end

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Redirect from 'react-router-dom';
 class SearchBar extends React.Component{
     constructor(props){
         super(props)
@@ -9,7 +9,7 @@ class SearchBar extends React.Component{
             activeDrop: false
         }
 
-        // this.dropdownContainer = React.createRef();
+        this.form = React.createRef();
         this.showDropdown = this.showDropdown.bind(this);
         this.hideDropdown = this.hideDropdown.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
@@ -22,12 +22,18 @@ class SearchBar extends React.Component{
     }
     
     showDropdown(e){
-        this.setState({activeDrop: true})
+        this.setState({activeDrop: true}, () => {
+            document.addEventListener('click', this.hideDropdown)
+        })
         
     }
     hideDropdown(e){
-        this.setState({activeDrop: false})
-        
+
+        if (this.form.current.contains(e.target)) { return
+        } else {
+            
+        this.setState({activeDrop: false}, () => document.removeEventListener('click', this.hideDropdown))
+        }
     }
 
     selectVid(e){
@@ -37,12 +43,18 @@ class SearchBar extends React.Component{
         let videos = Object.values(this.props.videos)
         let video = videos.find(video => video.title === e.target.innerText)
         this.props.history.push(`/videos/${video.id}`)
+      
        
+    }
+
+    componentWillUnmount(){
+
+        document.removeEventListener('click', this.hideDropdown)
     }
 
         handleSearch(e){
             this.setState({search : e.target.value})
-            console.log(this.state.search)
+            (this.state.search)
         }
 
         handleSubmit(e){
@@ -68,7 +80,8 @@ class SearchBar extends React.Component{
        })
         return (
             <div>
-                 <form onFocus={this.showDropdown} onBlur={this.hideDropdown} onSubmit={this.handleSubmit} className='search-bar-form'>
+                 <form ref={this.form} onFocus={this.showDropdown} onSubmit={this.handleSubmit} className='search-bar-form'>
+            <div className='search-bar-form-input-container'>    
             <input className='search-bar-input'
                    type='search'
                    placeholder='Search'
@@ -76,12 +89,12 @@ class SearchBar extends React.Component{
                    onChange={this.handleSearch} 
                    />
                    
-                     <button className='search-bar-button'> <i className="fas fa-search"></i> </button>
-                     </form>   
+                 <button className='search-bar-button'> <i className="fas fa-search"></i> </button>
+                 </div>  
                   {this.state.activeDrop ? <div className='search-bar-dropdown'>
                         {dropdown}
                     </div> : null}
-
+                    </form>  
             </div>
         )
     }

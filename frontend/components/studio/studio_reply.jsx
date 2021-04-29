@@ -17,11 +17,11 @@ class StudioReplyItem extends React.Component{
 
     componentDidUpdate(prevProps){
         if (JSON.stringify(this.props.comment) !== JSON.stringify(prevProps.comment)){
-            debugger
+            
             this.props.fetchComments(this.props.videoId)
 
         }
-        debugger
+        
     }
     openReplies(e){
         
@@ -41,9 +41,9 @@ class StudioReplyItem extends React.Component{
     }
 
     handleLikeComment(){
-        debugger
+        
         let {comment} = this.props
-        debugger
+        
         const commentLikesArray = comment.likes.map(like => {
             return (
                 like.liker_id
@@ -121,7 +121,7 @@ class StudioReplyItem extends React.Component{
            
             this.setState({ text: "" })
             this.replyForm.current.style["display"] = "none"
-            // debugger
+            // 
         } else {
            
             this.props.history.push("/login")
@@ -132,7 +132,7 @@ class StudioReplyItem extends React.Component{
     }
     
     render(){
-        debugger
+        
         let {comment} = this.props;
         let commenter = comment.commenter;
         let numLikes = comment.likes.length === 0 ? null : comment.likes.length

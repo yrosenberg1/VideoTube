@@ -5,11 +5,11 @@
 //  export const likeVideo = videoId => dispatch => {
 //      return LikeApiUtil.likeVideo(videoId).then(
        
-//             video => { debugger
+//             video => { 
 //                 return  dispatch(receiveVideo(video))}
 //             //     ,
 //             // errors => {
-//             //     debugger 
+//             //      
 //             //     return errors}
 //      )
 //  };

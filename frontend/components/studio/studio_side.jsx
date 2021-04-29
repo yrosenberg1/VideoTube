@@ -9,7 +9,7 @@ class StudioSide extends React.Component {
     }
 
     sideBtns(e){
-        debugger
+        
         e.preventDefault();
         e.target.parentElement.parentElement.childNodes.forEach( node => { node.classList.remove('selected-button')})
         e.target.parentElement.classList.add('selected-button')

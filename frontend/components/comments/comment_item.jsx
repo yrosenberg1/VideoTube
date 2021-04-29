@@ -77,7 +77,7 @@ class CommentItem extends React.Component {
             this.props.createComment(this.props.videoId, comment)
            
             this.setState({ text: "" })
-            // debugger
+            // 
         } else {
            
             this.props.history.push("/login")
@@ -148,16 +148,16 @@ class CommentItem extends React.Component {
     }
 
     replyButton(){
-       
+       debugger
         
         let replies = this.props.comment.replies
-        
+        debugger
         
         // if (!replies.length){
             
         // return null 
         // } else {
-        //     debugger
+        //     
 
         //   return (
         //       <div className=''></div>

@@ -14,14 +14,16 @@ class VideoIndexItem extends React.Component{
         } 
        let video = this.props.video
        let uploader = video.uploader
-        // debugger
+        // 
         return (
             <div className='video-item-container'>
 
                 <div className='video-thumbail-container'>
                     <li className='video-item'>
                    
-                        <Link to={`/videos/${video.id}`} > <img src={window.youtube_one} className="video-thumbnail" /> </Link>
+                        {/* <Link to={`/videos/${video.id}`} > <img src={window.youtube_one} className="video-thumbnail" /> </Link> */}
+                        <Link to={`/videos/${video.id}`} >  <video key={video.videoUrl} className='video-thumbnail'>
+                         <source src={video.videoUrl} type='video/mp4'/></video> </Link>
                         </li>
                      
                 </div>

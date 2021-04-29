@@ -37,7 +37,9 @@ class Api::VideosController < ApplicationController
             @videos = liked_vids.map {|like| like.likeable}
             
         elsif params[:userId] && (params["watched"] == "vids")   
-          watched_vids = User.find(params[:id]).watched_videos
+            
+          watched_vids = User.find(params[:userId]).watched_videos
+          
           @videos = watched_vids.map {|watch| watch.video}
           
         elsif params[:userId]

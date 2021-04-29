@@ -95,7 +95,7 @@ class StudioNavBar extends React.Component{
                 <div className='studio-left-side'>
                   
                   
-                      <button className='studio-navbar-hamburger-button' onClick={() => console.log('hamburger clicked')}> 
+                      <button className='studio-navbar-hamburger-button' onClick={() => ('hamburger clicked')}> 
                       <i className="fas fa-bars"></i>  </button>
                 
                   

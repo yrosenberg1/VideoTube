@@ -42,7 +42,7 @@ class SelectFile extends React.Component{
         this.props.closeModal()
     }
     render(){
-        console.log(this.state);
+        (this.state);
         
         //    const preview = this.state.videoUrl ? <video src={this.state.videoUrl }/> : null
         

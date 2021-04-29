@@ -112,7 +112,7 @@ class StudioCommentItem extends React.Component {
         e.preventDefault();
 
         if (this.props.user){
-            debugger
+            
             let comment = {
                 video_id: this.props.videoId,
                 commenter_id: this.props.user.id,
@@ -128,7 +128,7 @@ class StudioCommentItem extends React.Component {
            
             this.setState({ text: "" })
             this.replyForm.current.style["display"] = "none"
-            // debugger
+            // 
         } else {
            
             this.props.history.push("/login")
@@ -147,7 +147,7 @@ let word = replies.length === 1 ? "reply" : "replies"
 let numLikes = comment.likes.length === 0 ? null : comment.likes.length
 
 let text = this.state.text
-debugger
+
         return (
             <div className='comment-section'>
                 <div className='comment-thread'>

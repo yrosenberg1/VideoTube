@@ -103,8 +103,14 @@
     line-height: 20px;
 }
 
-.playlist-vid-uploader {
+.playlist-vid-uploader, .playlist-video-description {
     font-size: 13px;
     line-height: 18px;
     color: rgb(96,96,96);
+    padding-bottom: 5px;
+}
+
+.like-vid-link video {
+    height: 67.15px;
+    width: 120px;
 }

@@ -5,7 +5,7 @@ import SearchIndex from './search_index';
 
 
 const msp = (state, ownProps) => {
-    debugger
+    
     return {
         videos: state.entities.videos
     }

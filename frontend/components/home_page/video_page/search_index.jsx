@@ -13,7 +13,7 @@ class SearchIndex extends React.Component{
     componentDidMount(){
         
        if (!Object.entries(this.props.videos).length){
-           debugger
+           
   this.props.fetchSearchVideos(this.props.match.params.query)
     }
     
@@ -46,7 +46,7 @@ class SearchIndex extends React.Component{
               
             )
         })
-        debugger
+        
         return (
             <div className='home-page-container'>
         < NavBar />

@@ -29,7 +29,7 @@ class Channel extends React.Component {
       }
 
     renderUserProfile(){
-        // debugger
+        // 
         let {user} = this.props
         return (
             <div className='main-user-profile-container'>

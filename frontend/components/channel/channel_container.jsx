@@ -5,7 +5,7 @@ import {fetchUserVideos} from "../../actions/video_actions";
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
+    // 
     return {
         userId: state.session.id,
         user: state.entities.users[ownProps.match.params.id],

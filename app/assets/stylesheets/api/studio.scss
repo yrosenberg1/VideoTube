@@ -916,6 +916,13 @@ textarea.edit-desc-text {
         color: #212121
     }
 }
+.video-thumbnail-container video {
+    height: 68px;
+}
 
-
+.delete-video-thumbnail-container video {
+    height: inherit;
+    // width: 120px;
+    // height: 68px;
+}
 

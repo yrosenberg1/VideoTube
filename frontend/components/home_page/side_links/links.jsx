@@ -45,34 +45,45 @@ class SideLinks extends React.Component {
             </ul>
             </Link></button>
 
+            {loggedIn ? (<button className='library'><Link to={`/channel/${this.props.currentUser.id}/videos/upload`} >
+            <ul className='links-ul'>
+           <li className='studio-link-li'> <img src={window.grayStudioIcon}></img></li>
+           
+           <li> <p className='library-text'>Your Videos</p></li>
+            </ul></Link></button>
+        ):(
+
             <button className='library'><Link to='/' >
             <ul className='links-ul'>
-           <li> <i className="fas fa-video"></i></li>
-           <li> <p className='library-text'>Library</p></li>
+            <li className='studio-link-li'> <img src={window.grayStudioIcon}></img></li>
+           <li> <p className='library-text'>Your Videos</p></li>
             </ul>
             </Link>
             </button>
-            
+            )}
         </div>
 
         <div className='history-likes-container'>
         
-            <Link className='history-link' to='/'>
+         { loggedIn ?   <Link className='history-link' to={`/video/playlist/${this.props.currentUser.id}/history`}>
             <ul className='links-ul'>
             <li>  <i className="fas fa-history"></i> </li>
             <li>  <p>History</p></li>
             </ul>
-               </Link>
+               </Link> : < Link className='history-link' to='/'>  <ul className='links-ul'>
+            <li>  <i className="fas fa-history"></i> </li>
+            <li>  <p>History</p></li>
+            </ul> </Link>}
 
-        { loggedIn ?  <Link className='likes-link' to={`/video/playlist/${this.props.currentUser.id}/`}>
+        { loggedIn ?  <Link className='likes-link' to={`/video/playlist/${this.props.currentUser.id}/likes`}>
         <ul className='links-ul'>
        <li> <i className="fas fa-thumbs-up"></i></li>
        <li><p>Liked videos</p></li>
         </ul>
-               </Link> :  <ul className='links-ul'>
+               </Link> : <Link className='likes-link' to='/'>  <ul className='links-ul'>
        <li> <i className="fas fa-thumbs-up"></i></li>
        <li><p>Liked videos</p></li>
-        </ul>}
+        </ul> </Link>}
        
         </div>
 

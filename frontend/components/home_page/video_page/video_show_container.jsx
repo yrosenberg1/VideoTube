@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import VideoShow from './video_show';
-import { fetchVideo } from '../../../actions/video_actions';
+import { fetchVideo, createWatchVideo } from './../../../actions/video_actions'
 import {likeVideo, dislikeVideo, undoLike, changeLike} from '../../../actions/video_actions';
 import {addView} from '../../../actions/view_actions';
 // import correct actions here
@@ -24,7 +24,8 @@ const mdp = dispatch => {
         dislikeVideo: videoId => dispatch(dislikeVideo(videoId)),
         undoLike: videoId => dispatch(undoLike(videoId)),
         changeLike: videoId => dispatch(changeLike(videoId)),
-        addView: view => dispatch(addView(view))
+        addView: view => dispatch(addView(view)),
+        createWatchVideo: history => dispatch(createWatchVideo(history))
     }
 }
 

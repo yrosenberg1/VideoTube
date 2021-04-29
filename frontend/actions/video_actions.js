@@ -137,3 +137,8 @@ export const changeLike = videoId => dispatch => {
             errors => {return errors}
     )
 };
+
+export const createWatchVideo = history => dispatch => {
+    return VideoApiUtil.createWatchVideo(history)
+    
+}

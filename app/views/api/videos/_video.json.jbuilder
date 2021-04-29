@@ -7,4 +7,4 @@ json.date video.date_format
 json.likes video.filter_likes
 json.dislikes video.filter_dislikes
 json.numComments video.num_comments
-# json.videoUrl url_for(video.video)
+json.videoUrl url_for(video.video)

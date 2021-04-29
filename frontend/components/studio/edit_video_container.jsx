@@ -7,7 +7,7 @@ import { fetchComments } from '../../actions/comment_actions';
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         userId: state.session.id,
         video: state.entities.videos[ownProps.match.params.id],

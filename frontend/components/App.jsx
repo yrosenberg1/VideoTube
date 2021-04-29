@@ -24,7 +24,7 @@ const App = () => (
         <ProtectedRoute exact path="/channel/:id" component={ChannelContainer} />
         <ProtectedRoute exact path="/channel/:id/videos/upload" component={StudioManagerContainer} />
         <ProtectedRoute exact path="/studio/video/:id/:component" component={StudioEditVideoContainer} />
-        <ProtectedRoute exact path="/video/playlist/:id/" component={PlayListContainer} />
+        <ProtectedRoute exact path="/video/playlist/:id/:component" component={PlayListContainer} />
         < Route path='/' component ={HomePage} />
         </Switch>
         

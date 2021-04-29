@@ -78,8 +78,7 @@ ActiveRecord::Schema.define(version: 2021_04_27_175445) do
     t.integer "video_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_video_histories_on_user_id"
-    t.index ["video_id"], name: "index_video_histories_on_video_id"
+    t.index ["user_id", "video_id"], name: "index_video_histories_on_user_id_and_video_id", unique: true
   end
 
   create_table "videos", force: :cascade do |t|

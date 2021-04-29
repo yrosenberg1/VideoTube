@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router';
 import PlayList from './playlist';
-import {fetchUserLikedVideos} from './../../../actions/video_actions'
+import {fetchUserLikedVideos, fetchUserWatchedVideos} from './../../../actions/video_actions'
 
 
 
 const mSTP = (state, ownProps) => {
-    debugger
+    
     return {
         userId: state.session.id,
         user: state.entities.users[state.session.id],
@@ -17,7 +17,8 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return {
-        fetchUserLikedVideos: userId => dispatch(fetchUserLikedVideos(userId))
+        fetchUserLikedVideos: userId => dispatch(fetchUserLikedVideos(userId)),
+        fetchUserWatchedVideos: userId => dispatch(fetchUserWatchedVideos(userId))
     }
 }
     

@@ -25,13 +25,13 @@
 
 
 // componentWillUnmount(){
-//     debugger
+//     
 // }
 // render(){
     
     
 // if (!this.state.show) {return null } else {
-// debugger
+// 
 // return (
         
 //     <div className='modal-background' onClick={this.closeModal}>

@@ -8,6 +8,7 @@ class VideoShow extends React.Component{
     constructor(props){
     super(props)
 
+    
         
 
         this.handleLike = this.handleLike.bind(this)
@@ -17,12 +18,13 @@ class VideoShow extends React.Component{
 
     componentDidMount(){
         this.props.fetchVideo(this.props.videoId)
+
     }
 
-    // componentDidUpdate(){
-    //     this.props.fetchVideo(this.props.videoId)
-    //     debugger
-    // }
+    componentDidUpdate(prevProps){
+      
+       
+    }
 
     // setLikesArray(){
     //     this.props.videos[this.props.videoId].likes.map(like => {
@@ -46,20 +48,25 @@ class VideoShow extends React.Component{
             video_id: this.props.videoId
         }
 
-        this.props.addView(view)
-        debugger
+        let history = {
+            video_id: this.props.videoId,
+            user_id: this.props.userId
+        }
+
+        this.props.addView(view).then(this.props.createWatchVideo(history))
+        
     }
 
     handleLike(){
         
       const likerIdsArray = this.props.videos[this.props.videoId].likes.map(like => {
-            // debugger
+            // 
             return (
                 like.liker_id
             )
         })
       const dislikesIdsArray = this.props.videos[this.props.videoId].dislikes.map(dislike => {
-            // debugger
+            // 
             return (
                 dislike.liker_id
             )
@@ -79,13 +86,13 @@ class VideoShow extends React.Component{
 
     handleDislike(){
         const likerIdsArray = this.props.videos[this.props.videoId].likes.map(like => {
-            // debugger
+            // 
             return (
                 like.liker_id
             )
         })
       const dislikesIdsArray = this.props.videos[this.props.videoId].dislikes.map(dislike => {
-            // debugger
+            // 
             return (
                 dislike.liker_id
             )
@@ -108,14 +115,16 @@ class VideoShow extends React.Component{
         } 
         let string;
        
-       const video = this.props.videos[this.props.videoId]
+    //    const video = this.props.videos[this.props.videoId]
+    const {video} = this.props;
+    
        if (video) {
            
          string = video.date.split(" ")
          
        }
        
-       
+       debugger
        const uploader = video.uploader
 
         return (
@@ -130,12 +139,12 @@ class VideoShow extends React.Component{
 
              <div className='video-show-main-container'>
               <div className='video-body'>
-                <div><img className='video-screen' src={window.youtube_one} /></div>
+                {/* <div><img className='video-screen' src={window.youtube_one} /></div> */}
                 
-                 {/* <div>
-                     <video onPlay={this.addView} className='video-screen' controls>
+                 <div>
+                     <video key={video.videoUrl} onPlay={this.addView} className='video-screen' controls>
                          <source src={video.videoUrl} type='video/mp4'/></video>
-                 </div> */}
+                 </div>
                 <div>
                     <div className='video-main-details'>
                         

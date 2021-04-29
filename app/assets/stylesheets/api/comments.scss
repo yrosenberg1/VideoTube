@@ -171,6 +171,15 @@ ul.comment-user-interact {
         cursor: pointer;
     }
 
+    p.reply-comment-body {
+        /* margin-left: 56px; */
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+        font-family: 'Roboto';
+        color: #030303;
+    }
+    
     li.name-li {
         display: flex;
         margin-bottom: 2px;
@@ -180,6 +189,7 @@ ul.comment-user-interact {
             font-weight: 500;
             font-size: 13px;
             line-height: 18px;
+            height: 30px;
         }
 
         & .date-p{

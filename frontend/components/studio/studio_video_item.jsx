@@ -62,7 +62,9 @@ if (total === 0){
             <>
                         <div onMouseEnter={this.showButtons} onMouseLeave={this.hideButtons} className='video-row-container'>
                           <div className='video-details-container'>
-                       <div className='video-thumbnail-container'><img src={window.youtube_one} /></div>
+                       {/* <div className='video-thumbnail-container'><img src={window.youtube_one} /></div> */}
+                       <div className='video-thumbnail-container'><Link to={`/studio/video/${video.id}/Details`}>
+                             <video key={video.videoUrl}><source src={video.videoUrl} type='video/mp4'/></video> </Link> </div>
                        <div className='video-title-desc-container'>
                          <div className='video-title-container'>{video.title}</div>
                          <div className='video-des'>{video.description}</div> 
