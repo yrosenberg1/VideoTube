@@ -1,6 +1,7 @@
 import React from 'react';
-import ReactDom from 'react-dom';
-import { unmountComponentAtNode, render } from "react-dom";
+import VideoThumbnail from './video_thumbnail';
+import { unmountComponentAtNode } from "react-dom";
+
 
 
 class UploadVideo extends React.Component{
@@ -15,12 +16,52 @@ class UploadVideo extends React.Component{
             description: "",
             errors: {
 
-            }
+            },
+            generatedTn: null,
+            thumbFile: null,
+            thumbUrl: null,
+            thumbnail: ""
+
 
         }
      this.closeModal = this.closeModal.bind(this);
      this.handleSubmit = this.handleSubmit.bind(this);
+     this.handleThumbFile = this.handleThumbFile.bind(this);
+     this.retreiveFn = this.retreiveFn.bind(this);
+     this.selectThumb = this.selectThumb.bind(this);
     
+    }
+
+    retreiveFn(thumbnail){
+       
+        this.setState({thumbnail: thumbnail}) 
+        
+        }
+        
+        selectThumb(e){
+            e.preventDefault()
+            debugger
+        }
+     
+    handleThumbFile(e){
+        
+        const file = e.target.files[0]
+        const fileReader = new FileReader();
+        
+        fileReader.onloadend = () =>  {
+            
+            return (
+            this.setState({thumbFile: file, thumbUrl: fileReader.result})
+            )
+            
+        };
+
+
+        if(file) {
+       fileReader.readAsDataURL(file); 
+       
+        }
+        
     }
 componentDidMount(){
     const input = document.getElementById('file-upload')
@@ -60,8 +101,9 @@ componentDidMount(){
         
 
         let {videoFile, videoUrl} = this.props.video
+        const {thumbUrl} = this.state
         const preview = videoUrl ? <video controls src={videoUrl} height='171' width='304'/> : null
-       
+       const icon =  thumbUrl ? <img src={thumbUrl} /> : null
         let title = videoFile.name;
         let trimTitle = title.split(".")[0];
        
@@ -106,6 +148,7 @@ componentDidMount(){
                        <div className='thumbnail-header-div'><h1> Thumbnail </h1></div>
                        <div className='thumbnail-upload-instruct'><p>Select or upload a picture that shows what's in your video. A good thumbnail stands out and draws viewers' attention. </p></div>
                         </div>
+                        <div className='thumbnail-selector-container'>
                         <label htmlFor="thumb-file-upload">
                             <div className='select-thumbnail-button'>
                                 <div className='photo-icon'><img src={window.uploadPhotoIco} /></div>
@@ -113,7 +156,11 @@ componentDidMount(){
                             </div>
                         </label>
 
+                         
                         <input type="file" id="thumb-file-upload" name="thumb-file-upload" onChange={this.handleThumbFile}></input>
+                        <div onClick={this.selectThumb} className="thumbnail">{icon}</div>
+                        <div onClick={this.selectThumb} className='thumbnail'><VideoThumbnail videoUrl={videoUrl} retreiveFn ={this.retreiveFn} />  </div>
+                        </div>
 
                         {/* <label htmlFor="upload-vid-form"><button form='upload-video' type='submit' value={this.props.formType}>Publish</button></label> */}
             </form></div>

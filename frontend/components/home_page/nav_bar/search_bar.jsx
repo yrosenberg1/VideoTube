@@ -72,6 +72,7 @@ class SearchBar extends React.Component{
         let search = this.state.search
         let videos = Object.values(this.props.videos)
         let titles = videos.map(video => video.title )
+        titles = [...new Set(titles)]
        let filteredList = titles.filter( title => title.toLowerCase().startsWith(search.toLowerCase())  )
        let dropdown = filteredList.map((videoTitle,i) => {
            return (
@@ -91,7 +92,7 @@ class SearchBar extends React.Component{
                    
                  <button className='search-bar-button'> <i className="fas fa-search"></i> </button>
                  </div>  
-                  {this.state.activeDrop ? <div className='search-bar-dropdown'>
+                  {this.state.activeDrop && filteredList.length > 0 ? <div className='search-bar-dropdown'>
                         {dropdown}
                     </div> : null}
                     </form>  

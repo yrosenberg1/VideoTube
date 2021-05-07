@@ -926,3 +926,39 @@ textarea.edit-desc-text {
     // height: 68px;
 }
 
+.thumbnail-selector-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbnail {
+   
+    padding: 0px 8px;
+    cursor: pointer;
+    padding: 0px 8px;
+    opacity: 0.5;
+
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+
+.thumbnail img {
+    height: 68px;
+    width: 111px;
+}
+
+video-thumbnail-gen{
+    display:none;
+    height: 0px;
+}
+
+.modal-content {
+    height: 841px;
+}
+
+canvas {
+    display: none;
+}

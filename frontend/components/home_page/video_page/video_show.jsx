@@ -142,7 +142,7 @@ class VideoShow extends React.Component{
                 {/* <div><img className='video-screen' src={window.youtube_one} /></div> */}
                 
                  <div>
-                     <video key={video.videoUrl} onPlay={this.addView} className='video-screen' controls>
+                     <video key={video.id} onPlay={this.addView} className='video-screen' controls>
                          <source src={video.videoUrl} type='video/mp4'/></video>
                  </div>
                 <div>
