@@ -24,6 +24,9 @@ class NavBar extends React.Component{
                    <div className='youtube-logo'>
                        <Link className='youtube-icon' to='/'><img src={window.youtubelogoURL} className='youtube-pic' /></Link>
                    </div>
+                   {/* <div className='youtube-logo'>
+                       <Link className='youtube-icon' to='/'><img src={window.youtube_logo} className='youtube-pic' /> VideoTube</Link>
+                   </div> */}
                </div>
 
                <div className='center'>

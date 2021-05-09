@@ -8,9 +8,15 @@ class About extends React.Component{
     render(){
         let {user} = this.props;
         let {videos} = this.props;
+        let totalViews;
        
         let ViewsArray = Object.values(videos).map(video => video.views)
-        let totalViews = ViewsArray.reduce((acc,val) => acc + val)
+        if (!ViewsArray.length) {
+            totalViews = 0
+        } else {
+
+         totalViews = ViewsArray.reduce((acc,val) => acc + val)
+        }   
          
 
         

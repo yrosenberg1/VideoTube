@@ -17,7 +17,7 @@ class UserVideos extends React.Component{
         if (!videos.length){
 
             return (
-            <div>
+            <div className='channel-no-videos'>
                 
             This channel has no videos.
             </div>

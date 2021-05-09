@@ -9,8 +9,9 @@ class SignUpForm extends React.Component{
             email: "",
             password: "",
             first_name: "",
-            last_name: ""
-            
+            last_name: "",
+            confirm: "",
+            errors: ""
             // confirm:"Confirm password"
         };
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -18,8 +19,9 @@ class SignUpForm extends React.Component{
         this.handlePassword = this.handlePassword.bind(this)
         this.handleFirstName = this.handleFirstName.bind(this)
         this.handleLastName = this.handleLastName.bind(this)
-        
-        // this.handleConfirm = this.handleConfirm.bind(this)
+        this.renderNameErrors = this.renderNameErrors.bind(this);
+        this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
+        this.handleConfirm = this.handleConfirm.bind(this)
     };
 // componentDidUpdate(e){
 //     e.preventDefault();
@@ -35,6 +37,24 @@ class SignUpForm extends React.Component{
 
         handleSubmit(e){
             e.preventDefault();
+
+            let {confirm, password} = this.state;
+            let pwErrors = this.props.errors.password;
+
+            if (password === ""){
+                 this.setState({errors: "Enter a password"})
+            } else if 
+            (pwErrors){
+                this.setState({errors:"Use 8 characters or more for your password"})
+            } else if
+             (confirm === ""){
+                 this.setState({errors: "Confirm your password"})
+            } else if
+
+             (confirm !== password){
+               return  this.setState({errors: "Those passwords don't match"})
+            }
+        
              const user = Object.assign({}, this.state);
              this.props.form(user)
         };
@@ -53,18 +73,78 @@ class SignUpForm extends React.Component{
         handleLastName(e){
             this.setState({last_name : e.target.value})
         }
-        renderErrors(){
+
+        handleConfirm(e){
+            this.setState({confirm : e.target.value})
+        }
+        // renderErrors(){
            
-                return(
-                <ul>
-                    {this.props.errors.map((error, i) => (
-                        <li key={`error-number-${i}`}>
-                            {error}
-                        </li>
-                    ))}
-                </ul>
+        //         return(
+        //         <ul>
+        //             {this.props.errors.map((error, i) => (
+        //                 <li key={`error-number-${i}`}>
+        //                     {error}
+        //                 </li>
+        //             ))}
+        //         </ul>
+        //     )
+        // }
+
+            renderNameErrors(){
+               
+                let {errors} = this.props; 
+                if (errors.first_name && errors.last_name){
+                    return (
+                       <div className='errors'> <img className='error-icon' src={window.errorIcon} /><li>Enter first and last names</li> </div>
+                    )
+                }
+               if (errors.first_name){
+                    return (
+                        <div className='errors'>
+                           <img className='error-icon' src={window.errorIcon} /> <li>Enter first name</li>
+                        </div>
+                    )
+                }
+               if (errors.last_name){
+                    return (
+                        <div className='errors'>
+                          <img className='error-icon' src={window.errorIcon} />  <li>Enter last name</li>
+                        </div>
+                    )
+                }
+                
+        }
+
+        renderEmailError(){
+            return (
+                <>
+        {this.props.errors.email ? <div className='errors'> <img className='error-icon' src={window.errorIcon} />
+            <li>Choose an email address</li>
+            </div> : null}
+           
+           </>
+           )
+
+        
+     }
+
+     renderPasswordErrors(){
+        let {password, errors} = this.state;
+      
+        if ( errors.length > 0 && password === ""){
+            return (
+                <div className='errors'><img className='error-icon' src={window.errorIcon} /><li>Enter a password</li></div>
             )
         }
+
+       
+
+        if (errors){
+            return (
+                <div className='errors'><img className='error-icon' src={window.errorIcon} /><li>{errors}</li></div>
+            )
+        }
+     }
 
         componentWillUnmount(){
           const errors = [];
@@ -77,6 +157,7 @@ class SignUpForm extends React.Component{
         }
     render(){
         // 
+        
         return (
            
             <div className='signup-div'>
@@ -100,20 +181,24 @@ class SignUpForm extends React.Component{
                     onChange={this.handleLastName}
                     placeholder="Last name" />
                 </div>
+                {this.renderNameErrors()}
                     <input className='signup-form-input' type='text'
                     value={this.state.email}
                     onChange={this.handleEmail}
                     placeholder='Your email address' />
-
-                    <input className='signup-form-input' type='password'
+                {this.renderEmailError()}
+                <div className='name-container'>
+                    <input className='signup-form-name' type='password'
                     value={this.state.password}
                     onChange={this.handlePassword}
                     placeholder='Password' />
 
-                    {/* <input type='text'
+                    <input className='signup-form-name' type='password'
                     value={this.state.confirm}
-                    onChange={this.handleConfirm} /> */}
-                
+                    onChange={this.handleConfirm}
+                    placeholder='Confirm Password' />
+                </div>
+                {this.renderPasswordErrors()}
                 <div className='signup-button-link'>
                     <Link className='signup-form-link' to='/login'>Sign in instead </Link>
                     <button  className='signup-form-button'>Next</button>
@@ -125,7 +210,7 @@ class SignUpForm extends React.Component{
                 <div className='google-lotr-pic'>
                   <img src={window.googlesignup} />
                   <div className='signup-errors'>
-                  {this.renderErrors()}
+                  {/* {this.renderErrors()} */}
                   </div>
                 </div>
                 {}

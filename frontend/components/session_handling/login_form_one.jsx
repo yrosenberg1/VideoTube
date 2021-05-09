@@ -5,7 +5,8 @@ class LogInFormOne extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            email: this.props.email
+            email: this.props.email,
+            errors: {}
         }
         
        
@@ -29,18 +30,18 @@ class LogInFormOne extends React.Component{
     //    handlePassword(e){
     //        this.setState({password : e.target.value})
     //    }
-    renderErrors(){
-        return(
-            <ul>
-                {this.props.errors.map((error, i) => (
+    // renderErrors(){
+    //     return(
+    //         <ul>
+    //             {this.props.errors.map((error, i) => (
                     
-                    <li key={`error-number-${i}`}>
-                        {error}
-                    </li>
-                  ))}
-            </ul>
-        )
-    }
+    //                 <li key={`error-number-${i}`}>
+    //                     {error}
+    //                 </li>
+    //               ))}
+    //         </ul>
+    //     )
+    // }
 
     componentWillUnmount(){
         const errors = [];
@@ -49,7 +50,7 @@ class LogInFormOne extends React.Component{
       }
       
    render(){
-
+   
        return (
            <>
               
@@ -63,19 +64,20 @@ class LogInFormOne extends React.Component{
                    placeholder='Your Email'
                    value={this.props.email}
                    onChange={this.props.handleEmail} />
-
+               {this.props.stateErr ? <div className='errors'><img className='error-icon' src={window.errorIcon} /> <li>{this.props.stateErr}</li></div> : null }
                 
                <p className='demo-mode-text'> Use Demo Mode to Sign In with a demo account.
-               <button className='demo-button' type='submit' onClick={() => this.props.demo()}> Demo Mode </button></p>
+               <button className='demo-button' type='button' onClick={() => this.props.demo()}> Demo Mode </button></p>
                
                <div className='login-button-link'>
                  <Link className='signup-form-link' to='/signup'> Create account </Link>
                     <button onClick={() => this.props.next()} className='signup-form-button'>Next</button>
                    
                  </div>
-                 <div className='errors'>
-        {this.renderErrors()}
-        </div>
+               
+       
+        
+        
            </>
        )
    }

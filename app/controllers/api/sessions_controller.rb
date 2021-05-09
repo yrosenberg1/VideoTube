@@ -13,7 +13,7 @@ def create
        render "api/users/show"
        
     else
-        render json: ["Couldn't find your Email/ Invalid Password"], status: 401
+        render json: ["Wrong email or password. Try again."], status: 401
     end
 end
 

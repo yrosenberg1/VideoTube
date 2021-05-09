@@ -5,7 +5,8 @@ class LogInFormTwo extends React.Component{
     constructor(props){
     super(props)
     this.state ={
-        password: ""
+        password: "",
+        errors: ""
     }
 
 
@@ -22,6 +23,10 @@ handlePassword(e){
 
 handleSubmit(e){
     // e.preventDefault();
+    if (this.state.password === ""){
+        return this.setState({errors:"Enter a password"})
+    }
+    this.setState({errors:""})
   const user = {
       email: this.props.email,
       password: this.state.password
@@ -34,17 +39,11 @@ handleBack(e){
     this.props.back()
 }
 
-renderErrors(){
-    return(
-        <ul>
-            {this.props.errors.map((error, i) => (
-                <li key={`error-number-${i}`}>
-                    {error}
-                </li>
-            ))}
-        </ul>
-    )
-}
+// renderErrors(){
+//     return(
+//      {this.props.errors ? <div className="errors"><img className="error-icon" src={window.errorIcon} /><li>{this.props.errors}</li></div> : null}
+//     )
+// }
 
 componentWillUnmount(){
     const errors = [];
@@ -57,8 +56,9 @@ render(){
         
     return (
         <>
-        <h1 className='sign-in-greeting'> Hi {this.props.email} </h1>
-        <p></p>
+        <div className='sign-in-greeting'> <h1>Welcome</h1> 
+        <div className='sign-in-profile'><i className="fas fa-user-circle"></i><p> {this.props.email}</p> </div>
+         </div>
 
         
         <div>
@@ -68,10 +68,11 @@ render(){
                onChange={this.handlePassword} /> 
                </div>
                <div className='placeholder-space'>
-               <div className='errors'>
-                 {this.renderErrors()}
+             
+                 {this.state.errors ?  <div className='errors'><img className='error-icon' src={window.errorIcon} /><li>{this.state.errors}</li></div>: null}
+                 {this.props.errors.length ? <div className="errors"><img className="error-icon" src={window.errorIcon} /><li>{this.props.errors}</li></div> : null}
                  </div>
-               </div>
+              
                <div className='login-button-link'>
          <Link className='login-form-link'to='/'>Back to Home Page</Link>
 

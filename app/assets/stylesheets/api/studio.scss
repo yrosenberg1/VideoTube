@@ -937,6 +937,8 @@ textarea.edit-desc-text {
     cursor: pointer;
     padding: 0px 8px;
     opacity: 0.5;
+    height: 68px;  
+
 
 
     &:hover{
@@ -961,4 +963,12 @@ video-thumbnail-gen{
 
 canvas {
     display: none;
+}
+
+.thumbnail.selected-thumbnail {
+    opacity: 1.0;
+    border: 1px solid;
+    padding: 0;
+
+   
 }

@@ -2,10 +2,14 @@ import { connect } from 'react-redux';
 import SignUpForm from './signup_form';
 import { signup, receiveErrors } from '../../actions/session_actions';
 
-const mSTP = ({ errors }) => ({
+const mSTP = ({ errors }) =>{ 
+    debugger 
+    return {
+    
 errors: errors.session,
 formType: 'signup'
-});
+}
+};
 
 
 

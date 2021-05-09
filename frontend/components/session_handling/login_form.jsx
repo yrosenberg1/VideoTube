@@ -34,9 +34,21 @@ class LogInForm extends React.Component{
     }
 
     next(){
+        const {email } = this.state;
+
+        if (email === ""){
+            return this.setState({errors: "Enter an email"})
+        } 
+
+        if (!email.includes("@" && ".")){
+            return this.setState({errors: "Invalid Email"})  
+        } 
+
         if (this.state.step === 1){
+            debugger
             this.setState({step: 2})
-        }
+        } 
+       
     }
 
     back(){
@@ -46,6 +58,8 @@ class LogInForm extends React.Component{
     }
 
     handleEmail(e){
+       
+         
         this.setState({email: e.currentTarget.value})
     }
 
@@ -63,6 +77,7 @@ class LogInForm extends React.Component{
                     password = {this.state.password}
                     handleEmail = {this.handleEmail}
                     errors = {this.props.errors}
+                    stateErr = {this.state.errors}
                     clearErrors = {this.props.clearErrors}
                     demo= {this.demo}/>
                 )

@@ -17,7 +17,7 @@ class UploadVideo extends React.Component{
             errors: {
 
             },
-            generatedTn: null,
+            selectedNail: null,
             thumbFile: null,
             thumbUrl: null,
             thumbnail: ""
@@ -28,7 +28,7 @@ class UploadVideo extends React.Component{
      this.handleSubmit = this.handleSubmit.bind(this);
      this.handleThumbFile = this.handleThumbFile.bind(this);
      this.retreiveFn = this.retreiveFn.bind(this);
-     this.selectThumb = this.selectThumb.bind(this);
+    //  this.selectThumb = this.selectThumb.bind(this);
     
     }
 
@@ -38,9 +38,12 @@ class UploadVideo extends React.Component{
         
         }
         
-        selectThumb(e){
+        selectThumb(selectedThumb, e){
             e.preventDefault()
-            debugger
+            
+            e.currentTarget.parentElement.childNodes.forEach( node => { node.classList.remove('selected-thumbnail')})
+            e.currentTarget.classList.add('selected-thumbnail')
+            this.setState({selectedNail: selectedThumb}) 
         }
      
     handleThumbFile(e){
@@ -76,6 +79,12 @@ componentDidMount(){
 
     handleSubmit(e){
         e.preventDefault();
+        const {title, description, errors, selectedNail} = this.state
+
+        if (!selectedNail){
+            this.setState({errors:{thumbnail: "No thumbnail was selected"} })
+            return console.log(errors)
+        }
         
         const formData = new FormData();
             formData.append("video[title]", this.state.title);
@@ -84,10 +93,10 @@ componentDidMount(){
             
             formData.append("video[video]", this.props.video.videoFile);
        
-        this.props.uploadVideo(formData).then(
-        () => this.props.closeModal()
-        )
-        //ap this.props.closeModal()
+        // this.props.uploadVideo(formData).then(
+        // () => this.props.closeModal()
+        // )
+       this.props.closeModal()
         
     };
     
@@ -98,7 +107,9 @@ componentDidMount(){
     };
 
     render(){
-        
+        if (this.state.selectedNail){
+            console.log(`You selected ${this.state.selectedNail}`)
+        }
 
         let {videoFile, videoUrl} = this.props.video
         const {thumbUrl} = this.state
@@ -158,8 +169,8 @@ componentDidMount(){
 
                          
                         <input type="file" id="thumb-file-upload" name="thumb-file-upload" onChange={this.handleThumbFile}></input>
-                        <div onClick={this.selectThumb} className="thumbnail">{icon}</div>
-                        <div onClick={this.selectThumb} className='thumbnail'><VideoThumbnail videoUrl={videoUrl} retreiveFn ={this.retreiveFn} />  </div>
+                        <div onClick={(e) => this.selectThumb(thumbUrl, e)} className="thumbnail">{icon}</div>
+                        <div onClick={(e) => this.selectThumb(this.state.thumbnail, e)} className='thumbnail'><VideoThumbnail videoUrl={videoUrl} retreiveFn ={this.retreiveFn} />  </div>
                         </div>
 
                         {/* <label htmlFor="upload-vid-form"><button form='upload-video' type='submit' value={this.props.formType}>Publish</button></label> */}
