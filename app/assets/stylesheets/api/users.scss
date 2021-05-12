@@ -91,6 +91,11 @@ body{
  padding: 7px 9px 7px 9px;
  box-sizing: border-box;
  margin-bottom: 6px;
+
+ &:focus{
+    outline: none;
+    border: 2px solid #1a73e8;
+}
 }
 
 .signup-form-name{
@@ -102,6 +107,11 @@ body{
     width: 153px;
     padding: 6px 8px 6px 8px;
     // box-sizing: border-box;
+
+    &:focus{
+        outline: none;
+        border: 2px solid #1a73e8;
+    }
 }
 .signup-form-link{
     text-decoration: none;
@@ -201,7 +211,8 @@ body{
  padding: 13px 15px;
 
  &:focus{
-     border: 1px solid #1a73e8;
+    border: 2px solid #1a73e8;
+    outline: none; 
  }
 }
 
@@ -333,13 +344,16 @@ width: 300px;
 }
 
 .sign-in-profile {
-    display: flex;
+    display: inline-flex;
     padding: 0px 6px;
-    width: 150px;
+    min-width: 150px;
     border: 1px solid rgb(218, 220, 224);
     border-radius: 10px;
     margin: auto;
     align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-right: 10px;
 
     & i{
         font-size:20px;
@@ -351,5 +365,12 @@ width: 300px;
         font-size: 14px;
         line-height:30px;
         font-weight: 500;
+        padding-right: 10px;
     }
+    & .expand-arrow{
+        position: absolute;
+    right: 0px;
+}
+
+    
 }

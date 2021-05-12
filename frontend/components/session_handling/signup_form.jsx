@@ -11,7 +11,8 @@ class SignUpForm extends React.Component{
             first_name: "",
             last_name: "",
             confirm: "",
-            errors: ""
+            errors: "",
+            invalidEmail: ""
             // confirm:"Confirm password"
         };
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,6 +23,7 @@ class SignUpForm extends React.Component{
         this.renderNameErrors = this.renderNameErrors.bind(this);
         this.renderPasswordErrors = this.renderPasswordErrors.bind(this);
         this.handleConfirm = this.handleConfirm.bind(this)
+        this.handleErrors = this.handleErrors.bind(this);
     };
 // componentDidUpdate(e){
 //     e.preventDefault();
@@ -35,28 +37,48 @@ class SignUpForm extends React.Component{
         
 //         };
 
+   handleErrors(){
+        let {confirm, password, invalidEmail, email} = this.state;
+        let pwErrors = this.props.errors.password;
+
+        if (!email.includes(".") || !email.includes("@")){
+            this.setState({invalidEmail:'Invalid email'})
+        } else {
+            this.setState({invalidEmail: ""})
+        }
+
+        if (password === ""){
+             this.setState({errors: "Enter a password"})
+        } else if 
+        (pwErrors){
+            this.setState({errors:"Use 8 characters or more for your password"})
+        } else if
+         (confirm === ""){
+             this.setState({errors: "Confirm your password"})
+        } else if
+
+         (confirm !== password){
+           return  this.setState({errors: "Those passwords don't match"})
+        }
+        
+    }
+
         handleSubmit(e){
             e.preventDefault();
 
-            let {confirm, password} = this.state;
-            let pwErrors = this.props.errors.password;
-
-            if (password === ""){
-                 this.setState({errors: "Enter a password"})
-            } else if 
-            (pwErrors){
-                this.setState({errors:"Use 8 characters or more for your password"})
-            } else if
-             (confirm === ""){
-                 this.setState({errors: "Confirm your password"})
-            } else if
-
-             (confirm !== password){
-               return  this.setState({errors: "Those passwords don't match"})
-            }
+           this.handleErrors();
+            
+           if (this.state.password !== this.state.confirm || (this.state.email !== "" && this.state.invalidEmail !== "" && !this.props.errors)){
+            debugger  
+              return
+           }else {
+              debugger
+           const user = Object.assign({}, this.state);
+           this.props.form(user)
+          }
         
-             const user = Object.assign({}, this.state);
-             this.props.form(user)
+           
+        
         };
 
         handleEmail(e){
@@ -116,12 +138,13 @@ class SignUpForm extends React.Component{
         }
 
         renderEmailError(){
+            let {email} = this.state;
             return (
                 <>
         {this.props.errors.email ? <div className='errors'> <img className='error-icon' src={window.errorIcon} />
-            <li>Choose an email address</li>
-            </div> : null}
-           
+            {this.props.errors.email[0] === "can't be blank" ? <li>Choose an email address</li>: <li>That email address is already taken </li>}
+            </div> :  this.state.invalidEmail ? <div className='errors'> <img className='error-icon' src={window.errorIcon} />
+         <li>Invalid email address</li></div> : null}  
            </>
            )
 
@@ -210,10 +233,10 @@ class SignUpForm extends React.Component{
                 <div className='google-lotr-pic'>
                   <img src={window.googlesignup} />
                   <div className='signup-errors'>
-                  {/* {this.renderErrors()} */}
+               
                   </div>
                 </div>
-                {}
+              
               </div>
                 </form>
             </div>

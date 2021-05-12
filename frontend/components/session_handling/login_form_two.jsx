@@ -57,9 +57,13 @@ render(){
     return (
         <>
         <div className='sign-in-greeting'> <h1>Welcome</h1> 
-        <div className='sign-in-profile'><i className="fas fa-user-circle"></i><p> {this.props.email}</p> </div>
+        <div onClick={() => this.props.back()} className='sign-in-profile'>
+            <i className="fas fa-user-circle"></i>
+            <p> {this.props.email}</p> 
+            <img className='expand-arrow' src={window.expandMore} />
+            
          </div>
-
+        </div>
         
         <div>
         <input className='signup-form-input-section' type='password'

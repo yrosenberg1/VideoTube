@@ -102,6 +102,10 @@ flex-direction: column;
 
 }
 
+.search-bar-form-input-container {
+    display: flex;
+}
+
 .search-bar-input{
 height: 30px;
 width: 574px;
@@ -115,8 +119,8 @@ border-bottom-left-radius: 3px;
 
 
 &:focus{
-    outline: 1px solid blue;
-    border-right:1px solid blue;
+    outline: none;
+    border: 1px solid #1c62b9;
 }
 }
 .container-icon .fa-user-circle{

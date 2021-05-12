@@ -65,7 +65,7 @@ class SelectFile extends React.Component{
                     <div className='modal-body'>
                      <label htmlFor="file-upload">   <div className='upload-img'> <img src={window.large_file_upload} /></div></label>
                         <p className='drag-instruction'>Drag and drop video files to upload</p>
-                        <label htmlFor="file-upload"><div className='select-video-button'> SELECT FILES</div>  </label>
+                        <label htmlFor="file-upload"><div className='select-video-button'> SELECT FILE</div>  </label>
                         <p className='copy-disclaimer'>Please be sure not to violate others' copyright or privacy rights.</p>  
                         <input ref={this.input} type="file" id="file-upload" name="file-upload" onChange={this.handleVideoFile}></input>
                    

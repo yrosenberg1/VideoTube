@@ -54,7 +54,7 @@ class SearchBar extends React.Component{
 
         handleSearch(e){
             this.setState({search : e.target.value})
-            (this.state.search)
+            
         }
 
         handleSubmit(e){
