@@ -103,8 +103,8 @@ v16 = Video.new({
     uploader_id: u7.id
 })
 
-video_1 = URI.open('https://s3.amazonaws.com/video-tube-seed/181015_13_Venice Beach Drone_25.mp4')
-video_2 = URI.open('https://video-tube-seed.s3.amazonaws.com/Baseball.mp4')
+video_1 = URI.open("https://s3.amazonaws.com/video-tube-seed/Venice.mp4")
+video_2 = URI.open('https://s3.amazonaws.com/video-tube-seed/Baseball.mp4')
 video_3 = URI.open('https://video-tube-seed.s3.amazonaws.com/Beach.mp4')
 video_4 = URI.open('https://video-tube-seed.s3.amazonaws.com/Busy+Street.mp4')
 video_5 = URI.open('https://video-tube-seed.s3.amazonaws.com/Highway+Driving.mp4')
