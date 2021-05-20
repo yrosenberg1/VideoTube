@@ -140,6 +140,7 @@ GEM
     nokogiri (1.11.2)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
+    open-uri (0.1.0)
     pg (1.2.3)
     pry (0.14.0)
       coderay (~> 1.1)
@@ -245,6 +246,7 @@ DEPENDENCIES
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   newrelic_rpm
+  open-uri
   pg (>= 0.18, < 2.0)
   pry-rails
   puma (~> 3.11)
