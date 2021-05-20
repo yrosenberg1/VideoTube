@@ -43,11 +43,11 @@ class Video < ApplicationRecord
 
     has_one_attached :video
 
-def ensure_video
-  unless self.video.attached?
-    errors[:video] << "must be attached"
-  end
-end
+# def ensure_video
+#   unless self.video.attached?
+#     errors[:video] << "must be attached"
+#   end
+# end
 
 def date_modifier
   

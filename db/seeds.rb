@@ -22,82 +22,82 @@ u7 = User.create!({email: "cemmo@gmail.com", password: "password", first_name: "
 
 
 
-v1 = Video.new({
+v1 = Video.create!({
     title: "The beach", 
     description: "The beach during the summer. #SummerTime #Beach", 
     uploader_id: u1.id
 })
-v2 = Video.new({
+v2 = Video.create!({
     title: "Baseball", 
     description: "A close up of a man swinging at a pitch. #SummerTime #BaseballSzn", 
     uploader_id: u4.id
 })
-v3 = Video.new({
+v3 = Video.create!({
     title: "Sunset by the waterfront", 
     description: "the sun setting over Venice Beach. ", 
     uploader_id: u2.id
 })
-v4 = Video.new({
+v4 = Video.create!({
     title: "Busy Street", 
     description: "Video of a busy street in the city.", 
     uploader_id: u3.id
 })
-v5 = Video.new({
+v5 = Video.create!({
     title: "Chess", 
     description: "Video of a game of chess.", 
     uploader_id: u1.id
 })
-v6 = Video.new({
+v6 = Video.create!({
     title: "Coding", 
     description: "A shot of coding.", 
     uploader_id: u6.id
 })
-v7 = Video.new({
+v7 = Video.create!({
     title: "Coffee", 
     description: "Pouring Milk into a freshly brewed coffee.", 
     uploader_id: u1.id
 })
-v8 = Video.new({
+v8 = Video.create!({
     title: "Amusement Park", 
     description: "People enjoying a nice day at the amusement Park.", 
     uploader_id: u7.id
 })
-v9 = Video.new({
+v9 = Video.create!({
     title: "NightLife", 
     description: "A video montage of a busy highway at night.", 
     uploader_id: u2.id
 })
-v10 = Video.new({
+v10 = Video.create!({
     title: "Highway", 
     description: "A overhead shot of a car driving on a highway", 
     uploader_id: u3.id
 })
-v11 = Video.new({
+v11 = Video.create!({
     title: "Layup", 
     description: "A basketball player makes a layup in a practice.", 
     uploader_id: u4.id
 })
-v12 = Video.new({
+v12 = Video.create!({
     title: "Moon", 
     description: "A shot of the moon over the sea at night.", 
     uploader_id: u1.id
 })
-v13 = Video.new({
+v13 = Video.create!({
     title: "Soccer", 
     description: "A player takes the game winning shot!", 
     uploader_id: u4.id
 })
-v14 = Video.new({
+v14 = Video.create!({
     title: "Sushi", 
     description: "Artistic Sushi.", 
     uploader_id: u5.id
 })
-v15 = Video.new({
+v15 = Video.create!({
     title: "Sea Life", 
     description: "An underwater shot of the aqautic sea life.", 
     uploader_id: u4.id
 })
-v16 = Video.new({
+v16 = Video.create!({
     title: "Winter Sports", 
     description: "A man riding his snowmobile down the curvy path.", 
     uploader_id: u7.id
@@ -137,22 +137,22 @@ v14.video.attach(io: video_16, filename: "sushi.mp4")
 v15.video.attach(io: video_9, filename: "underwater-Sea-life.mp4") 
 v16.video.attach(io: video_10, filename: "winter-activity.mp4") 
 
-v1.save!
-v2.save!
-v3.save!
-v4.save!
-v5.save!
-v6.save!
-v7.save!
-v8.save!
-v9.save!
-v10.save!
-v11.save!
-v12.save!
-v13.save!
-v14.save!
-v15.save!
-v16.save!
+# v1.save!
+# v2.save!
+# v3.save!
+# v4.save!
+# v5.save!
+# v6.save!
+# v7.save!
+# v8.save!
+# v9.save!
+# v10.save!
+# v11.save!
+# v12.save!
+# v13.save!
+# v14.save!
+# v15.save!
+# v16.save!
 
 
 l1 = Like.create!({like_dislike: true, liker_id: u2.id, likeable_type: "Video", likeable_id: v1.id})
