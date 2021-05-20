@@ -173,13 +173,15 @@ l14 = Like.create!({like_dislike: true, liker_id: u4.id, likeable_type: "Video",
 l15 = Like.create!({like_dislike: true, liker_id: u5.id, likeable_type: "Video", likeable_id: v1.id})
 l16 = Like.create!({like_dislike: true, liker_id: u6.id, likeable_type: "Video", likeable_id: v1.id})
 l17 = Like.create!({like_dislike: true, liker_id: u7.id, likeable_type: "Video", likeable_id: v1.id})
-l18 = Like.create!({like_dislike: true, liker_id: u8.id, likeable_type: "Video", likeable_id: v1.id})
-l19 = Like.create!({like_dislike: true, liker_id: u9.id, likeable_type: "Video", likeable_id: v1.id})
-l20 = Like.create!({like_dislike: true, liker_id: u10.id, likeable_type: "Video", likeable_id: v1.id})
-l21 = Like.create!({like_dislike: true, liker_id: u11.id, likeable_type: "Video", likeable_id: v1.id})
-l22 = Like.create!({like_dislike: false, liker_id: u12.id, likeable_type: "Video", likeable_id: v1.id})
-l23 = Like.create!({like_dislike: false, liker_id: u13.id, likeable_type: "Video", likeable_id: v1.id})
-l24 = Like.create!({like_dislike: false, liker_id: u14.id, likeable_type: "Video", likeable_id: v1.id})
+
+l18 = Like.create!({like_dislike: true, liker_id: u1.id, likeable_type: "Video", likeable_id: v2.id})
+l19 = Like.create!({like_dislike: true, liker_id: u2.id, likeable_type: "Video", likeable_id: v2.id})
+l22 = Like.create!({like_dislike: false, liker_id: u3.id, likeable_type: "Video", likeable_id: v2.id})
+l23 = Like.create!({like_dislike: false, liker_id: u4.id, likeable_type: "Video", likeable_id: v3.id})
+l24 = Like.create!({like_dislike: false, liker_id: u5.id, likeable_type: "Video", likeable_id: v2.id})
+
+l20 = Like.create!({like_dislike: true, liker_id: u6.id, likeable_type: "Video", likeable_id: v2.id})
+l21 = Like.create!({like_dislike: true, liker_id: u7.id, likeable_type: "Video", likeable_id: v2.id})
 
 c1 = Comment.create!(video_id: v1.id, commenter_id: u1.id, comment_body: "Enjoy the Video!")
 c2 = Comment.create!(video_id: v1.id, commenter_id: u2.id, comment_body: "Great Content!", parent_comment_id: c1.id)
