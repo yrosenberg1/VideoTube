@@ -19,7 +19,7 @@
 class Video < ApplicationRecord
     include ActionView::Helpers::DateHelper
     validates :uploader_id, :title, :description, presence: true
-    validate :ensure_video
+    # validate :ensure_video
 
     belongs_to :uploader,
     primary_key: :id,
