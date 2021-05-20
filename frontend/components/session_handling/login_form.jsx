@@ -45,10 +45,11 @@ class LogInForm extends React.Component{
         } 
 
         if (this.state.step === 1){
-            debugger
+           this.setState({errors: ""})
             this.setState({step: 2})
         } 
        
+    
     }
 
     back(){
