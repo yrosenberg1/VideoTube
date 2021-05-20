@@ -175,7 +175,7 @@ l16 = Like.create!({like_dislike: true, liker_id: u6.id, likeable_type: "Video",
 l17 = Like.create!({like_dislike: true, liker_id: u7.id, likeable_type: "Video", likeable_id: v1.id})
 
 l18 = Like.create!({like_dislike: true, liker_id: u1.id, likeable_type: "Video", likeable_id: v2.id})
-l19 = Like.create!({like_dislike: true, liker_id: u2.id, likeable_type: "Video", likeable_id: v2.id})
+
 l22 = Like.create!({like_dislike: false, liker_id: u3.id, likeable_type: "Video", likeable_id: v2.id})
 l23 = Like.create!({like_dislike: false, liker_id: u4.id, likeable_type: "Video", likeable_id: v3.id})
 l24 = Like.create!({like_dislike: false, liker_id: u5.id, likeable_type: "Video", likeable_id: v2.id})
