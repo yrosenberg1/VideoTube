@@ -9,6 +9,7 @@ require 'open-uri'
 
 Like.destroy_all
 Comment.destroy_all
+View.destroy_all
 Video.destroy_all
 User.destroy_all
 
@@ -22,88 +23,89 @@ u7 = User.create!({email: "cemmo@gmail.com", password: "password", first_name: "
 
 
 
-v1 = Video.create!({
+v1 = Video.create({
     title: "The beach", 
     description: "The beach during the summer. #SummerTime #Beach", 
     uploader_id: u1.id
 })
-v2 = Video.create!({
+v2 = Video.create({
     title: "Baseball", 
     description: "A close up of a man swinging at a pitch. #SummerTime #BaseballSzn", 
     uploader_id: u4.id
 })
-v3 = Video.create!({
+v3 = Video.create({
     title: "Sunset by the waterfront", 
     description: "the sun setting over Venice Beach. ", 
     uploader_id: u2.id
 })
-v4 = Video.create!({
+v4 = Video.create({
     title: "Busy Street", 
     description: "Video of a busy street in the city.", 
     uploader_id: u3.id
 })
-v5 = Video.create!({
+v5 = Video.create({
     title: "Chess", 
     description: "Video of a game of chess.", 
     uploader_id: u1.id
 })
-v6 = Video.create!({
+v6 = Video.create({
     title: "Coding", 
     description: "A shot of coding.", 
     uploader_id: u6.id
 })
-v7 = Video.create!({
+v7 = Video.create({
     title: "Coffee", 
     description: "Pouring Milk into a freshly brewed coffee.", 
     uploader_id: u1.id
 })
-v8 = Video.create!({
+v8 = Video.create({
     title: "Amusement Park", 
     description: "People enjoying a nice day at the amusement Park.", 
     uploader_id: u7.id
 })
-v9 = Video.create!({
+v9 = Video.create({
     title: "NightLife", 
     description: "A video montage of a busy highway at night.", 
     uploader_id: u2.id
 })
-v10 = Video.create!({
+v10 = Video.create({
     title: "Highway", 
     description: "A overhead shot of a car driving on a highway", 
     uploader_id: u3.id
 })
-v11 = Video.create!({
+v11 = Video.create({
     title: "Layup", 
     description: "A basketball player makes a layup in a practice.", 
     uploader_id: u4.id
 })
-v12 = Video.create!({
+v12 = Video.create({
     title: "Moon", 
     description: "A shot of the moon over the sea at night.", 
     uploader_id: u1.id
 })
-v13 = Video.create!({
+v13 = Video.create({
     title: "Soccer", 
     description: "A player takes the game winning shot!", 
     uploader_id: u4.id
 })
-v14 = Video.create!({
+v14 = Video.create({
     title: "Sushi", 
     description: "Artistic Sushi.", 
     uploader_id: u5.id
 })
-v15 = Video.create!({
+v15 = Video.create({
     title: "Sea Life", 
     description: "An underwater shot of the aqautic sea life.", 
     uploader_id: u4.id
 })
-v16 = Video.create!({
+v16 = Video.create({
     title: "Winter Sports", 
     description: "A man riding his snowmobile down the curvy path.", 
     uploader_id: u7.id
 })
 
 video_1 = URI.open("https://s3.amazonaws.com/video-tube-seed/Venice.mp4")
+
 video_2 = URI.open('https://s3.amazonaws.com/video-tube-seed/Baseball.mp4')
 video_3 = URI.open('https://video-tube-seed.s3.amazonaws.com/Beach.mp4')
 video_4 = URI.open('https://video-tube-seed.s3.amazonaws.com/Busy+Street.mp4')
@@ -137,23 +139,56 @@ v14.video.attach(io: video_16, filename: "sushi.mp4")
 v15.video.attach(io: video_9, filename: "underwater-Sea-life.mp4") 
 v16.video.attach(io: video_10, filename: "winter-activity.mp4") 
 
-# v1.save!
-# v2.save!
-# v3.save!
-# v4.save!
-# v5.save!
-# v6.save!
-# v7.save!
-# v8.save!
-# v9.save!
-# v10.save!
-# v11.save!
-# v12.save!
-# v13.save!
-# v14.save!
-# v15.save!
-# v16.save!
+v1.save
+v2.save
+v3.save
+v4.save
+v5.save
+v6.save
+v7.save
+v8.save
+v9.save
+v10.save
+v11.save
+v12.save
+v13.save
+v14.save
+v15.save
+v16.save
 
+view1 = View.create({video_id: v1.id})
+view2 = View.create({video_id: v2.id})
+view3 = View.create({video_id: v3.id})
+view4 = View.create({video_id: v4.id})
+view5 = View.create({video_id: v5.id})
+view6 = View.create({video_id: v6.id})
+view7 = View.create({video_id: v7.id})
+view8 = View.create({video_id: v8.id})
+view9 = View.create({video_id: v9.id})
+view10 = View.create({video_id: v10.id})
+view11 = View.create({video_id: v11.id})
+view12 = View.create({video_id: v12.id})
+view13 = View.create({video_id: v13.id})
+view14 = View.create({video_id: v14.id})
+view15 = View.create({video_id: v15.id})
+view16 = View.create({video_id: v16.id})
+
+view1.save
+view2.save
+view3.save
+view4.save
+view5.save
+view6.save
+view7.save
+view8.save
+view9.save
+view10.save
+view11.save
+view12.save
+view13.save
+view14.save
+view15.save
+view16.save
 
 l1 = Like.create!({like_dislike: true, liker_id: u2.id, likeable_type: "Video", likeable_id: v1.id})
 l2 = Like.create!({like_dislike: true, liker_id: u2.id, likeable_type: "Video", likeable_id: v2.id})

@@ -62,12 +62,7 @@ end
 
 
 def views
-  # if !self.view
-    
-  #   View.create({video_id:self.id})
-    
-  #   self.view.num_views
-  # else
+ 
     
   self.view.num_views 
   
