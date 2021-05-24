@@ -93,10 +93,10 @@ componentDidMount(){
             
             formData.append("video[video]", this.props.video.videoFile);
        
-        // this.props.uploadVideo(formData).then(
-        // () => this.props.closeModal()
-        // )
-       this.props.closeModal()
+        this.props.uploadVideo(formData).then(
+        () => this.props.closeModal()
+        )
+    //    this.props.closeModal()
         
     };
     
