@@ -10,10 +10,13 @@ class UserVideos extends React.Component{
         
     }
   
-    
-    render(){
-        const videos = Object.values(this.props.videos)
+    componentDidMount() {
+        this.props.fetchUserVideos(this.props.userId)
         
+    }
+    render(){
+        let videos = Object.values(this.props.videos)
+        videos = videos.filter(video => video.uploader_id === this.props.userId)
         if (!videos.length){
 
             return (

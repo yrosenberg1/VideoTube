@@ -24,7 +24,7 @@ class Channel extends React.Component {
    
 
     componentDidMount() {
-        this.props.fetchUserVideos(this.props.userId)
+        // this.props.fetchUserVideos(this.props.userId)
         this.button.current.click()
       }
 
@@ -76,7 +76,7 @@ class Channel extends React.Component {
                 <UserVideosContainer 
                     user = {this.props.user}
                     userId ={this.props.userId}
-                    videos ={this.props.videos}
+                    // videos ={this.props.videos}
                    
                 />
                 )
