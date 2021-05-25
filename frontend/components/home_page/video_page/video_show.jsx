@@ -22,7 +22,9 @@ class VideoShow extends React.Component{
     }
 
     componentDidUpdate(prevProps){
-      
+      if (JSON.stringify(this.props.video) !== JSON.stringify(prevProps.video)){
+          this.props.fetchVideo(this.props.videoId)
+      }
        
     }
 
