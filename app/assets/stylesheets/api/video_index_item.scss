@@ -86,4 +86,6 @@ ul.video-index-search-flex {
 
 video.video-thumbnail {
     height: 202px;
+    width: 100%;
+    object-fit: cover;
 }

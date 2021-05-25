@@ -151,8 +151,12 @@ font-weight: 500;
         }
     
         .user-video-item{
-            margin-right: 4px;
+            margin-right: 8px;
             margin-bottom: 24px;
+
+            & video{
+                width: auto;
+            }
         }
 
         .user-vid-item-title{
@@ -166,6 +170,9 @@ font-weight: 500;
             font-size: 13px;
             line-height: 18px;
             color: #606060;
+
+
+            
         }
 
         .channel-no-videos{
